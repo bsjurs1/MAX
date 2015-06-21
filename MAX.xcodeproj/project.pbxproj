@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9103F9E11B37123C00735BF7 /* ExerciseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9103F9E01B37123C00735BF7 /* ExerciseTableViewController.swift */; };
 		91121D121B36F1EB004BAC11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91121D111B36F1EB004BAC11 /* AppDelegate.swift */; };
 		91121D151B36F1EB004BAC11 /* MAX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91121D131B36F1EB004BAC11 /* MAX.xcdatamodeld */; };
 		91121D171B36F1EB004BAC11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91121D161B36F1EB004BAC11 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9103F9E01B37123C00735BF7 /* ExerciseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewController.swift; sourceTree = "<group>"; };
 		91121D0C1B36F1EB004BAC11 /* MAX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91121D101B36F1EB004BAC11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91121D111B36F1EB004BAC11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				91121D111B36F1EB004BAC11 /* AppDelegate.swift */,
 				91121D161B36F1EB004BAC11 /* ViewController.swift */,
 				91121D181B36F1EB004BAC11 /* Main.storyboard */,
+				9103F9E01B37123C00735BF7 /* ExerciseTableViewController.swift */,
 				91121D1B1B36F1EB004BAC11 /* Images.xcassets */,
 				91121D1D1B36F1EB004BAC11 /* LaunchScreen.xib */,
 				91121D131B36F1EB004BAC11 /* MAX.xcdatamodeld */,
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91121D171B36F1EB004BAC11 /* ViewController.swift in Sources */,
+				9103F9E11B37123C00735BF7 /* ExerciseTableViewController.swift in Sources */,
 				91121D151B36F1EB004BAC11 /* MAX.xcdatamodeld in Sources */,
 				91121D121B36F1EB004BAC11 /* AppDelegate.swift in Sources */,
 			);
@@ -413,6 +417,7 @@
 				91121D301B36F1EB004BAC11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		91121D311B36F1EB004BAC11 /* Build configuration list for PBXNativeTarget "MAXTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +426,7 @@
 				91121D331B36F1EB004BAC11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
