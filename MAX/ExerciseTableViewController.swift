@@ -9,11 +9,16 @@
 import UIKit
 
 class ExerciseTableViewController: UITableViewController {
-
+    
+    var sampleArray : [String] = [String]()
+    
+    let alphabetArray : [String] = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s",
+        "t","u","v","w","x","y","z"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    
+        sampleArray = ["Squats", "Dead lifts"]
         
         
     }
@@ -29,7 +34,7 @@ class ExerciseTableViewController: UITableViewController {
     
     override func sectionIndexTitlesForTableView(tableView: UITableView) -> [AnyObject]! {
         
-        return ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+        return alphabetArray
         
     }
 
@@ -41,18 +46,22 @@ class ExerciseTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        return sampleArray.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCellWithIdentifier("exerciseCell", forIndexPath: indexPath) as! UITableViewCell
+        
+        cell.textLabel?.text = sampleArray[indexPath.row]
 
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    
+        return alphabetArray[section].uppercaseString
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
