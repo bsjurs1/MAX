@@ -10,22 +10,27 @@ import UIKit
 
 class ExerciseTableViewController: UITableViewController {
     
-    var sampleArray : [String] = [String]()
+    @IBOutlet weak var exerciseSearchBar: UISearchBar!
+    
+    var sSampleArray : [String] = ["Squats", "Sit-ups"]
+    var samplePicArray : [String] = ["squats.png", "situp.jpg"]
+    var appDelegate : AppDelegate = AppDelegate()
     
     let alphabetArray : [String] = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s",
         "t","u","v","w","x","y","z"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        sampleArray = ["Squats", "Dead lifts"]
+        
+        self.navigationItem.title = "Exercises"
+        
+        self.view.tintColor = appDelegate.maxTintColor
         
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     /*- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
@@ -33,9 +38,7 @@ class ExerciseTableViewController: UITableViewController {
     }*/
     
     override func sectionIndexTitlesForTableView(tableView: UITableView) -> [AnyObject]! {
-        
         return alphabetArray
-        
     }
 
     // MARK: - Table view data source
@@ -46,19 +49,32 @@ class ExerciseTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return sampleArray.count
+        if (alphabetArray[section] == "s") {
+            
+            return sSampleArray.count
+            
+        } else {
+            
+            return 0
+            
+        }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("exerciseCell", forIndexPath: indexPath) as! UITableViewCell
         
-        cell.textLabel?.text = sampleArray[indexPath.row]
+        
+        var cell : ExerciseTableViewCell = tableView.dequeueReusableCellWithIdentifier("exerciseCell", forIndexPath: indexPath) as! ExerciseTableViewCell
+        
+        cell.exerciseImageView?.image = UIImage(named: samplePicArray[indexPath.row])
+        cell.exerciseNameLabel?.text = sSampleArray[indexPath.row]
+        cell.lastPerformanceDateLabel?.text = "Last performed 20.may.2015"
 
         return cell
+        
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    
+        
         return alphabetArray[section].uppercaseString
         
     }

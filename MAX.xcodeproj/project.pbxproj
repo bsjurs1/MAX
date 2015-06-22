@@ -15,6 +15,8 @@
 		91121D1C1B36F1EB004BAC11 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91121D1B1B36F1EB004BAC11 /* Images.xcassets */; };
 		91121D1F1B36F1EB004BAC11 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91121D1D1B36F1EB004BAC11 /* LaunchScreen.xib */; };
 		91121D2B1B36F1EB004BAC11 /* MAXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91121D2A1B36F1EB004BAC11 /* MAXTests.swift */; };
+		913004F31B3723C800F7BC80 /* situp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 913004F11B3723C800F7BC80 /* situp.jpg */; };
+		913004F41B3723C800F7BC80 /* squats.png in Resources */ = {isa = PBXBuildFile; fileRef = 913004F21B3723C800F7BC80 /* squats.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		91121D241B36F1EB004BAC11 /* MAXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MAXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91121D291B36F1EB004BAC11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91121D2A1B36F1EB004BAC11 /* MAXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAXTests.swift; sourceTree = "<group>"; };
+		913004F11B3723C800F7BC80 /* situp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = situp.jpg; path = ../../situp.jpg; sourceTree = "<group>"; };
+		913004F21B3723C800F7BC80 /* squats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = squats.png; path = ../../squats.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 			children = (
 				91121D111B36F1EB004BAC11 /* AppDelegate.swift */,
 				91121D181B36F1EB004BAC11 /* Main.storyboard */,
+				913004F11B3723C800F7BC80 /* situp.jpg */,
+				913004F21B3723C800F7BC80 /* squats.png */,
 				9103F9E01B37123C00735BF7 /* ExerciseTableViewController.swift */,
 				9103F9E21B3712BF00735BF7 /* ExerciseTableViewCell.swift */,
 				91121D1B1B36F1EB004BAC11 /* Images.xcassets */,
@@ -198,6 +204,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				913004F31B3723C800F7BC80 /* situp.jpg in Resources */,
+				913004F41B3723C800F7BC80 /* squats.png in Resources */,
 				91121D1A1B36F1EB004BAC11 /* Main.storyboard in Resources */,
 				91121D1F1B36F1EB004BAC11 /* LaunchScreen.xib in Resources */,
 				91121D1C1B36F1EB004BAC11 /* Images.xcassets in Resources */,
