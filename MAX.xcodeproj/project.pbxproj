@@ -21,6 +21,7 @@
 		919B4E141B38995300C82A54 /* ExerciseRoutineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B4E131B38995300C82A54 /* ExerciseRoutineTableViewController.swift */; };
 		919B4E181B389D3A00C82A54 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B4E171B389D3A00C82A54 /* ExerciseTableViewCell.swift */; };
 		919B4E1A1B38A0F600C82A54 /* ExerciseRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B4E191B38A0F600C82A54 /* ExerciseRoutineViewController.swift */; };
+		919B4E1E1B38A8B800C82A54 /* Skjermbilde 2015-06-22 kl. 22.33.26.png in Resources */ = {isa = PBXBuildFile; fileRef = 919B4E1D1B38A8B800C82A54 /* Skjermbilde 2015-06-22 kl. 22.33.26.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		919B4E131B38995300C82A54 /* ExerciseRoutineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineTableViewController.swift; sourceTree = "<group>"; };
 		919B4E171B389D3A00C82A54 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseTableViewCell.swift; path = ../ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		919B4E191B38A0F600C82A54 /* ExerciseRoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineViewController.swift; sourceTree = "<group>"; };
+		919B4E1D1B38A8B800C82A54 /* Skjermbilde 2015-06-22 kl. 22.33.26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Skjermbilde 2015-06-22 kl. 22.33.26.png"; path = "../../../../Desktop/Skjermbilde 2015-06-22 kl. 22.33.26.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +97,6 @@
 			children = (
 				91121D111B36F1EB004BAC11 /* AppDelegate.swift */,
 				91121D181B36F1EB004BAC11 /* Main.storyboard */,
-				919B4E191B38A0F600C82A54 /* ExerciseRoutineViewController.swift */,
 				913004F11B3723C800F7BC80 /* situp.jpg */,
 				913004F21B3723C800F7BC80 /* squats.png */,
 				9103F9E01B37123C00735BF7 /* ExerciseTableViewController.swift */,
@@ -103,6 +104,7 @@
 				9109067D1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift */,
 				9103F9E21B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift */,
 				919B4E171B389D3A00C82A54 /* ExerciseTableViewCell.swift */,
+				919B4E191B38A0F600C82A54 /* ExerciseRoutineViewController.swift */,
 				91121D1B1B36F1EB004BAC11 /* Images.xcassets */,
 				91121D1D1B36F1EB004BAC11 /* LaunchScreen.xib */,
 				91121D131B36F1EB004BAC11 /* MAX.xcdatamodeld */,
@@ -114,6 +116,7 @@
 		91121D0F1B36F1EB004BAC11 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				919B4E1D1B38A8B800C82A54 /* Skjermbilde 2015-06-22 kl. 22.33.26.png */,
 				91121D101B36F1EB004BAC11 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				913004F31B3723C800F7BC80 /* situp.jpg in Resources */,
+				919B4E1E1B38A8B800C82A54 /* Skjermbilde 2015-06-22 kl. 22.33.26.png in Resources */,
 				913004F41B3723C800F7BC80 /* squats.png in Resources */,
 				91121D1A1B36F1EB004BAC11 /* Main.storyboard in Resources */,
 				91121D1F1B36F1EB004BAC11 /* LaunchScreen.xib in Resources */,

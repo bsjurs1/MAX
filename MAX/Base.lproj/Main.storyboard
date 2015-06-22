@@ -150,10 +150,6 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="exerciseImageView" destination="PKO-cL-usy" id="18d-08-TdF"/>
-                                    <outlet property="exerciseNameLabel" destination="biz-gE-LkV" id="kjw-iG-XE8"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -184,36 +180,94 @@
                                     <barButtonItem title="Start training" id="n81-z0-zDA"/>
                                 </items>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IJO-FJ-xE6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Skjermbilde 2015-06-22 kl. 22.33.26.png" translatesAutoresizingMaskIntoConstraints="NO" id="4uf-dW-79B">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="128"/>
+                                </variation>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IJO-FJ-xE6">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xy2-pV-aKo">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="exerciseRoutineCell" rowHeight="90" id="xy2-pV-aKo" customClass="ExerciseTableViewCell" customModule="MAX" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xy2-pV-aKo" id="gcp-h0-5V4">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2ZP-PB-EoC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="5" y="0.0" width="90" height="90"/>
+                                                    </variation>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Squats" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rR-2a-Lbd">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
+                                                    <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="103" y="39" width="250" height="21"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="2ZP-PB-EoC"/>
+                                                    <exclude reference="9rR-2a-Lbd"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="2ZP-PB-EoC"/>
+                                                    <include reference="9rR-2a-Lbd"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="exerciseImageView" destination="2ZP-PB-EoC" id="Zwi-U1-yES"/>
+                                            <outlet property="exerciseNameLabel" destination="9rR-2a-Lbd" id="fOs-uH-ICb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="492"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="200" width="400" height="356"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="t5F-6b-Zdo" id="XM4-qS-V8k"/>
+                                    <outlet property="delegate" destination="t5F-6b-Zdo" id="22N-YH-wZd"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="IJO-FJ-xE6" firstAttribute="top" secondItem="4uf-dW-79B" secondAttribute="bottom" constant="8" id="2HH-5W-Tiq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IJO-FJ-xE6" secondAttribute="trailing" constant="-16" id="6M3-h5-vTx"/>
+                            <constraint firstItem="4uf-dW-79B" firstAttribute="leading" secondItem="cth-Q2-DF6" secondAttribute="leadingMargin" constant="-16" id="ABs-0Q-417"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Y3u-ES-HxJ" secondAttribute="trailing" constant="-16" id="Aio-4h-QfO"/>
                             <constraint firstItem="Q2O-CO-APb" firstAttribute="top" secondItem="Y3u-ES-HxJ" secondAttribute="bottom" id="WoO-wi-Dt7"/>
+                            <constraint firstItem="4uf-dW-79B" firstAttribute="top" secondItem="aQg-eL-bXg" secondAttribute="bottom" id="WyT-zM-ATQ"/>
+                            <constraint firstItem="IJO-FJ-xE6" firstAttribute="leading" secondItem="cth-Q2-DF6" secondAttribute="leadingMargin" constant="-16" id="aKr-vZ-4Nm"/>
+                            <constraint firstItem="Y3u-ES-HxJ" firstAttribute="top" secondItem="IJO-FJ-xE6" secondAttribute="bottom" id="bz8-fK-1Hs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4uf-dW-79B" secondAttribute="trailing" constant="-16" id="k5F-PT-FBC"/>
                             <constraint firstItem="Y3u-ES-HxJ" firstAttribute="leading" secondItem="cth-Q2-DF6" secondAttribute="leadingMargin" constant="-16" id="oG4-2W-VFG"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Y3u-ES-HxJ"/>
+                                <exclude reference="4uf-dW-79B"/>
                                 <exclude reference="IJO-FJ-xE6"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="ABs-0Q-417"/>
+                                <exclude reference="WyT-zM-ATQ"/>
+                                <exclude reference="k5F-PT-FBC"/>
+                                <exclude reference="2HH-5W-Tiq"/>
+                                <exclude reference="6M3-h5-vTx"/>
+                                <exclude reference="aKr-vZ-4Nm"/>
                                 <exclude reference="Aio-4h-QfO"/>
+                                <exclude reference="bz8-fK-1Hs"/>
                                 <exclude reference="oG4-2W-VFG"/>
                                 <exclude reference="WoO-wi-Dt7"/>
                             </mask>
@@ -221,10 +275,18 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Y3u-ES-HxJ"/>
+                                <include reference="4uf-dW-79B"/>
                                 <include reference="IJO-FJ-xE6"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="ABs-0Q-417"/>
+                                <include reference="WyT-zM-ATQ"/>
+                                <include reference="k5F-PT-FBC"/>
+                                <include reference="2HH-5W-Tiq"/>
+                                <include reference="6M3-h5-vTx"/>
+                                <include reference="aKr-vZ-4Nm"/>
                                 <include reference="Aio-4h-QfO"/>
+                                <include reference="bz8-fK-1Hs"/>
                                 <include reference="oG4-2W-VFG"/>
                                 <include reference="WoO-wi-Dt7"/>
                             </mask>
@@ -232,12 +294,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="G3A-JJ-s7h"/>
                     <connections>
+                        <outlet property="exerciseRoutineTableView" destination="IJO-FJ-xE6" id="1Dh-2S-dmd"/>
                         <outlet property="startTrainingToolBarButton" destination="n81-z0-zDA" id="a3S-4S-f0y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tos-Sz-zFF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3444" y="1825"/>
+            <point key="canvasLocation" x="3297" y="1139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3R8-Xx-YL0">
@@ -277,6 +340,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Skjermbilde 2015-06-22 kl. 22.33.26.png" width="375" height="286"/>
         <image name="squats.png" width="400" height="236"/>
     </resources>
 </document>

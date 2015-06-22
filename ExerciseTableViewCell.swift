@@ -10,11 +10,7 @@ import UIKit
 
 class ExerciseTableViewCell: UITableViewCell {
     
-    
-    @IBOutlet weak var exerciseNameLabel: UILabel!
     @IBOutlet weak var exerciseImageView: UIImageView!
+    @IBOutlet weak var exerciseNameLabel: UILabel!
     
-    
-    
-
 }
