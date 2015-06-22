@@ -10,14 +10,9 @@ import UIKit
 
 class ExerciseTableViewController: UITableViewController {
     
-    @IBOutlet weak var exerciseSearchBar: UISearchBar!
-    
     var sSampleArray : [String] = ["Squats", "Sit-ups"]
     var samplePicArray : [String] = ["squats.png", "situp.jpg"]
     var appDelegate : AppDelegate = AppDelegate()
-    
-    let alphabetArray : [String] = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s",
-        "t","u","v","w","x","y","z"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,50 +27,17 @@ class ExerciseTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    /*- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    return[NSArray arrayWithObjects:@"a", @"e", @"i", @"m", @"p", nil];
-    }*/
-    
-    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [AnyObject]! {
-        return alphabetArray
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 26
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if (alphabetArray[section] == "s") {
-            
-            return sSampleArray.count
-            
-        } else {
-            
-            return 0
-            
-        }
-    }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         
-        var cell : ExerciseTableViewCell = tableView.dequeueReusableCellWithIdentifier("exerciseCell", forIndexPath: indexPath) as! ExerciseTableViewCell
+        var cell : ExerciseProfileTableViewCell = tableView.dequeueReusableCellWithIdentifier("exerciseCell", forIndexPath: indexPath) as! ExerciseProfileTableViewCell
         
         cell.exerciseImageView?.image = UIImage(named: samplePicArray[indexPath.row])
         cell.exerciseNameLabel?.text = sSampleArray[indexPath.row]
         cell.lastPerformanceDateLabel?.text = "Last performed 20.may.2015"
 
         return cell
-        
-    }
-    
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        return alphabetArray[section].uppercaseString
         
     }
 
