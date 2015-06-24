@@ -11,6 +11,7 @@
 		9103F9E31B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9103F9E21B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift */; };
 		9109067E1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9109067D1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift */; };
 		910BC4361B3A9A230078FF8B /* ExerciseProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910BC4351B3A9A230078FF8B /* ExerciseProfileTableViewController.swift */; };
+		910BC43C1B3AA2D30078FF8B /* ExerciseEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910BC43B1B3AA2D30078FF8B /* ExerciseEditTableViewCell.swift */; };
 		91121D121B36F1EB004BAC11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91121D111B36F1EB004BAC11 /* AppDelegate.swift */; };
 		91121D151B36F1EB004BAC11 /* MAX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91121D131B36F1EB004BAC11 /* MAX.xcdatamodeld */; };
 		91121D1A1B36F1EB004BAC11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91121D181B36F1EB004BAC11 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		9103F9E21B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseProfileTableViewCell.swift; sourceTree = "<group>"; };
 		9109067D1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLibraryTableViewController.swift; sourceTree = "<group>"; };
 		910BC4351B3A9A230078FF8B /* ExerciseProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseProfileTableViewController.swift; sourceTree = "<group>"; };
+		910BC43B1B3AA2D30078FF8B /* ExerciseEditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseEditTableViewCell.swift; sourceTree = "<group>"; };
 		91121D0C1B36F1EB004BAC11 /* MAX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91121D101B36F1EB004BAC11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91121D111B36F1EB004BAC11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				91121D181B36F1EB004BAC11 /* Main.storyboard */,
+				910BC43B1B3AA2D30078FF8B /* ExerciseEditTableViewCell.swift */,
 				9103F9E21B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift */,
 				919B4E171B389D3A00C82A54 /* ExerciseTableViewCell.swift */,
 			);
@@ -287,6 +290,7 @@
 				919B4E141B38995300C82A54 /* ExerciseRoutineTableViewController.swift in Sources */,
 				9109067E1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift in Sources */,
 				9103F9E31B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift in Sources */,
+				910BC43C1B3AA2D30078FF8B /* ExerciseEditTableViewCell.swift in Sources */,
 				910BC4361B3A9A230078FF8B /* ExerciseProfileTableViewController.swift in Sources */,
 				919B4E1A1B38A0F600C82A54 /* ExerciseRoutineViewController.swift in Sources */,
 				919B4E181B389D3A00C82A54 /* ExerciseTableViewCell.swift in Sources */,

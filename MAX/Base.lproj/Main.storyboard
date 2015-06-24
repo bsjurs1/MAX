@@ -237,7 +237,7 @@
                                     <outlet property="exerciseNameLabel" destination="biz-gE-LkV" id="vpV-Rc-jbh"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleAspectFit" selectionStyle="none" indentationWidth="10" reuseIdentifier="exerciseEditCell" rowHeight="300" id="iXK-lJ-50c" customClass="ExerciseTableViewCell" customModule="MAX" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleAspectFit" selectionStyle="none" indentationWidth="10" reuseIdentifier="exerciseEditCell" rowHeight="300" id="iXK-lJ-50c" customClass="ExerciseEditTableViewCell" customModule="MAX" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iXK-lJ-50c" id="ia3-GA-Zzp">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -313,6 +313,14 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="addSetButton" destination="6Yu-uh-63r" id="36Q-2d-9Uf"/>
+                                    <outlet property="editExerciseButton" destination="eAZ-5v-fek" id="zRG-zU-eAh"/>
+                                    <outlet property="exerciseDetailsButton" destination="oOX-Tq-56b" id="kID-sC-46j"/>
+                                    <outlet property="exerciseImageView" destination="tjF-jK-VAp" id="Ntp-DW-D4g"/>
+                                    <outlet property="exerciseNameLabel" destination="3sy-WJ-sbT" id="Yw7-6P-hHo"/>
+                                    <outlet property="setsTableView" destination="vFG-33-GVb" id="gd0-hq-cb4"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
