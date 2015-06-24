@@ -10,6 +10,7 @@
 		9103F9E11B37123C00735BF7 /* ExerciseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9103F9E01B37123C00735BF7 /* ExerciseTableViewController.swift */; };
 		9103F9E31B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9103F9E21B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift */; };
 		9109067E1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9109067D1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift */; };
+		910BC4361B3A9A230078FF8B /* ExerciseProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910BC4351B3A9A230078FF8B /* ExerciseProfileTableViewController.swift */; };
 		91121D121B36F1EB004BAC11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91121D111B36F1EB004BAC11 /* AppDelegate.swift */; };
 		91121D151B36F1EB004BAC11 /* MAX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91121D131B36F1EB004BAC11 /* MAX.xcdatamodeld */; };
 		91121D1A1B36F1EB004BAC11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91121D181B36F1EB004BAC11 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		9103F9E01B37123C00735BF7 /* ExerciseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewController.swift; sourceTree = "<group>"; };
 		9103F9E21B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseProfileTableViewCell.swift; sourceTree = "<group>"; };
 		9109067D1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLibraryTableViewController.swift; sourceTree = "<group>"; };
+		910BC4351B3A9A230078FF8B /* ExerciseProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseProfileTableViewController.swift; sourceTree = "<group>"; };
 		91121D0C1B36F1EB004BAC11 /* MAX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91121D101B36F1EB004BAC11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91121D111B36F1EB004BAC11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		910BC4371B3A9B470078FF8B /* ExerciseTableViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9103F9E01B37123C00735BF7 /* ExerciseTableViewController.swift */,
+				919B4E131B38995300C82A54 /* ExerciseRoutineTableViewController.swift */,
+				9109067D1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift */,
+				910BC4351B3A9A230078FF8B /* ExerciseProfileTableViewController.swift */,
+			);
+			name = ExerciseTableViewControllers;
+			sourceTree = "<group>";
+		};
+		910BC4381B3A9B8F0078FF8B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				919B4E191B38A0F600C82A54 /* ExerciseRoutineViewController.swift */,
+				919B4E1F1B39A9DA00C82A54 /* ExerciseProfileViewController.swift */,
+				910BC4371B3A9B470078FF8B /* ExerciseTableViewControllers */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		910BC4391B3A9BCA0078FF8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91121D131B36F1EB004BAC11 /* MAX.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		910BC43A1B3A9BF50078FF8B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91121D181B36F1EB004BAC11 /* Main.storyboard */,
+				9103F9E21B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift */,
+				919B4E171B389D3A00C82A54 /* ExerciseTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		91121D031B36F1EB004BAC11 = {
 			isa = PBXGroup;
 			children = (
@@ -100,19 +141,9 @@
 			isa = PBXGroup;
 			children = (
 				91121D111B36F1EB004BAC11 /* AppDelegate.swift */,
-				91121D181B36F1EB004BAC11 /* Main.storyboard */,
-				913004F11B3723C800F7BC80 /* situp.jpg */,
-				913004F21B3723C800F7BC80 /* squats.png */,
-				9103F9E01B37123C00735BF7 /* ExerciseTableViewController.swift */,
-				919B4E131B38995300C82A54 /* ExerciseRoutineTableViewController.swift */,
-				9109067D1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift */,
-				9103F9E21B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift */,
-				919B4E171B389D3A00C82A54 /* ExerciseTableViewCell.swift */,
-				919B4E191B38A0F600C82A54 /* ExerciseRoutineViewController.swift */,
-				919B4E1F1B39A9DA00C82A54 /* ExerciseProfileViewController.swift */,
-				91121D1B1B36F1EB004BAC11 /* Images.xcassets */,
-				91121D1D1B36F1EB004BAC11 /* LaunchScreen.xib */,
-				91121D131B36F1EB004BAC11 /* MAX.xcdatamodeld */,
+				910BC43A1B3A9BF50078FF8B /* Views */,
+				910BC4391B3A9BCA0078FF8B /* Model */,
+				910BC4381B3A9B8F0078FF8B /* Controllers */,
 				91121D0F1B36F1EB004BAC11 /* Supporting Files */,
 			);
 			path = MAX;
@@ -121,6 +152,10 @@
 		91121D0F1B36F1EB004BAC11 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				91121D1B1B36F1EB004BAC11 /* Images.xcassets */,
+				913004F11B3723C800F7BC80 /* situp.jpg */,
+				913004F21B3723C800F7BC80 /* squats.png */,
+				91121D1D1B36F1EB004BAC11 /* LaunchScreen.xib */,
 				919B4E231B39E40C00C82A54 /* bjarte.jpg */,
 				919B4E1D1B38A8B800C82A54 /* Skjermbilde 2015-06-22 kl. 22.33.26.png */,
 				91121D101B36F1EB004BAC11 /* Info.plist */,
@@ -252,6 +287,7 @@
 				919B4E141B38995300C82A54 /* ExerciseRoutineTableViewController.swift in Sources */,
 				9109067E1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift in Sources */,
 				9103F9E31B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift in Sources */,
+				910BC4361B3A9A230078FF8B /* ExerciseProfileTableViewController.swift in Sources */,
 				919B4E1A1B38A0F600C82A54 /* ExerciseRoutineViewController.swift in Sources */,
 				919B4E181B389D3A00C82A54 /* ExerciseTableViewCell.swift in Sources */,
 				9103F9E11B37123C00735BF7 /* ExerciseTableViewController.swift in Sources */,

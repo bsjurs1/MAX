@@ -23,7 +23,7 @@ class ExerciseProfileViewController: UIViewController {
     
     func setUpExerciseTableView(){
         
-        var exerciseProfileTableViewController: ExerciseLibraryTableViewController? = self.storyboard?.instantiateViewControllerWithIdentifier("profileTableViewController") as? ExerciseLibraryTableViewController
+        var exerciseProfileTableViewController: ExerciseProfileTableViewController? = self.storyboard?.instantiateViewControllerWithIdentifier("profileTableViewController") as? ExerciseProfileTableViewController
         
         self.addChildViewController(exerciseProfileTableViewController!)
         
