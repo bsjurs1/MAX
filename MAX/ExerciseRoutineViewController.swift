@@ -8,25 +8,36 @@
 
 import UIKit
 
-class ExerciseRoutineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ExerciseRoutineViewController: UIViewController {
     
     var appDelegate = AppDelegate()
     
-    var sSampleArray : [String] = ["Squats"]
-    var samplePicArray : [String] = ["squats.png"]
-    
     @IBOutlet weak var startTrainingToolBarButton: UIBarButtonItem!
-    @IBOutlet weak var exerciseRoutineTableView: UITableView!
     
     override func viewDidLoad() {
         
         setBarButtons()
+        
+        setUpExerciseTableView()
         
         self.navigationItem.title = "Leg day"
         
         self.view.tintColor = appDelegate.maxTintColor
         
     }
+    
+    func setUpExerciseTableView(){
+        
+        var exerciseTableViewController: ExerciseTableViewController? = self.storyboard?.instantiateViewControllerWithIdentifier("exerciseTableViewController") as? ExerciseTableViewController
+        
+        self.addChildViewController(exerciseTableViewController!)
+        
+        exerciseTableViewController?.view.frame = CGRectMake(0, 200, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height-200)
+        
+        self.view.addSubview(exerciseTableViewController!.view)
+        
+    }
+
     
     func setBarButtons(){
         
@@ -43,27 +54,6 @@ class ExerciseRoutineViewController: UIViewController, UITableViewDataSource, UI
         self.navigationItem.rightBarButtonItems = [addExerciseBarButtonItem, editExerciseBarButton]
         
         startTrainingToolBarButton.tintColor = appDelegate.maxTintColor
-        
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        var cell : ExerciseTableViewCell = exerciseRoutineTableView.dequeueReusableCellWithIdentifier("exerciseRoutineCell", forIndexPath: indexPath) as! ExerciseTableViewCell
-        
-        cell.exerciseImageView?.image = UIImage(named: samplePicArray[0])
-        cell.exerciseNameLabel?.text = sSampleArray[0]
-        
-        return cell
-        
-    }
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 10
         
     }
     
