@@ -30,11 +30,13 @@ class ExerciseRoutineViewController: UIViewController, UITableViewDataSource, UI
     
     func setBarButtons(){
         
-        var editExerciseBarButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.Plain, target: self, action: "editExercise")
+        var editExerciseBarButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.Plain,
+            target: self, action: "editExercise")
 
         editExerciseBarButton.tintColor = appDelegate.maxTintColor
         
-        var addExerciseBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addExercise")
+        var addExerciseBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add,
+            target: self, action: "addExercise")
         
         addExerciseBarButtonItem.tintColor = appDelegate.maxTintColor
         
@@ -45,7 +47,6 @@ class ExerciseRoutineViewController: UIViewController, UITableViewDataSource, UI
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         
         var cell : ExerciseTableViewCell = exerciseRoutineTableView.dequeueReusableCellWithIdentifier("exerciseRoutineCell", forIndexPath: indexPath) as! ExerciseTableViewCell
         

@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mWB-DH-Z34">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3Wt-Fr-Ecr">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Exercise Library Table View Controller-->
         <scene sceneID="yO9-M9-nxX">
             <objects>
-                <tableViewController id="AGj-WP-ftf" customClass="ExerciseLibraryTableViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="profileTableViewController" id="AGj-WP-ftf" customClass="ExerciseLibraryTableViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="XZB-vb-amd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,7 +104,88 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Dv-Uj-GOI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="393" y="399"/>
+            <point key="canvasLocation" x="768" y="251"/>
+        </scene>
+        <!--Exercise Profile View Controller-->
+        <scene sceneID="jQ4-Wz-YZQ">
+            <objects>
+                <viewController id="3Wt-Fr-Ecr" customClass="ExerciseProfileViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZHL-V5-x5C"/>
+                        <viewControllerLayoutGuide type="bottom" id="sxV-2a-ECc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qoh-F1-3Yx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAX-h3-sce">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bjarte.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DS9-LX-o1n">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="10" y="10" width="80" height="80"/>
+                                        </variation>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bjarte Sjursen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1U-D6-xXc">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="98" y="25" width="108" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 years" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDX-pR-rRR">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="98" y="54" width="66" height="21"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="DS9-LX-o1n"/>
+                                        <exclude reference="b1U-D6-xXc"/>
+                                        <exclude reference="yDX-pR-rRR"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="20" width="400" height="100"/>
+                                    <mask key="subviews">
+                                        <include reference="DS9-LX-o1n"/>
+                                        <include reference="b1U-D6-xXc"/>
+                                        <include reference="yDX-pR-rRR"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="OAX-h3-sce"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="OAX-h3-sce"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="PKY-ZI-bSA"/>
+                    <connections>
+                        <outlet property="exerciseProfileView" destination="OAX-h3-sce" id="XFk-q4-d0j"/>
+                        <outlet property="profileAgeLabel" destination="yDX-pR-rRR" id="grh-rF-VGu"/>
+                        <outlet property="profileImageView" destination="DS9-LX-o1n" id="ceW-ys-emY"/>
+                        <outlet property="profileNameLabel" destination="b1U-D6-xXc" id="NAr-LS-LJY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vvL-GJ-Q4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4852.5" y="433"/>
         </scene>
         <!--Exercise Routine Table View Controller-->
         <scene sceneID="i6l-sJ-kxo">
@@ -172,6 +254,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Q2O-CO-APb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cth-Q2-DF6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y3u-ES-HxJ">
@@ -182,8 +265,18 @@
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Skjermbilde 2015-06-22 kl. 22.33.26.png" translatesAutoresizingMaskIntoConstraints="NO" id="4uf-dW-79B">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="ror-TT-whL"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ror-TT-whL"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="ror-TT-whL"/>
+                                    </mask>
                                 </variation>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IJO-FJ-xE6">
@@ -231,9 +324,6 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="200" width="400" height="356"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="t5F-6b-Zdo" id="XM4-qS-V8k"/>
                                     <outlet property="delegate" destination="t5F-6b-Zdo" id="22N-YH-wZd"/>
@@ -260,16 +350,16 @@
                                 <exclude reference="IJO-FJ-xE6"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="WoO-wi-Dt7"/>
+                                <exclude reference="Aio-4h-QfO"/>
+                                <exclude reference="bz8-fK-1Hs"/>
+                                <exclude reference="oG4-2W-VFG"/>
                                 <exclude reference="ABs-0Q-417"/>
                                 <exclude reference="WyT-zM-ATQ"/>
                                 <exclude reference="k5F-PT-FBC"/>
                                 <exclude reference="2HH-5W-Tiq"/>
                                 <exclude reference="6M3-h5-vTx"/>
                                 <exclude reference="aKr-vZ-4Nm"/>
-                                <exclude reference="Aio-4h-QfO"/>
-                                <exclude reference="bz8-fK-1Hs"/>
-                                <exclude reference="oG4-2W-VFG"/>
-                                <exclude reference="WoO-wi-Dt7"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -279,16 +369,16 @@
                                 <include reference="IJO-FJ-xE6"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="WoO-wi-Dt7"/>
+                                <include reference="Aio-4h-QfO"/>
+                                <include reference="bz8-fK-1Hs"/>
+                                <include reference="oG4-2W-VFG"/>
                                 <include reference="ABs-0Q-417"/>
                                 <include reference="WyT-zM-ATQ"/>
                                 <include reference="k5F-PT-FBC"/>
                                 <include reference="2HH-5W-Tiq"/>
                                 <include reference="6M3-h5-vTx"/>
                                 <include reference="aKr-vZ-4Nm"/>
-                                <include reference="Aio-4h-QfO"/>
-                                <include reference="bz8-fK-1Hs"/>
-                                <include reference="oG4-2W-VFG"/>
-                                <include reference="WoO-wi-Dt7"/>
                             </mask>
                         </variation>
                     </view>
@@ -300,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tos-Sz-zFF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3297" y="1139"/>
+            <point key="canvasLocation" x="3312" y="1825"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3R8-Xx-YL0">
@@ -341,6 +431,7 @@
     </scenes>
     <resources>
         <image name="Skjermbilde 2015-06-22 kl. 22.33.26.png" width="375" height="286"/>
+        <image name="bjarte.jpg" width="960" height="960"/>
         <image name="squats.png" width="400" height="236"/>
     </resources>
 </document>

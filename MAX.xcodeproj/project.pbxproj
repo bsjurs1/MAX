@@ -22,6 +22,8 @@
 		919B4E181B389D3A00C82A54 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B4E171B389D3A00C82A54 /* ExerciseTableViewCell.swift */; };
 		919B4E1A1B38A0F600C82A54 /* ExerciseRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B4E191B38A0F600C82A54 /* ExerciseRoutineViewController.swift */; };
 		919B4E1E1B38A8B800C82A54 /* Skjermbilde 2015-06-22 kl. 22.33.26.png in Resources */ = {isa = PBXBuildFile; fileRef = 919B4E1D1B38A8B800C82A54 /* Skjermbilde 2015-06-22 kl. 22.33.26.png */; };
+		919B4E201B39A9DA00C82A54 /* ExerciseProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B4E1F1B39A9DA00C82A54 /* ExerciseProfileViewController.swift */; };
+		919B4E241B39E40C00C82A54 /* bjarte.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 919B4E231B39E40C00C82A54 /* bjarte.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		919B4E171B389D3A00C82A54 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseTableViewCell.swift; path = ../ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		919B4E191B38A0F600C82A54 /* ExerciseRoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineViewController.swift; sourceTree = "<group>"; };
 		919B4E1D1B38A8B800C82A54 /* Skjermbilde 2015-06-22 kl. 22.33.26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Skjermbilde 2015-06-22 kl. 22.33.26.png"; path = "../../../../Desktop/Skjermbilde 2015-06-22 kl. 22.33.26.png"; sourceTree = "<group>"; };
+		919B4E1F1B39A9DA00C82A54 /* ExerciseProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseProfileViewController.swift; sourceTree = "<group>"; };
+		919B4E231B39E40C00C82A54 /* bjarte.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bjarte.jpg; path = ../../../../Desktop/bjarte.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 				9103F9E21B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift */,
 				919B4E171B389D3A00C82A54 /* ExerciseTableViewCell.swift */,
 				919B4E191B38A0F600C82A54 /* ExerciseRoutineViewController.swift */,
+				919B4E1F1B39A9DA00C82A54 /* ExerciseProfileViewController.swift */,
 				91121D1B1B36F1EB004BAC11 /* Images.xcassets */,
 				91121D1D1B36F1EB004BAC11 /* LaunchScreen.xib */,
 				91121D131B36F1EB004BAC11 /* MAX.xcdatamodeld */,
@@ -116,6 +121,7 @@
 		91121D0F1B36F1EB004BAC11 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				919B4E231B39E40C00C82A54 /* bjarte.jpg */,
 				919B4E1D1B38A8B800C82A54 /* Skjermbilde 2015-06-22 kl. 22.33.26.png */,
 				91121D101B36F1EB004BAC11 /* Info.plist */,
 			);
@@ -225,6 +231,7 @@
 				91121D1A1B36F1EB004BAC11 /* Main.storyboard in Resources */,
 				91121D1F1B36F1EB004BAC11 /* LaunchScreen.xib in Resources */,
 				91121D1C1B36F1EB004BAC11 /* Images.xcassets in Resources */,
+				919B4E241B39E40C00C82A54 /* bjarte.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +257,7 @@
 				9103F9E11B37123C00735BF7 /* ExerciseTableViewController.swift in Sources */,
 				91121D151B36F1EB004BAC11 /* MAX.xcdatamodeld in Sources */,
 				91121D121B36F1EB004BAC11 /* AppDelegate.swift in Sources */,
+				919B4E201B39A9DA00C82A54 /* ExerciseProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
