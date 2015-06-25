@@ -16,11 +16,39 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("exerciseRoutineCell", forIndexPath: indexPath) as! ExerciseRoutineCollectionViewCell
+        var cell : ExerciseRoutineCollectionViewCell
+        
+        if indexPath.row % numerOfCellsOnScreenWidth() == 0{
+            
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("leftRoutineCell", forIndexPath: indexPath) as! ExerciseRoutineCollectionViewCell
+            
+        }
+        else if (indexPath.row % numerOfCellsOnScreenWidth()) == (numerOfCellsOnScreenWidth()-1) {
+            
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("rightRoutineCell", forIndexPath: indexPath) as! ExerciseRoutineCollectionViewCell
+            
+        }
+        else{
+            
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("middleRoutineCell", forIndexPath: indexPath) as! ExerciseRoutineCollectionViewCell
+            
+        }
         
         cell.exerciseRoutinePrintScreenImageView = UIImageView(image: UIImage(contentsOfFile: "prtscreen.png"))
         
         return cell
+    }
+    
+    func numerOfCellsOnScreenWidth()-> Int {
+        
+        
+        var numberToFloor = (UIScreen.mainScreen().bounds.size.width)/120.0
+        
+        var convertedNumberToFloor : Int = Int(numberToFloor)
+        
+        return convertedNumberToFloor
+        
+        
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
