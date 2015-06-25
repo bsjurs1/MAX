@@ -9,5 +9,28 @@
 import UIKit
 
 class ExerciseRoutinesCollectionViewController: UICollectionViewController {
+    
+    override func viewDidLoad() {
+        
+    }
+    
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        
+        
+    }
+    
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return 10
+        
+    }
+    
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        
+        return 1
+        
+    }
+    
 
 }
