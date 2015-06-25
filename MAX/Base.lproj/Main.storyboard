@@ -697,7 +697,7 @@
                                             <string key="text">10.june.2015
 </string>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -819,7 +819,7 @@
                                             <string key="text">10.june.2015
 </string>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -946,7 +946,7 @@
                                             <string key="text">10.june.2015
 </string>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -1031,6 +1031,112 @@
                                     </mask>
                                 </variation>
                             </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="addButtonCell" id="Hn5-nC-1B2">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="112" height="181"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Cn-tc-ylH">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qvb-68-gVY">
+                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="70"/>
+                                                    <state key="normal" title="+">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="25" y="39" width="45" height="57"/>
+                                                    </variation>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="142" id="VCt-FP-MRP"/>
+                                                <constraint firstAttribute="width" constant="94" id="itR-Q0-qv3"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="Qvb-68-gVY"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="VCt-FP-MRP"/>
+                                                    <exclude reference="itR-Q0-qv3"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="Qvb-68-gVY"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="VCt-FP-MRP"/>
+                                                    <include reference="itR-Q0-qv3"/>
+                                                </mask>
+                                            </variation>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create new " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bds-Fg-vng">
+                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Z6I-pP-Bq5"/>
+                                                <constraint firstAttribute="width" constant="65" id="i5q-RX-tvV"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                            <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Z6I-pP-Bq5"/>
+                                                    <exclude reference="i5q-RX-tvV"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="Z6I-pP-Bq5"/>
+                                                    <include reference="i5q-RX-tvV"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="3Cn-tc-ylH" firstAttribute="top" secondItem="Hn5-nC-1B2" secondAttribute="topMargin" constant="12" id="OEi-PF-Xe1"/>
+                                    <constraint firstAttribute="centerY" secondItem="Bds-Fg-vng" secondAttribute="centerY" constant="-80" id="qiL-ft-EGf"/>
+                                    <constraint firstItem="Bds-Fg-vng" firstAttribute="leading" secondItem="Hn5-nC-1B2" secondAttribute="leadingMargin" constant="26" id="rqs-Lu-9BD"/>
+                                    <constraint firstItem="Bds-Fg-vng" firstAttribute="top" secondItem="3Cn-tc-ylH" secondAttribute="bottom" constant="-2" id="uJA-lo-dmf"/>
+                                    <constraint firstItem="3Cn-tc-ylH" firstAttribute="leading" secondItem="Hn5-nC-1B2" secondAttribute="leadingMargin" constant="10" id="y2P-9X-8vy"/>
+                                </constraints>
+                                <size key="customSize" width="112" height="181"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="3Cn-tc-ylH"/>
+                                        <exclude reference="Bds-Fg-vng"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="OEi-PF-Xe1"/>
+                                        <exclude reference="y2P-9X-8vy"/>
+                                        <exclude reference="qiL-ft-EGf"/>
+                                        <exclude reference="rqs-Lu-9BD"/>
+                                        <exclude reference="uJA-lo-dmf"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="3Cn-tc-ylH"/>
+                                        <include reference="Bds-Fg-vng"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="OEi-PF-Xe1"/>
+                                        <include reference="y2P-9X-8vy"/>
+                                        <include reference="qiL-ft-EGf"/>
+                                        <include reference="rqs-Lu-9BD"/>
+                                        <include reference="uJA-lo-dmf"/>
+                                    </mask>
+                                </variation>
+                            </collectionViewCell>
                         </cells>
                         <connections>
                             <outlet property="dataSource" destination="jc0-Aw-N17" id="1Qn-9I-2UM"/>
@@ -1039,9 +1145,11 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Exercise Routines" id="k7z-BU-LDb">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="LxS-SI-pEB"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Ho5-ST-SZk"/>
                     </navigationItem>
                     <connections>
                         <outlet property="addExerciseRoutineBarButton" destination="LxS-SI-pEB" id="wP6-nD-uPy"/>
+                        <outlet property="editExerciseRoutineBarButton" destination="Ho5-ST-SZk" id="R8O-Hf-UkX"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JQr-P0-r2c" userLabel="First Responder" sceneMemberID="firstResponder"/>

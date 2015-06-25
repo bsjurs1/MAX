@@ -11,12 +11,15 @@ import UIKit
 class ExerciseRoutinesCollectionViewController: UICollectionViewController {
     
     
+    @IBOutlet weak var editExerciseRoutineBarButton: UIBarButtonItem!
     @IBOutlet weak var addExerciseRoutineBarButton: UIBarButtonItem!
+    
     var appDelegate = AppDelegate()
     
     override func viewDidLoad() {
         
         addExerciseRoutineBarButton.tintColor = appDelegate.maxTintColor
+        editExerciseRoutineBarButton.tintColor = appDelegate.maxTintColor
         
         self.navigationController?.navigationBar.translucent = false
         
@@ -26,23 +29,38 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
         
         var cell : ExerciseRoutineCollectionViewCell
         
-        if indexPath.row % numerOfCellsOnScreenWidth() == 0{
+        if indexPath.row == 0{
+            
+            var cell : UICollectionViewCell
+            
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("addButtonCell", forIndexPath: indexPath) as! UICollectionViewCell
+            
+            return cell
+            
+        }
+        else if indexPath.row % numerOfCellsOnScreenWidth() == 0{
+            
+            
             
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("leftRoutineCell", forIndexPath: indexPath) as! ExerciseRoutineCollectionViewCell
+            
+            cell.exerciseRoutinePrintScreenImageView = UIImageView(image: UIImage(contentsOfFile: "prtscreen.png"))
             
         }
         else if (indexPath.row % numerOfCellsOnScreenWidth()) == (numerOfCellsOnScreenWidth()-1) {
             
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("rightRoutineCell", forIndexPath: indexPath) as! ExerciseRoutineCollectionViewCell
             
+            cell.exerciseRoutinePrintScreenImageView = UIImageView(image: UIImage(contentsOfFile: "prtscreen.png"))
+            
         }
         else{
             
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("middleRoutineCell", forIndexPath: indexPath) as! ExerciseRoutineCollectionViewCell
             
+            cell.exerciseRoutinePrintScreenImageView = UIImageView(image: UIImage(contentsOfFile: "prtscreen.png"))
+            
         }
-        
-        cell.exerciseRoutinePrintScreenImageView = UIImageView(image: UIImage(contentsOfFile: "prtscreen.png"))
         
         return cell
     }
@@ -54,8 +72,6 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
         
         var convertedNumberToFloor : Int = Int(numberToFloor)
         
-        println(convertedNumberToFloor)
-        
         return convertedNumberToFloor
         
         
@@ -63,7 +79,7 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 200
+        return 6
         
     }
     
