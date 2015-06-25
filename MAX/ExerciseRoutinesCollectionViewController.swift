@@ -10,7 +10,15 @@ import UIKit
 
 class ExerciseRoutinesCollectionViewController: UICollectionViewController {
     
+    
+    @IBOutlet weak var addExerciseRoutineBarButton: UIBarButtonItem!
+    var appDelegate = AppDelegate()
+    
     override func viewDidLoad() {
+        
+        addExerciseRoutineBarButton.tintColor = appDelegate.maxTintColor
+        
+        self.navigationController?.navigationBar.translucent = false
         
     }
     
@@ -42,9 +50,11 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
     func numerOfCellsOnScreenWidth()-> Int {
         
         
-        var numberToFloor = (UIScreen.mainScreen().bounds.size.width)/120.0
+        var numberToFloor = (UIScreen.mainScreen().bounds.size.width)/112.0
         
         var convertedNumberToFloor : Int = Int(numberToFloor)
+        
+        println(convertedNumberToFloor)
         
         return convertedNumberToFloor
         
