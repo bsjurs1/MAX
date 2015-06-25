@@ -20,7 +20,7 @@
 		91121D1C1B36F1EB004BAC11 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91121D1B1B36F1EB004BAC11 /* Images.xcassets */; };
 		91121D1F1B36F1EB004BAC11 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91121D1D1B36F1EB004BAC11 /* LaunchScreen.xib */; };
 		91121D2B1B36F1EB004BAC11 /* MAXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91121D2A1B36F1EB004BAC11 /* MAXTests.swift */; };
-		9114E8C31B3C38B20034127B /* Skjermbilde 2015-06-25 kl. 15.24.43.png in Resources */ = {isa = PBXBuildFile; fileRef = 9114E8C21B3C38B20034127B /* Skjermbilde 2015-06-25 kl. 15.24.43.png */; };
+		9114E8C31B3C38B20034127B /* prtscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 9114E8C21B3C38B20034127B /* prtscreen.png */; };
 		9114E8C51B3C39220034127B /* ExerciseRoutinesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E8C41B3C39220034127B /* ExerciseRoutinesCollectionViewController.swift */; };
 		9114E8C71B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E8C61B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift */; };
 		913004F31B3723C800F7BC80 /* situp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 913004F11B3723C800F7BC80 /* situp.jpg */; };
@@ -61,7 +61,7 @@
 		91121D241B36F1EB004BAC11 /* MAXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MAXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91121D291B36F1EB004BAC11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91121D2A1B36F1EB004BAC11 /* MAXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAXTests.swift; sourceTree = "<group>"; };
-		9114E8C21B3C38B20034127B /* Skjermbilde 2015-06-25 kl. 15.24.43.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Skjermbilde 2015-06-25 kl. 15.24.43.png"; path = "../../../../Desktop/Skjermbilde 2015-06-25 kl. 15.24.43.png"; sourceTree = "<group>"; };
+		9114E8C21B3C38B20034127B /* prtscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prtscreen.png; path = ../../../../Desktop/prtscreen.png; sourceTree = "<group>"; };
 		9114E8C41B3C39220034127B /* ExerciseRoutinesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutinesCollectionViewController.swift; sourceTree = "<group>"; };
 		9114E8C61B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineCollectionViewCell.swift; sourceTree = "<group>"; };
 		913004F11B3723C800F7BC80 /* situp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = situp.jpg; path = ../../situp.jpg; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 				913004F21B3723C800F7BC80 /* squats.png */,
 				91121D1D1B36F1EB004BAC11 /* LaunchScreen.xib */,
 				919B4E231B39E40C00C82A54 /* bjarte.jpg */,
-				9114E8C21B3C38B20034127B /* Skjermbilde 2015-06-25 kl. 15.24.43.png */,
+				9114E8C21B3C38B20034127B /* prtscreen.png */,
 				919B4E1D1B38A8B800C82A54 /* Skjermbilde 2015-06-22 kl. 22.33.26.png */,
 				91121D101B36F1EB004BAC11 /* Info.plist */,
 			);
@@ -287,7 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				913004F31B3723C800F7BC80 /* situp.jpg in Resources */,
-				9114E8C31B3C38B20034127B /* Skjermbilde 2015-06-25 kl. 15.24.43.png in Resources */,
+				9114E8C31B3C38B20034127B /* prtscreen.png in Resources */,
 				919B4E1E1B38A8B800C82A54 /* Skjermbilde 2015-06-22 kl. 22.33.26.png in Resources */,
 				913004F41B3723C800F7BC80 /* squats.png in Resources */,
 				91121D1A1B36F1EB004BAC11 /* Main.storyboard in Resources */,
