@@ -718,7 +718,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outlet property="exerciseRoutinePrintScreen" destination="CSY-Sr-Q6Q" id="Jb0-Jk-iKs"/>
+                                    <outlet property="exerciseRoutinePrintScreenImageView" destination="CSY-Sr-Q6Q" id="ZNJ-F2-4NQ"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
