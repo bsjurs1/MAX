@@ -22,6 +22,7 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
         
         self.navigationController?.navigationBar.translucent = false
         
+        
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -95,6 +96,8 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
         case UICollectionElementKindSectionHeader:
             
             var headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "bjarte", forIndexPath: indexPath) as! ExerciseRoutineCollectionSearchBarHeaderView
+            
+            headerView.searchBar.searchBarStyle = UISearchBarStyle.Minimal
         
             return headerView
          

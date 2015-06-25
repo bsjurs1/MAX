@@ -1141,8 +1141,9 @@
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="bjarte" id="Esf-hx-j20" customClass="ExerciseRoutineCollectionSearchBarHeaderView" customModule="MAX" customModuleProvider="target">
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <searchBar opaque="NO" contentMode="redraw" searchBarStyle="prominent" placeholder="Search for exercise routines" translatesAutoresizingMaskIntoConstraints="NO" id="95D-Ej-hgt">
+                                <searchBar opaque="NO" contentMode="redraw" barStyle="black" placeholder="Search for exercise routines" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95D-Ej-hgt">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <color key="barTintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                             </subviews>
