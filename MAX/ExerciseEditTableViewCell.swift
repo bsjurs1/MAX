@@ -10,14 +10,23 @@ import UIKit
 
 class ExerciseEditTableViewCell: UITableViewCell {
     
+    var appDelegate = AppDelegate()
+    var usedByViewController = ExerciseRoutineTableViewController()
     
     @IBOutlet weak var exerciseDetailsButton: UIButton!
     @IBOutlet weak var addSetButton: UIButton!
     @IBOutlet weak var editExerciseButton: UIButton!
     @IBOutlet weak var exerciseNameLabel: UILabel!
     @IBOutlet weak var exerciseImageView: UIImageView!
-    @IBOutlet weak var setsTableView: UITableView!
-    
-    
 
+    required init(coder aDecoder: NSCoder) {
+        
+        super.init(coder: aDecoder)
+        
+    }
+    
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
 }
