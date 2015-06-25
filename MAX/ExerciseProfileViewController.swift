@@ -17,6 +17,10 @@ class ExerciseProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         
+        self.view.backgroundColor = UIColor.whiteColor()
+        
+        self.exerciseProfileView.backgroundColor = UIColor.whiteColor()
+        
         setUpExerciseTableView()
         
     }

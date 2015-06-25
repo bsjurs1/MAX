@@ -109,7 +109,7 @@
         <!--Exercise Profile View Controller-->
         <scene sceneID="jQ4-Wz-YZQ">
             <objects>
-                <viewController id="3Wt-Fr-Ecr" customClass="ExerciseProfileViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profileViewController" id="3Wt-Fr-Ecr" customClass="ExerciseProfileViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZHL-V5-x5C"/>
                         <viewControllerLayoutGuide type="bottom" id="sxV-2a-ECc"/>
@@ -124,7 +124,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bjarte.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DS9-LX-o1n">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="10" y="10" width="80" height="80"/>
+                                            <rect key="frame" x="8" y="8" width="80" height="80"/>
                                         </variation>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bjarte Sjursen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1U-D6-xXc">
@@ -133,7 +133,7 @@
                                         <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="98" y="25" width="108" height="21"/>
+                                            <rect key="frame" x="96" y="23" width="108" height="21"/>
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 years" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDX-pR-rRR">
@@ -142,7 +142,7 @@
                                         <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="98" y="54" width="66" height="21"/>
+                                            <rect key="frame" x="96" y="52" width="66" height="21"/>
                                         </variation>
                                     </label>
                                 </subviews>
@@ -154,7 +154,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="20" width="400" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="120"/>
                                     <mask key="subviews">
                                         <include reference="DS9-LX-o1n"/>
                                         <include reference="b1U-D6-xXc"/>
@@ -163,7 +163,7 @@
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="OAX-h3-sce"/>
@@ -648,7 +648,7 @@
         <scene sceneID="qOm-er-3il">
             <objects>
                 <collectionViewController id="jc0-Aw-N17" customClass="ExerciseRoutinesCollectionViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="Cax-BQ-ngH">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" id="Cax-BQ-ngH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -1144,7 +1144,7 @@
                                 <searchBar opaque="NO" contentMode="redraw" barStyle="black" placeholder="Search for exercise routines" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95D-Ej-hgt">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <color key="barTintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" spellCheckingType="yes" keyboardAppearance="alert" returnKeyType="search"/>
                                 </searchBar>
                             </subviews>
                             <constraints>

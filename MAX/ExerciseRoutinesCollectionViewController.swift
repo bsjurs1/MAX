@@ -22,9 +22,23 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
         
         self.navigationController?.navigationBar.translucent = false
         
+        addExerciseProfileViewController()
+        
         
     }
     
+    func addExerciseProfileViewController(){
+        
+        var profileViewController : ExerciseProfileViewController = (self.storyboard?.instantiateViewControllerWithIdentifier("profileViewController") as? ExerciseProfileViewController)!
+        
+        self.addChildViewController(profileViewController)
+        
+        self.view.addSubview(profileViewController.view)
+        
+        profileViewController.view.frame = CGRectMake(0, 500, UIScreen.mainScreen().bounds.size.width, 50)
+        
+    }
+ 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         var cell : ExerciseRoutineCollectionViewCell
@@ -98,7 +112,7 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
             var headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "bjarte", forIndexPath: indexPath) as! ExerciseRoutineCollectionSearchBarHeaderView
             
             headerView.searchBar.searchBarStyle = UISearchBarStyle.Minimal
-        
+            
             return headerView
          
         default:
