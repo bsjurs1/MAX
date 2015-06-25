@@ -644,6 +644,43 @@
             </objects>
             <point key="canvasLocation" x="3444" y="921"/>
         </scene>
+        <!--Exercise Routines-->
+        <scene sceneID="qOm-er-3il">
+            <objects>
+                <collectionViewController id="jc0-Aw-N17" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Cax-BQ-ngH">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bVw-Jj-sEW">
+                            <size key="itemSize" width="80" height="100"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="6xi-35-PFI">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="jc0-Aw-N17" id="1Qn-9I-2UM"/>
+                            <outlet property="delegate" destination="jc0-Aw-N17" id="P4O-W1-Mdr"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Exercise Routines" id="k7z-BU-LDb"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JQr-P0-r2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4734" y="1829"/>
+        </scene>
         <!--Exercise Profile Table View Controller-->
         <scene sceneID="wYz-D6-wiL">
             <objects>
@@ -725,6 +762,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U0n-vA-cjR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1614" y="-485"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4k5-ZB-LCw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N6o-Tr-ceq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gpN-yV-I2K">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jc0-Aw-N17" kind="relationship" relationship="rootViewController" id="gI7-iH-Sn4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fCR-ms-TPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3816" y="1829"/>
         </scene>
     </scenes>
     <resources>
