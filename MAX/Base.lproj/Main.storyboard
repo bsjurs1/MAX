@@ -689,6 +689,23 @@
             </objects>
             <point key="canvasLocation" x="4230" y="921"/>
         </scene>
+        <!--Create Routine View Controller-->
+        <scene sceneID="qmw-nA-M1y">
+            <objects>
+                <viewController id="bmP-O9-yI8" customClass="CreateRoutineViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kU3-OM-h39"/>
+                        <viewControllerLayoutGuide type="bottom" id="QkB-2O-zhf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h3A-bV-n4z">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="56f-0R-ZZb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4734" y="2561"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="3R8-Xx-YL0">
             <objects>
@@ -732,7 +749,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" id="Cax-BQ-ngH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bVw-Jj-sEW">
                             <size key="itemSize" width="111" height="180"/>
                             <size key="headerReferenceSize" width="50" height="47"/>
@@ -1264,7 +1281,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Exercise Routines" id="k7z-BU-LDb">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="LxS-SI-pEB"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="LxS-SI-pEB">
+                            <connections>
+                                <segue destination="bmP-O9-yI8" kind="presentation" id="zf0-el-I3I"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Ho5-ST-SZk"/>
                     </navigationItem>
                     <connections>

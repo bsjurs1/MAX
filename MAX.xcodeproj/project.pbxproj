@@ -32,6 +32,7 @@
 		919B4E1E1B38A8B800C82A54 /* Skjermbilde 2015-06-22 kl. 22.33.26.png in Resources */ = {isa = PBXBuildFile; fileRef = 919B4E1D1B38A8B800C82A54 /* Skjermbilde 2015-06-22 kl. 22.33.26.png */; };
 		919B4E201B39A9DA00C82A54 /* ExerciseProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B4E1F1B39A9DA00C82A54 /* ExerciseProfileViewController.swift */; };
 		919B4E241B39E40C00C82A54 /* bjarte.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 919B4E231B39E40C00C82A54 /* bjarte.jpg */; };
+		91BDBC391B3DD0570014AD41 /* CreateRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BDBC381B3DD0570014AD41 /* CreateRoutineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		919B4E1D1B38A8B800C82A54 /* Skjermbilde 2015-06-22 kl. 22.33.26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Skjermbilde 2015-06-22 kl. 22.33.26.png"; path = "../../../../Desktop/Skjermbilde 2015-06-22 kl. 22.33.26.png"; sourceTree = "<group>"; };
 		919B4E1F1B39A9DA00C82A54 /* ExerciseProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseProfileViewController.swift; sourceTree = "<group>"; };
 		919B4E231B39E40C00C82A54 /* bjarte.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bjarte.jpg; path = ../../../../Desktop/bjarte.jpg; sourceTree = "<group>"; };
+		91BDBC381B3DD0570014AD41 /* CreateRoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRoutineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		910BC4381B3A9B8F0078FF8B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				91BDBC381B3DD0570014AD41 /* CreateRoutineViewController.swift */,
 				9114E8C41B3C39220034127B /* ExerciseRoutinesCollectionViewController.swift */,
 				919B4E191B38A0F600C82A54 /* ExerciseRoutineViewController.swift */,
 				919B4E1F1B39A9DA00C82A54 /* ExerciseProfileViewController.swift */,
@@ -315,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				919B4E141B38995300C82A54 /* ExerciseRoutineTableViewController.swift in Sources */,
+				91BDBC391B3DD0570014AD41 /* CreateRoutineViewController.swift in Sources */,
 				9114E8C51B3C39220034127B /* ExerciseRoutinesCollectionViewController.swift in Sources */,
 				9109067E1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift in Sources */,
 				9103F9E31B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift in Sources */,
