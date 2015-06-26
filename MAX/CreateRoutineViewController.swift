@@ -12,10 +12,14 @@ class CreateRoutineViewController: UIViewController {
     
     var appDelegate = AppDelegate()
     
+    @IBOutlet weak var addRoutineImageButton: UIButton!
+    
+    
     override func viewDidLoad() {
         
         self.view.tintColor = appDelegate.maxTintColor
         self.navigationController?.navigationBar.tintColor = appDelegate.maxTintColor
+        self.addRoutineImageButton.tintColor = appDelegate.maxTintColor
         
         addExerciseLibraryViewController()
         
