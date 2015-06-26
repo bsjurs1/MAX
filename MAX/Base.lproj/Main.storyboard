@@ -1439,6 +1439,9 @@
                                 <state key="normal" title="Add exercise to library">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addExerciseToLibrary:" destination="k1u-AP-2Jp" eventType="touchUpInside" id="KZA-je-DFd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1565,6 +1568,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U0n-vA-cjR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1614" y="-485"/>
+        </scene>
+        <!--Create Exercise For Library View Controller-->
+        <scene sceneID="lf1-Sd-TR4">
+            <objects>
+                <viewController id="8qd-hE-sPZ" customClass="CreateExerciseForLibraryViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="igU-sI-anM"/>
+                        <viewControllerLayoutGuide type="bottom" id="S11-29-wu4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RmT-ds-mX5">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m3C-qR-lUI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1614" y="2571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4k5-ZB-LCw">

@@ -34,6 +34,7 @@
 		919B4E241B39E40C00C82A54 /* bjarte.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 919B4E231B39E40C00C82A54 /* bjarte.jpg */; };
 		91BDBC391B3DD0570014AD41 /* CreateRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BDBC381B3DD0570014AD41 /* CreateRoutineViewController.swift */; };
 		91BDBC3B1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BDBC3A1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift */; };
+		91BDBC3D1B3DEACF0014AD41 /* CreateExerciseForLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BDBC3C1B3DEACF0014AD41 /* CreateExerciseForLibraryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		919B4E231B39E40C00C82A54 /* bjarte.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bjarte.jpg; path = ../../../../Desktop/bjarte.jpg; sourceTree = "<group>"; };
 		91BDBC381B3DD0570014AD41 /* CreateRoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRoutineViewController.swift; sourceTree = "<group>"; };
 		91BDBC3A1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLibraryViewController.swift; sourceTree = "<group>"; };
+		91BDBC3C1B3DEACF0014AD41 /* CreateExerciseForLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateExerciseForLibraryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		910BC4381B3A9B8F0078FF8B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				91BDBC3C1B3DEACF0014AD41 /* CreateExerciseForLibraryViewController.swift */,
 				91BDBC3A1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift */,
 				91BDBC381B3DD0570014AD41 /* CreateRoutineViewController.swift */,
 				9114E8C41B3C39220034127B /* ExerciseRoutinesCollectionViewController.swift */,
@@ -329,6 +332,7 @@
 				910BC4361B3A9A230078FF8B /* ExerciseProfileTableViewController.swift in Sources */,
 				9130C26B1B3C9A4500368E54 /* ExerciseRoutineCollectionSearchBarHeaderView.swift in Sources */,
 				919B4E1A1B38A0F600C82A54 /* ExerciseRoutineViewController.swift in Sources */,
+				91BDBC3D1B3DEACF0014AD41 /* CreateExerciseForLibraryViewController.swift in Sources */,
 				919B4E181B389D3A00C82A54 /* ExerciseTableViewCell.swift in Sources */,
 				9114E8C71B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift in Sources */,
 				9103F9E11B37123C00735BF7 /* ExerciseTableViewController.swift in Sources */,
