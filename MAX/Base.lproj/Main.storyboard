@@ -1485,7 +1485,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rwm-N9-gAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1614" y="-1169"/>
+            <point key="canvasLocation" x="1614" y="-1355"/>
         </scene>
         <!--Exercise Profile Table View Controller-->
         <scene sceneID="wYz-D6-wiL">
@@ -1572,19 +1572,145 @@
         <!--Create Exercise For Library View Controller-->
         <scene sceneID="lf1-Sd-TR4">
             <objects>
-                <viewController id="8qd-hE-sPZ" customClass="CreateExerciseForLibraryViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="createExerciseForLibVC" id="8qd-hE-sPZ" customClass="CreateExerciseForLibraryViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="igU-sI-anM"/>
                         <viewControllerLayoutGuide type="bottom" id="S11-29-wu4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RmT-ds-mX5">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter the name of the exercise here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ARU-Sb-8sl">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AGW-jY-yDB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="AGW-jY-yDB"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="AGW-jY-yDB"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72O-rI-n8e">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="XIC-Fd-Czw"/>
+                                    <constraint firstAttribute="width" constant="30" id="b98-cs-rhl"/>
+                                </constraints>
+                                <state key="normal" title="Img">
+                                    <color key="titleColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="XIC-Fd-Czw"/>
+                                        <exclude reference="b98-cs-rhl"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="XIC-Fd-Czw"/>
+                                        <include reference="b98-cs-rhl"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bkh-OR-GF4">
+                                <rect key="frame" x="-61" y="-14" width="123" height="29"/>
+                                <segments>
+                                    <segment title="Repetitions"/>
+                                    <segment title="Time"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter a short description of the exercise you want to add" translatesAutoresizingMaskIntoConstraints="NO" id="DOY-74-4op">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="72O-rI-n8e" firstAttribute="top" secondItem="igU-sI-anM" secondAttribute="bottom" id="6oO-Zh-2SN"/>
+                            <constraint firstItem="DOY-74-4op" firstAttribute="leading" secondItem="RmT-ds-mX5" secondAttribute="leadingMargin" id="EZf-Mu-vVQ"/>
+                            <constraint firstItem="DOY-74-4op" firstAttribute="top" secondItem="bkh-OR-GF4" secondAttribute="bottom" constant="8" id="IDT-im-1e9"/>
+                            <constraint firstItem="bkh-OR-GF4" firstAttribute="leading" secondItem="RmT-ds-mX5" secondAttribute="leadingMargin" id="Nlj-eG-O09"/>
+                            <constraint firstAttribute="centerX" secondItem="DOY-74-4op" secondAttribute="centerX" id="OVs-vR-x2m"/>
+                            <constraint firstItem="bkh-OR-GF4" firstAttribute="trailing" secondItem="RmT-ds-mX5" secondAttribute="trailingMargin" id="QXI-M3-L5c"/>
+                            <constraint firstItem="S11-29-wu4" firstAttribute="top" secondItem="DOY-74-4op" secondAttribute="bottom" constant="20" id="Vxe-BO-ZP6"/>
+                            <constraint firstItem="DOY-74-4op" firstAttribute="trailing" secondItem="RmT-ds-mX5" secondAttribute="trailingMargin" id="aQe-9d-BNR"/>
+                            <constraint firstItem="72O-rI-n8e" firstAttribute="leading" secondItem="ARU-Sb-8sl" secondAttribute="trailing" constant="8" id="bWQ-tT-7ny"/>
+                            <constraint firstAttribute="centerY" secondItem="DOY-74-4op" secondAttribute="centerY" constant="-37" id="eLD-Kk-nzd"/>
+                            <constraint firstItem="bkh-OR-GF4" firstAttribute="top" secondItem="ARU-Sb-8sl" secondAttribute="bottom" constant="8" id="f4n-vA-qAe"/>
+                            <constraint firstItem="ARU-Sb-8sl" firstAttribute="leading" secondItem="RmT-ds-mX5" secondAttribute="leadingMargin" id="fM1-kV-T0V"/>
+                            <constraint firstItem="ARU-Sb-8sl" firstAttribute="top" secondItem="igU-sI-anM" secondAttribute="bottom" id="myE-0M-wGP"/>
+                            <constraint firstItem="72O-rI-n8e" firstAttribute="trailing" secondItem="RmT-ds-mX5" secondAttribute="trailingMargin" id="phV-bR-pdE"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ARU-Sb-8sl"/>
+                                <exclude reference="72O-rI-n8e"/>
+                                <exclude reference="bkh-OR-GF4"/>
+                                <exclude reference="DOY-74-4op"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="fM1-kV-T0V"/>
+                                <exclude reference="myE-0M-wGP"/>
+                                <exclude reference="Nlj-eG-O09"/>
+                                <exclude reference="QXI-M3-L5c"/>
+                                <exclude reference="f4n-vA-qAe"/>
+                                <exclude reference="EZf-Mu-vVQ"/>
+                                <exclude reference="IDT-im-1e9"/>
+                                <exclude reference="OVs-vR-x2m"/>
+                                <exclude reference="aQe-9d-BNR"/>
+                                <exclude reference="eLD-Kk-nzd"/>
+                                <exclude reference="6oO-Zh-2SN"/>
+                                <exclude reference="bWQ-tT-7ny"/>
+                                <exclude reference="phV-bR-pdE"/>
+                                <exclude reference="Vxe-BO-ZP6"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="ARU-Sb-8sl"/>
+                                <include reference="72O-rI-n8e"/>
+                                <include reference="bkh-OR-GF4"/>
+                                <include reference="DOY-74-4op"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="fM1-kV-T0V"/>
+                                <include reference="myE-0M-wGP"/>
+                                <include reference="Nlj-eG-O09"/>
+                                <include reference="QXI-M3-L5c"/>
+                                <include reference="f4n-vA-qAe"/>
+                                <include reference="EZf-Mu-vVQ"/>
+                                <include reference="IDT-im-1e9"/>
+                                <include reference="OVs-vR-x2m"/>
+                                <include reference="aQe-9d-BNR"/>
+                                <include reference="eLD-Kk-nzd"/>
+                                <include reference="6oO-Zh-2SN"/>
+                                <include reference="bWQ-tT-7ny"/>
+                                <include reference="phV-bR-pdE"/>
+                                <include reference="Vxe-BO-ZP6"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="addExerciseImageButton" destination="72O-rI-n8e" id="mur-YQ-tkU"/>
+                        <outlet property="chooseKindOfExerciseSegmentedControl" destination="bkh-OR-GF4" id="hvi-dq-WmE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m3C-qR-lUI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1614" y="2571"/>
+            <point key="canvasLocation" x="2466" y="-1527"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4k5-ZB-LCw">

@@ -36,17 +36,18 @@ class ExerciseLibraryViewController: UIViewController {
     
     @IBAction func addExerciseToLibrary(sender: UIButton) {
         
-        var contributeViewController = UIViewController()
+        var createExerciseForLibraryViewController = self.storyboard?.instantiateViewControllerWithIdentifier("createExerciseForLibVC") as? CreateExerciseForLibraryViewController!
+        
         var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         var beView = UIVisualEffectView(effect: blurEffect)
         beView.frame = UIScreen.mainScreen().bounds
         
-        contributeViewController.view.frame = UIScreen.mainScreen().bounds
-        contributeViewController.view.backgroundColor = UIColor.clearColor()
-        contributeViewController.view.insertSubview(beView, atIndex: 0)
-        contributeViewController.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+        createExerciseForLibraryViewController!.view.frame = UIScreen.mainScreen().bounds
+        createExerciseForLibraryViewController!.view.backgroundColor = UIColor.clearColor()
+        createExerciseForLibraryViewController!.view.insertSubview(beView, atIndex: 0)
+        createExerciseForLibraryViewController!.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
         
-        self.presentViewController(contributeViewController, animated: true, completion: nil)
+        self.presentViewController(createExerciseForLibraryViewController!, animated: true, completion: nil)
         
         
     }

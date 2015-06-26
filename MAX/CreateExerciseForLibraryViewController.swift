@@ -9,5 +9,33 @@
 import UIKit
 
 class CreateExerciseForLibraryViewController: UIViewController {
+    
+    
+    @IBOutlet weak var chooseKindOfExerciseSegmentedControl: UISegmentedControl!
+    
+    @IBOutlet weak var addExerciseImageButton: UIButton!
+    
+    var appDelegate = AppDelegate()
+    
+    
+    override func viewDidLoad() {
+        
+        //chooseKindOfExerciseSegmentedControl.tintColor = appDelegate.maxTintColor
+        
+        //chooseKindOfExerciseSegmentedControl.tintColor = appDelegate.maxTintColor
+        
+        
+    }
+    
+    func addBlurredBackGround(){
+    
+        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        var beView = UIVisualEffectView(effect: blurEffect)
+        beView.frame = UIScreen.mainScreen().bounds
+        
+        self.view.frame = UIScreen.mainScreen().bounds
+        self.view.backgroundColor = UIColor.clearColor()
+    
+    }
 
 }
