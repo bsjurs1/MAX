@@ -12,6 +12,8 @@ class CreateRoutineViewController: UIViewController {
     
     var appDelegate = AppDelegate()
     
+    var exerciseLibraryViewController : ExerciseLibraryViewController?
+    
     @IBOutlet weak var addRoutineImageButton: UIButton!
     
     
@@ -27,18 +29,35 @@ class CreateRoutineViewController: UIViewController {
     
     func addExerciseLibraryViewController(){
         
-        var exerciseLibraryViewController = self.storyboard?.instantiateViewControllerWithIdentifier("exerciseLibraryViewController") as? ExerciseLibraryViewController
+        exerciseLibraryViewController = (self.storyboard?.instantiateViewControllerWithIdentifier("exerciseLibraryViewController") as? ExerciseLibraryViewController)!
         
         self.addChildViewController(exerciseLibraryViewController!)
         
         self.view.addSubview(exerciseLibraryViewController!.view)
     
-        exerciseLibraryViewController?.view.frame = CGRectMake(0, (UIScreen.mainScreen().bounds.size.height/2) ,UIScreen.mainScreen().bounds.size.width, (UIScreen.mainScreen().bounds.size.height/2))
+        exerciseLibraryViewController!.view.frame = CGRectMake(0, (UIScreen.mainScreen().bounds.size.height/2) ,UIScreen.mainScreen().bounds.size.width, (UIScreen.mainScreen().bounds.size.height/2))
         
         
+        var gestureRecognizer =  UIPanGestureRecognizer(target: self, action: "moveView:")
         
+        gestureRecognizer.maximumNumberOfTouches = 1
+        
+        exerciseLibraryViewController!.view.addGestureRecognizer(gestureRecognizer)
         
     }
+    
+    func moveView(gestureRecognizer : UIPanGestureRecognizer){
+        
+        var translation : CGPoint = gestureRecognizer.translationInView(self.view)
+        
+        gestureRecognizer.view?.center = CGPointMake((UIScreen.mainScreen().bounds.width/2), exerciseLibraryViewController!.view.center.y + translation.y)
+        
+        exerciseLibraryViewController!.view.frame.size.height = exerciseLibraryViewController!.view.frame.size.height - translation.y
+        
+        gestureRecognizer.setTranslation(CGPointMake(0,0), inView: self.view)
+        
+    }
+
 
     
     
