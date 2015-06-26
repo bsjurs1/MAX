@@ -20,6 +20,8 @@ class CreateExerciseForLibraryViewController: UIViewController {
     
     override func viewDidLoad() {
         
+        self.navigationController?.navigationItem.title = "Create new exercise for library"
+        
         //chooseKindOfExerciseSegmentedControl.tintColor = appDelegate.maxTintColor
         
         //chooseKindOfExerciseSegmentedControl.tintColor = appDelegate.maxTintColor
