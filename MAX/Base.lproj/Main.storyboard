@@ -16,7 +16,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" text="" placeholder="Search for exercise" id="e9J-6b-WDi">
+                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" searchBarStyle="minimal" text="" placeholder="Search for exercise" id="e9J-6b-WDi">
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -689,7 +689,7 @@
             </objects>
             <point key="canvasLocation" x="4230" y="921"/>
         </scene>
-        <!--Create Routine View Controller-->
+        <!--Create new routine-->
         <scene sceneID="qmw-nA-M1y">
             <objects>
                 <viewController id="bmP-O9-yI8" customClass="CreateRoutineViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
@@ -699,8 +699,13 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="h3A-bV-n4z">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Create new routine" id="gd7-fi-Uvv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="MKW-Uo-50b"/>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56f-0R-ZZb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1283,7 +1288,7 @@
                     <navigationItem key="navigationItem" title="Exercise Routines" id="k7z-BU-LDb">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="LxS-SI-pEB">
                             <connections>
-                                <segue destination="bmP-O9-yI8" kind="presentation" id="zf0-el-I3I"/>
+                                <segue destination="bmP-O9-yI8" kind="push" id="RiR-bL-pGJ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Ho5-ST-SZk"/>
@@ -1297,6 +1302,89 @@
             </objects>
             <point key="canvasLocation" x="4734" y="1829"/>
         </scene>
+        <!--Exercise Library View Controller-->
+        <scene sceneID="wSn-mb-1Ia">
+            <objects>
+                <viewController storyboardIdentifier="exerciseLibraryViewController" id="k1u-AP-2Jp" customClass="ExerciseLibraryViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oHl-xa-mW9"/>
+                        <viewControllerLayoutGuide type="bottom" id="lf5-TJ-PIF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sgX-2P-dFI">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Library" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTh-RR-w7w">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="8pv-WW-aWd"/>
+                                    <constraint firstAttribute="height" constant="21" id="D8d-h6-QkB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="12"/>
+                                <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8pv-WW-aWd"/>
+                                        <exclude reference="D8d-h6-QkB"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="8pv-WW-aWd"/>
+                                        <include reference="D8d-h6-QkB"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDL-QN-xkP">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Add exercise to library">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gTh-RR-w7w" firstAttribute="leading" secondItem="sgX-2P-dFI" secondAttribute="leadingMargin" id="4Wn-Kv-BOd"/>
+                            <constraint firstItem="BDL-QN-xkP" firstAttribute="leading" secondItem="oHl-xa-mW9" secondAttribute="trailing" constant="-170" id="KGl-Ys-o8k"/>
+                            <constraint firstItem="gTh-RR-w7w" firstAttribute="top" secondItem="sgX-2P-dFI" secondAttribute="topMargin" id="Lhz-SF-vmn"/>
+                            <constraint firstItem="BDL-QN-xkP" firstAttribute="trailing" secondItem="sgX-2P-dFI" secondAttribute="trailingMargin" id="Wzq-Gj-wmD"/>
+                            <constraint firstItem="BDL-QN-xkP" firstAttribute="top" secondItem="sgX-2P-dFI" secondAttribute="topMargin" id="f0K-4s-fP7"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="gTh-RR-w7w"/>
+                                <exclude reference="BDL-QN-xkP"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="4Wn-Kv-BOd"/>
+                                <exclude reference="Lhz-SF-vmn"/>
+                                <exclude reference="KGl-Ys-o8k"/>
+                                <exclude reference="Wzq-Gj-wmD"/>
+                                <exclude reference="f0K-4s-fP7"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="gTh-RR-w7w"/>
+                                <include reference="BDL-QN-xkP"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="4Wn-Kv-BOd"/>
+                                <include reference="Lhz-SF-vmn"/>
+                                <include reference="KGl-Ys-o8k"/>
+                                <include reference="Wzq-Gj-wmD"/>
+                                <include reference="f0K-4s-fP7"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="addExerciseButton" destination="BDL-QN-xkP" id="g00-ns-FaG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rwm-N9-gAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1614" y="-1169"/>
+        </scene>
         <!--Exercise Profile Table View Controller-->
         <scene sceneID="wYz-D6-wiL">
             <objects>
@@ -1307,7 +1395,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" text="" placeholder="Search for exercise" id="KXG-jj-3S5">
+                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" searchBarStyle="minimal" text="" placeholder="Search for exercise" id="KXG-jj-3S5">
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
