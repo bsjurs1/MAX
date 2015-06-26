@@ -14,6 +14,7 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
     @IBOutlet weak var addExerciseRoutineBarButton: UIBarButtonItem!
     
     var appDelegate = AppDelegate()
+    var profileViewController : ExerciseProfileViewController?
     
     override func viewDidLoad() {
         
@@ -29,13 +30,29 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
     
     func addExerciseProfileViewController(){
         
-        var profileViewController : ExerciseProfileViewController = (self.storyboard?.instantiateViewControllerWithIdentifier("profileViewController") as? ExerciseProfileViewController)!
+        profileViewController = (self.storyboard?.instantiateViewControllerWithIdentifier("profileViewController") as? ExerciseProfileViewController)!
         
-        self.addChildViewController(profileViewController)
+        self.addChildViewController(profileViewController!)
         
-        self.view.addSubview(profileViewController.view)
+        self.view.addSubview(profileViewController!.view)
         
-        profileViewController.view.frame = CGRectMake(0, 500, UIScreen.mainScreen().bounds.size.width, 50)
+        profileViewController?.view.frame = CGRectMake(0, 500, UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.height)
+        
+        var gestureRecognizer =  UIPanGestureRecognizer(target: self, action: "moveView:")
+        
+        gestureRecognizer.maximumNumberOfTouches = 1
+        
+        profileViewController!.view.addGestureRecognizer(gestureRecognizer)
+        
+    }
+    
+    func moveView(gestureRecognizer : UIPanGestureRecognizer){
+        
+        var translation : CGPoint = gestureRecognizer.translationInView(self.view)
+        
+        gestureRecognizer.view?.center = CGPointMake((UIScreen.mainScreen().bounds.width/2), profileViewController!.view.center.y + translation.y)
+        
+        gestureRecognizer.setTranslation(CGPointMake(0,0), inView: self.view)
         
     }
  
