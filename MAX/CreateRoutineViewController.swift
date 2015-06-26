@@ -15,6 +15,8 @@ class CreateRoutineViewController: UIViewController {
     var exerciseLibraryViewController : ExerciseLibraryViewController?
     
     @IBOutlet weak var addRoutineImageButton: UIButton!
+    @IBOutlet weak var dragStaticLabel: UILabel!
+    @IBOutlet weak var routineNameTextField: UITextField!
     
     
     override func viewDidLoad() {
@@ -24,6 +26,8 @@ class CreateRoutineViewController: UIViewController {
         self.addRoutineImageButton.tintColor = appDelegate.maxTintColor
         
         addExerciseLibraryViewController()
+        
+        setUpButtons()
         
     }
     
@@ -43,6 +47,16 @@ class CreateRoutineViewController: UIViewController {
         gestureRecognizer.maximumNumberOfTouches = 1
         
         exerciseLibraryViewController!.view.addGestureRecognizer(gestureRecognizer)
+        
+        self.view.bringSubviewToFront(exerciseLibraryViewController!.view)
+        
+    }
+    
+    func setUpButtons(){
+        
+        self.view.sendSubviewToBack(routineNameTextField)
+        self.view.sendSubviewToBack(addRoutineImageButton)
+        self.view.sendSubviewToBack(dragStaticLabel)
         
     }
     

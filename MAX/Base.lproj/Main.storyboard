@@ -199,12 +199,12 @@
                                     <mask key="constraints">
                                         <exclude reference="L6x-3G-1ze"/>
                                         <exclude reference="fZU-Xt-Yli"/>
-                                        <exclude reference="TDH-b5-B5j"/>
-                                        <exclude reference="WOp-7V-zy4"/>
                                         <exclude reference="aAY-my-jnl"/>
                                         <exclude reference="krI-E4-h1X"/>
                                         <exclude reference="MtJ-BU-X39"/>
                                         <exclude reference="sxp-Wh-rlZ"/>
+                                        <exclude reference="TDH-b5-B5j"/>
+                                        <exclude reference="WOp-7V-zy4"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -216,12 +216,12 @@
                                     <mask key="constraints">
                                         <include reference="L6x-3G-1ze"/>
                                         <include reference="fZU-Xt-Yli"/>
-                                        <include reference="TDH-b5-B5j"/>
-                                        <include reference="WOp-7V-zy4"/>
                                         <include reference="aAY-my-jnl"/>
                                         <include reference="krI-E4-h1X"/>
                                         <include reference="MtJ-BU-X39"/>
                                         <include reference="sxp-Wh-rlZ"/>
+                                        <include reference="TDH-b5-B5j"/>
+                                        <include reference="WOp-7V-zy4"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -238,10 +238,10 @@
                                 <exclude reference="OAX-h3-sce"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Og8-fd-EAK"/>
                                 <exclude reference="L1H-n6-tEs"/>
                                 <exclude reference="LSr-F4-c0w"/>
                                 <exclude reference="RFk-v2-B1m"/>
-                                <exclude reference="Og8-fd-EAK"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -249,10 +249,10 @@
                                 <include reference="OAX-h3-sce"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Og8-fd-EAK"/>
                                 <include reference="L1H-n6-tEs"/>
                                 <include reference="LSr-F4-c0w"/>
                                 <include reference="RFk-v2-B1m"/>
-                                <include reference="Og8-fd-EAK"/>
                             </mask>
                         </variation>
                     </view>
@@ -692,12 +692,13 @@
         <!--Create new routine-->
         <scene sceneID="qmw-nA-M1y">
             <objects>
-                <viewController id="bmP-O9-yI8" customClass="CreateRoutineViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController definesPresentationContext="YES" modalTransitionStyle="crossDissolve" id="bmP-O9-yI8" customClass="CreateRoutineViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kU3-OM-h39"/>
                         <viewControllerLayoutGuide type="bottom" id="QkB-2O-zhf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="h3A-bV-n4z">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag the exercises you want as part of the routine here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wme-W3-VU2">
@@ -800,6 +801,8 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="addRoutineImageButton" destination="FPq-ni-dSm" id="FxF-NB-tEN"/>
+                        <outlet property="dragStaticLabel" destination="wme-W3-VU2" id="V6m-SK-fPx"/>
+                        <outlet property="routineNameTextField" destination="Hkr-ic-PYb" id="gP2-Mo-fUH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56f-0R-ZZb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1406,6 +1409,7 @@
                         <viewControllerLayoutGuide type="bottom" id="lf5-TJ-PIF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sgX-2P-dFI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Library" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTh-RR-w7w">
