@@ -18,7 +18,6 @@ class CreateRoutineViewController: UIViewController {
     @IBOutlet weak var dragStaticLabel: UILabel!
     @IBOutlet weak var routineNameTextField: UITextField!
     
-    
     override func viewDidLoad() {
         
         self.view.tintColor = appDelegate.maxTintColor

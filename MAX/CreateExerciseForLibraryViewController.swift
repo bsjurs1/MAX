@@ -11,20 +11,23 @@ import UIKit
 class CreateExerciseForLibraryViewController: UIViewController {
     
     
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var chooseKindOfExerciseSegmentedControl: UISegmentedControl!
     
     @IBOutlet weak var addExerciseImageButton: UIButton!
+    
+    var parentNavigationController : UINavigationController?
     
     var appDelegate = AppDelegate()
     
     
     override func viewDidLoad() {
         
-        self.navigationController?.navigationItem.title = "Create new exercise for library"
+        parentNavigationController?.title = "Create exercise for the library"
         
-        //chooseKindOfExerciseSegmentedControl.tintColor = appDelegate.maxTintColor
-        
-        //chooseKindOfExerciseSegmentedControl.tintColor = appDelegate.maxTintColor
+        cancelButton.tintColor = appDelegate.maxTintColor
+        doneButton.tintColor = appDelegate.maxTintColor
         
         
     }
@@ -38,6 +41,12 @@ class CreateExerciseForLibraryViewController: UIViewController {
         self.view.frame = UIScreen.mainScreen().bounds
         self.view.backgroundColor = UIColor.clearColor()
     
+    }
+
+    @IBAction func cancelExerciseCreation(sender: UIButton) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
 
 }

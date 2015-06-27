@@ -13,6 +13,8 @@ class ExerciseLibraryViewController: UIViewController {
     var appDelegate = AppDelegate()
     @IBOutlet weak var addExerciseButton: UIButton!
     
+    var parentNavigationController : UINavigationController?
+    
     
     override func viewDidLoad() {
         
@@ -45,7 +47,7 @@ class ExerciseLibraryViewController: UIViewController {
         createExerciseForLibraryViewController!.view.frame = UIScreen.mainScreen().bounds
         createExerciseForLibraryViewController!.view.backgroundColor = UIColor.clearColor()
         createExerciseForLibraryViewController!.view.insertSubview(beView, atIndex: 0)
-        createExerciseForLibraryViewController!.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+        createExerciseForLibraryViewController!.modalPresentationStyle = UIModalPresentationStyle.OverFullScreen
         
         self.presentViewController(createExerciseForLibraryViewController!, animated: true, completion: nil)
         
