@@ -21,8 +21,6 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
         addExerciseRoutineBarButton.tintColor = appDelegate.maxTintColor
         editExerciseRoutineBarButton.tintColor = appDelegate.maxTintColor
         
-        self.navigationController?.navigationBar.translucent = false
-        
         addExerciseProfileViewController()
         
         

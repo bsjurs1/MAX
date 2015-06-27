@@ -118,144 +118,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAX-h3-sce">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bjarte.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DS9-LX-o1n">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="kye-3p-fXk"/>
-                                            <constraint firstAttribute="width" constant="80" id="qpZ-no-NKM"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="kye-3p-fXk"/>
-                                                <exclude reference="qpZ-no-NKM"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="widthClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="kye-3p-fXk"/>
-                                                <include reference="qpZ-no-NKM"/>
-                                            </mask>
-                                        </variation>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bjarte Sjursen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1U-D6-xXc">
-                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="108" id="dWU-xz-G8a"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                        <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="dWU-xz-G8a"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="widthClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="dWU-xz-G8a"/>
-                                            </mask>
-                                        </variation>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 years" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDX-pR-rRR">
-                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="66" id="I5w-cp-aSh"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                        <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="I5w-cp-aSh"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="widthClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="I5w-cp-aSh"/>
-                                            </mask>
-                                        </variation>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bjarte.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DS9-LX-o1n">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstItem="b1U-D6-xXc" firstAttribute="top" secondItem="OAX-h3-sce" secondAttribute="top" constant="15" id="ADx-zI-fbI"/>
-                                    <constraint firstAttribute="height" constant="80" id="CRi-gF-Ahs"/>
-                                    <constraint firstItem="yDX-pR-rRR" firstAttribute="leading" secondItem="DS9-LX-o1n" secondAttribute="trailing" constant="8" id="MtJ-BU-X39"/>
-                                    <constraint firstItem="DS9-LX-o1n" firstAttribute="top" secondItem="OAX-h3-sce" secondAttribute="top" constant="-8" id="N1f-2c-wFX"/>
-                                    <constraint firstItem="DS9-LX-o1n" firstAttribute="leading" secondItem="OAX-h3-sce" secondAttribute="leading" constant="8" id="WOp-7V-zy4"/>
-                                    <constraint firstItem="b1U-D6-xXc" firstAttribute="leading" secondItem="DS9-LX-o1n" secondAttribute="trailing" constant="8" id="aAY-my-jnl"/>
-                                    <constraint firstAttribute="width" constant="400" id="fZU-Xt-Yli"/>
-                                    <constraint firstItem="yDX-pR-rRR" firstAttribute="top" secondItem="b1U-D6-xXc" secondAttribute="bottom" constant="8" id="sxp-Wh-rlZ"/>
+                                    <constraint firstAttribute="height" constant="80" id="kye-3p-fXk"/>
+                                    <constraint firstAttribute="width" constant="80" id="qpZ-no-NKM"/>
                                 </constraints>
                                 <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="DS9-LX-o1n"/>
-                                        <exclude reference="b1U-D6-xXc"/>
-                                        <exclude reference="yDX-pR-rRR"/>
-                                    </mask>
                                     <mask key="constraints">
-                                        <exclude reference="CRi-gF-Ahs"/>
-                                        <exclude reference="fZU-Xt-Yli"/>
-                                        <exclude reference="ADx-zI-fbI"/>
-                                        <exclude reference="aAY-my-jnl"/>
-                                        <exclude reference="MtJ-BU-X39"/>
-                                        <exclude reference="sxp-Wh-rlZ"/>
-                                        <exclude reference="N1f-2c-wFX"/>
-                                        <exclude reference="WOp-7V-zy4"/>
+                                        <exclude reference="kye-3p-fXk"/>
+                                        <exclude reference="qpZ-no-NKM"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="subviews">
-                                        <include reference="DS9-LX-o1n"/>
-                                        <include reference="b1U-D6-xXc"/>
-                                        <include reference="yDX-pR-rRR"/>
-                                    </mask>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                     <mask key="constraints">
-                                        <include reference="CRi-gF-Ahs"/>
-                                        <include reference="fZU-Xt-Yli"/>
-                                        <include reference="ADx-zI-fbI"/>
-                                        <include reference="aAY-my-jnl"/>
-                                        <include reference="MtJ-BU-X39"/>
-                                        <include reference="sxp-Wh-rlZ"/>
-                                        <include reference="N1f-2c-wFX"/>
-                                        <include reference="WOp-7V-zy4"/>
+                                        <include reference="kye-3p-fXk"/>
+                                        <include reference="qpZ-no-NKM"/>
                                     </mask>
                                 </variation>
-                            </view>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bjarte Sjursen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1U-D6-xXc">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="88" y="15" width="108" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 years" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDX-pR-rRR">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="88" y="44" width="66" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="OAX-h3-sce" secondAttribute="trailing" constant="-16" id="Cjl-zg-mlq"/>
-                            <constraint firstItem="OAX-h3-sce" firstAttribute="leading" secondItem="Qoh-F1-3Yx" secondAttribute="leadingMargin" constant="-16" id="L1H-n6-tEs"/>
-                            <constraint firstItem="OAX-h3-sce" firstAttribute="top" secondItem="Qoh-F1-3Yx" secondAttribute="topMargin" id="LSr-F4-c0w"/>
+                            <constraint firstItem="DS9-LX-o1n" firstAttribute="top" secondItem="Qoh-F1-3Yx" secondAttribute="topMargin" constant="-8" id="A7K-MT-93S"/>
+                            <constraint firstItem="DS9-LX-o1n" firstAttribute="leading" secondItem="Qoh-F1-3Yx" secondAttribute="leadingMargin" constant="-16" id="dCW-xZ-cCs"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="OAX-h3-sce"/>
+                                <exclude reference="DS9-LX-o1n"/>
+                                <exclude reference="b1U-D6-xXc"/>
+                                <exclude reference="yDX-pR-rRR"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Cjl-zg-mlq"/>
-                                <exclude reference="L1H-n6-tEs"/>
-                                <exclude reference="LSr-F4-c0w"/>
+                                <exclude reference="A7K-MT-93S"/>
+                                <exclude reference="dCW-xZ-cCs"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="OAX-h3-sce"/>
+                                <include reference="DS9-LX-o1n"/>
+                                <include reference="b1U-D6-xXc"/>
+                                <include reference="yDX-pR-rRR"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Cjl-zg-mlq"/>
-                                <include reference="L1H-n6-tEs"/>
-                                <include reference="LSr-F4-c0w"/>
+                                <include reference="A7K-MT-93S"/>
+                                <include reference="dCW-xZ-cCs"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="PKY-ZI-bSA"/>
                     <connections>
-                        <outlet property="exerciseProfileView" destination="OAX-h3-sce" id="XFk-q4-d0j"/>
                         <outlet property="profileAgeLabel" destination="yDX-pR-rRR" id="grh-rF-VGu"/>
                         <outlet property="profileImageView" destination="DS9-LX-o1n" id="ceW-ys-emY"/>
                         <outlet property="profileNameLabel" destination="b1U-D6-xXc" id="NAr-LS-LJY"/>
@@ -1388,6 +1319,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Ho5-ST-SZk"/>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="addExerciseRoutineBarButton" destination="LxS-SI-pEB" id="wP6-nD-uPy"/>
                         <outlet property="editExerciseRoutineBarButton" destination="Ho5-ST-SZk" id="R8O-Hf-UkX"/>
