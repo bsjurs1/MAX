@@ -130,8 +130,7 @@
                                         <exclude reference="qpZ-no-NKM"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="kye-3p-fXk"/>
                                         <include reference="qpZ-no-NKM"/>
@@ -538,7 +537,7 @@
         <!--Exercise Routine View Controller-->
         <scene sceneID="MtI-xP-Bby">
             <objects>
-                <viewController id="t5F-6b-Zdo" customClass="ExerciseRoutineViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="exerciseRoutineStartView" id="t5F-6b-Zdo" customClass="ExerciseRoutineViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aQg-eL-bXg"/>
                         <viewControllerLayoutGuide type="bottom" id="Q2O-CO-APb"/>
@@ -609,13 +608,14 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="G3A-JJ-s7h"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="startTrainingToolBarButton" destination="n81-z0-zDA" id="a3S-4S-f0y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tos-Sz-zFF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4230" y="921"/>
+            <point key="canvasLocation" x="5589" y="1829"/>
         </scene>
         <!--Create new routine-->
         <scene sceneID="qmw-nA-M1y">
@@ -754,24 +754,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vhe-IU-Wbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="768" y="953"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="xby-eI-kOV">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mWB-DH-Z34" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uha-CY-Thc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="t5F-6b-Zdo" kind="relationship" relationship="rootViewController" id="NFf-9g-VWj"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EHu-mu-9IX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3444" y="921"/>
         </scene>
         <!--Exercise Routines-->
         <scene sceneID="qOm-er-3il">
@@ -1021,6 +1003,9 @@
                                         <include reference="ZKs-TK-DkS"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="t5F-6b-Zdo" kind="show" id="ET1-HA-PQy"/>
+                                </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="rightRoutineCell" id="xSJ-cf-Mfc" customClass="ExerciseRoutineCollectionViewCell" customModule="MAX" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -1143,6 +1128,9 @@
                                         <include reference="xVV-aU-t2K"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="t5F-6b-Zdo" kind="show" id="ARK-4p-e8e"/>
+                                </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="leftRoutineCell" id="ltJ-kB-Uc9" customClass="ExerciseRoutineCollectionViewCell" customModule="MAX" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -1264,6 +1252,7 @@
                                 </variation>
                                 <connections>
                                     <outlet property="exerciseRoutinePrintScreenImageView" destination="xv3-9G-xcD" id="bau-nL-RDH"/>
+                                    <segue destination="t5F-6b-Zdo" kind="show" id="3HP-xM-qax"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -1507,7 +1496,7 @@
                         <viewControllerLayoutGuide type="bottom" id="S11-29-wu4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RmT-ds-mX5">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter the name of the exercise here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ARU-Sb-8sl">
@@ -1660,25 +1649,25 @@
                                 <exclude reference="uSG-vv-OUd"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="bpp-ew-N3e"/>
-                                <exclude reference="nvd-gS-iBa"/>
                                 <exclude reference="fM1-kV-T0V"/>
                                 <exclude reference="vUa-Hq-Kv7"/>
                                 <exclude reference="i3Z-pj-RLM"/>
                                 <exclude reference="mcK-zd-OrW"/>
                                 <exclude reference="peG-ao-aX4"/>
                                 <exclude reference="waf-CZ-oSO"/>
+                                <exclude reference="FBd-FY-Qwk"/>
+                                <exclude reference="Ore-HX-BPP"/>
+                                <exclude reference="bWQ-tT-7ny"/>
+                                <exclude reference="XtO-81-ozR"/>
+                                <exclude reference="fps-Yn-r8e"/>
+                                <exclude reference="bpp-ew-N3e"/>
+                                <exclude reference="nvd-gS-iBa"/>
                                 <exclude reference="Nlj-eG-O09"/>
                                 <exclude reference="QXI-M3-L5c"/>
                                 <exclude reference="i4N-Jy-Wqe"/>
                                 <exclude reference="EZf-Mu-vVQ"/>
                                 <exclude reference="aQe-9d-BNR"/>
                                 <exclude reference="tYH-KR-foI"/>
-                                <exclude reference="XtO-81-ozR"/>
-                                <exclude reference="fps-Yn-r8e"/>
-                                <exclude reference="FBd-FY-Qwk"/>
-                                <exclude reference="Ore-HX-BPP"/>
-                                <exclude reference="bWQ-tT-7ny"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1692,25 +1681,25 @@
                                 <include reference="uSG-vv-OUd"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="bpp-ew-N3e"/>
-                                <include reference="nvd-gS-iBa"/>
                                 <include reference="fM1-kV-T0V"/>
                                 <include reference="vUa-Hq-Kv7"/>
                                 <include reference="i3Z-pj-RLM"/>
                                 <include reference="mcK-zd-OrW"/>
                                 <include reference="peG-ao-aX4"/>
                                 <include reference="waf-CZ-oSO"/>
+                                <include reference="FBd-FY-Qwk"/>
+                                <include reference="Ore-HX-BPP"/>
+                                <include reference="bWQ-tT-7ny"/>
+                                <include reference="XtO-81-ozR"/>
+                                <include reference="fps-Yn-r8e"/>
+                                <include reference="bpp-ew-N3e"/>
+                                <include reference="nvd-gS-iBa"/>
                                 <include reference="Nlj-eG-O09"/>
                                 <include reference="QXI-M3-L5c"/>
                                 <include reference="i4N-Jy-Wqe"/>
                                 <include reference="EZf-Mu-vVQ"/>
                                 <include reference="aQe-9d-BNR"/>
                                 <include reference="tYH-KR-foI"/>
-                                <include reference="XtO-81-ozR"/>
-                                <include reference="fps-Yn-r8e"/>
-                                <include reference="FBd-FY-Qwk"/>
-                                <include reference="Ore-HX-BPP"/>
-                                <include reference="bWQ-tT-7ny"/>
                             </mask>
                         </variation>
                     </view>
@@ -1751,4 +1740,7 @@
         <image name="prtscreen.png" width="375" height="560"/>
         <image name="squats.png" width="400" height="236"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ET1-HA-PQy"/>
+    </inferredMetricsTieBreakers>
 </document>

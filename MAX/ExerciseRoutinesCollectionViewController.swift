@@ -34,7 +34,7 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
         
         self.view.addSubview(profileViewController!.view)
         
-        profileViewController?.view.frame = CGRectMake(0, UIScreen.mainScreen().bounds.size.height-144, UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.height)
+        profileViewController?.view.frame = CGRectMake(0, UIScreen.mainScreen().bounds.size.height-80, UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.height)
         
         var gestureRecognizer =  UIPanGestureRecognizer(target: self, action: "moveView:")
         
@@ -135,6 +135,13 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
             assert(false, "Unexpected element kind")
             
         }
+        
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        
+        
         
     }
     

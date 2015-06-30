@@ -33,6 +33,8 @@ class ExerciseTableViewController: UITableViewController {
         
         var cell : ExerciseProfileTableViewCell = tableView.dequeueReusableCellWithIdentifier("exerciseCell", forIndexPath: indexPath) as! ExerciseProfileTableViewCell
         
+        cell.backgroundColor = UIColor.clearColor()
+        
         cell.exerciseImageView?.image = UIImage(named: samplePicArray[indexPath.row])
         cell.exerciseNameLabel?.text = sSampleArray[indexPath.row]
         cell.lastPerformanceDateLabel?.text = "Last performed 20.may.2015"

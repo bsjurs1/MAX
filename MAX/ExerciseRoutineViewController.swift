@@ -22,6 +22,8 @@ class ExerciseRoutineViewController: UIViewController {
         
         self.navigationItem.title = "Leg day"
         
+        self.navigationController?.navigationBar.tintColor = appDelegate.maxTintColor
+        
         self.view.tintColor = appDelegate.maxTintColor
         
     }
