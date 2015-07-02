@@ -32,13 +32,16 @@ class ExerciseScrollViewCell: UIView {
     
     init(inputexerciseNameLabel : String){
         
-        exerciseNameLabel = UILabel(frame: baseLayerCollapsedSize)
+        exerciseNameLabel = UILabel()
+        exerciseNameLabel.center = CGPointMake(UIScreen.mainScreen().bounds.width/2, 25)
+        exerciseNameLabel.bounds.size = CGSizeMake(300, 50)
         exerciseNameLabel.textAlignment = NSTextAlignment.Center
         exerciseNameLabel.text = inputexerciseNameLabel
         
         
         baseLayer = CALayer()
         baseLayer.borderColor = UIColor.grayColor().CGColor
+        baseLayer.backgroundColor = UIColor.whiteColor().CGColor
         baseLayer.borderWidth = 0.5
         baseLayer.frame = baseLayerCollapsedSize
         
@@ -46,38 +49,57 @@ class ExerciseScrollViewCell: UIView {
         super.init(frame: baseLayerCollapsedSize)
         
         self.addSubview(exerciseNameLabel)
-        
         self.layer.addSublayer(baseLayer)
+        self.bringSubviewToFront(exerciseNameLabel)
         
     }
     
     func changeState(tapGestureRecognizer : UITapGestureRecognizer){
         
-        println("tapped the square")
-        
         if(collapsedState){
             
             collapsedState = false
             
-            self.frame = baseLayerEnlargedSize
+            baseLayer.borderColor = UIColor.orangeColor().CGColor
+            baseLayer.borderWidth = 1
             
-            var animation = CABasicAnimation(keyPath: "frame")
-            animation.fromValue = layer.valueForKey("frame")
+            var animation = CABasicAnimation(keyPath: "bounds")
+            animation.fromValue = NSValue(CGRect: baseLayerCollapsedSize)
             animation.toValue = NSValue(CGRect: baseLayerEnlargedSize)
-            animation.duration = 10
-            baseLayer.frame = baseLayerEnlargedSize
-            baseLayer.addAnimation(animation, forKey: "frame")
+            animation.duration = 0.3
+            baseLayer.bounds = baseLayerEnlargedSize
+            baseLayer.addAnimation(animation, forKey: "bounds")
             
-            UIView.animateWithDuration(10, animations: {
-            
-                
-                
+            UIView.animateWithDuration(0.3, animations: {
+
+                self.frame.size = self.baseLayerEnlargedSize.size
+                self.exerciseNameLabel.textAlignment = NSTextAlignment.Left
                 
             })
             
             
         }
         else{
+            
+            collapsedState = true
+            
+            baseLayer.borderColor = UIColor.grayColor().CGColor
+            baseLayer.borderWidth = 0.5
+            
+            var animation = CABasicAnimation(keyPath: "bounds")
+            animation.fromValue = NSValue(CGRect: baseLayerEnlargedSize)
+            animation.toValue = NSValue(CGRect: baseLayerCollapsedSize)
+            animation.duration = 0.3
+            baseLayer.bounds = baseLayerCollapsedSize
+            baseLayer.addAnimation(animation, forKey: "bounds")
+            
+            UIView.animateWithDuration(0.3, animations: {
+                
+                self.frame.size = self.baseLayerCollapsedSize.size
+                self.exerciseNameLabel.textAlignment = NSTextAlignment.Center
+                
+            })
+
             
             
             

@@ -551,7 +551,8 @@
                                 <items>
                                     <barButtonItem title="Start training" id="n81-z0-zDA">
                                         <connections>
-                                            <segue destination="TCt-gC-caj" kind="push" id="xxT-Yb-K1P"/>
+                                            <action selector="startTraining:" destination="t5F-6b-Zdo" id="sno-fg-VSm"/>
+                                            <segue destination="TCt-gC-caj" kind="push" id="hgg-dk-Avi"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -614,7 +615,7 @@
                     <navigationItem key="navigationItem" id="G3A-JJ-s7h"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="startTrainingToolBarButton" destination="n81-z0-zDA" id="a3S-4S-f0y"/>
+                        <outlet property="startTrainingToolBarButton" destination="n81-z0-zDA" id="f0A-0e-CWo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tos-Sz-zFF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -624,12 +625,13 @@
         <!--Leg day-->
         <scene sceneID="40i-JA-QvS">
             <objects>
-                <viewController id="TCt-gC-caj" customClass="PerformExerciseRoutineViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="performExerciseViewController" id="TCt-gC-caj" customClass="PerformExerciseRoutineViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ibn-pe-Fdx"/>
                         <viewControllerLayoutGuide type="bottom" id="3be-YD-lYP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nzg-Ve-CgX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R7x-Cd-jLC">
@@ -652,9 +654,9 @@
                                 <exclude reference="R7x-Cd-jLC"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="61S-NS-nVM"/>
                                 <exclude reference="nAN-uF-RWk"/>
                                 <exclude reference="yV4-fe-kgd"/>
-                                <exclude reference="61S-NS-nVM"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -662,9 +664,9 @@
                                 <include reference="R7x-Cd-jLC"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="61S-NS-nVM"/>
                                 <include reference="nAN-uF-RWk"/>
                                 <include reference="yV4-fe-kgd"/>
-                                <include reference="61S-NS-nVM"/>
                             </mask>
                         </variation>
                     </view>
