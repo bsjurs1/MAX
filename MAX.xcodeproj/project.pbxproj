@@ -23,6 +23,8 @@
 		9114E8C31B3C38B20034127B /* prtscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 9114E8C21B3C38B20034127B /* prtscreen.png */; };
 		9114E8C51B3C39220034127B /* ExerciseRoutinesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E8C41B3C39220034127B /* ExerciseRoutinesCollectionViewController.swift */; };
 		9114E8C71B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E8C61B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift */; };
+		9126E8F81B452EB4006EA187 /* PerformExerciseRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126E8F71B452EB4006EA187 /* PerformExerciseRoutineViewController.swift */; };
+		9126E8FA1B453045006EA187 /* ExerciseScrollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126E8F91B453045006EA187 /* ExerciseScrollViewCell.swift */; };
 		913004F31B3723C800F7BC80 /* situp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 913004F11B3723C800F7BC80 /* situp.jpg */; };
 		913004F41B3723C800F7BC80 /* squats.png in Resources */ = {isa = PBXBuildFile; fileRef = 913004F21B3723C800F7BC80 /* squats.png */; };
 		9130C26B1B3C9A4500368E54 /* ExerciseRoutineCollectionSearchBarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9130C26A1B3C9A4500368E54 /* ExerciseRoutineCollectionSearchBarHeaderView.swift */; };
@@ -68,6 +70,8 @@
 		9114E8C21B3C38B20034127B /* prtscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prtscreen.png; path = ../../../../Desktop/prtscreen.png; sourceTree = "<group>"; };
 		9114E8C41B3C39220034127B /* ExerciseRoutinesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutinesCollectionViewController.swift; sourceTree = "<group>"; };
 		9114E8C61B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineCollectionViewCell.swift; sourceTree = "<group>"; };
+		9126E8F71B452EB4006EA187 /* PerformExerciseRoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformExerciseRoutineViewController.swift; sourceTree = "<group>"; };
+		9126E8F91B453045006EA187 /* ExerciseScrollViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseScrollViewCell.swift; sourceTree = "<group>"; };
 		913004F11B3723C800F7BC80 /* situp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = situp.jpg; path = ../../situp.jpg; sourceTree = "<group>"; };
 		913004F21B3723C800F7BC80 /* squats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = squats.png; path = ../../squats.png; sourceTree = "<group>"; };
 		9130C26A1B3C9A4500368E54 /* ExerciseRoutineCollectionSearchBarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineCollectionSearchBarHeaderView.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 		910BC4381B3A9B8F0078FF8B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9126E8F71B452EB4006EA187 /* PerformExerciseRoutineViewController.swift */,
 				91BDBC3C1B3DEACF0014AD41 /* CreateExerciseForLibraryViewController.swift */,
 				91BDBC3A1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift */,
 				91BDBC381B3DD0570014AD41 /* CreateRoutineViewController.swift */,
@@ -137,6 +142,7 @@
 		910BC43A1B3A9BF50078FF8B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9126E8F91B453045006EA187 /* ExerciseScrollViewCell.swift */,
 				9114E8C61B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift */,
 				9130C26A1B3C9A4500368E54 /* ExerciseRoutineCollectionSearchBarHeaderView.swift */,
 				910BC4431B3AB0050078FF8B /* TableViewCells */,
@@ -336,10 +342,12 @@
 				919B4E181B389D3A00C82A54 /* ExerciseTableViewCell.swift in Sources */,
 				9114E8C71B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift in Sources */,
 				9103F9E11B37123C00735BF7 /* ExerciseTableViewController.swift in Sources */,
+				9126E8FA1B453045006EA187 /* ExerciseScrollViewCell.swift in Sources */,
 				91121D151B36F1EB004BAC11 /* MAX.xcdatamodeld in Sources */,
 				91121D121B36F1EB004BAC11 /* AppDelegate.swift in Sources */,
 				91BDBC3B1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift in Sources */,
 				919B4E201B39A9DA00C82A54 /* ExerciseProfileViewController.swift in Sources */,
+				9126E8F81B452EB4006EA187 /* PerformExerciseRoutineViewController.swift in Sources */,
 				910BC4421B3AAFC40078FF8B /* SetsTableViewController.swift in Sources */,
 				910BC4401B3AAD000078FF8B /* EditExerciseSetTableViewCell.swift in Sources */,
 			);

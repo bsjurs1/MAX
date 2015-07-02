@@ -624,20 +624,56 @@
         <!--Leg day-->
         <scene sceneID="40i-JA-QvS">
             <objects>
-                <viewController id="TCt-gC-caj" sceneMemberID="viewController">
+                <viewController id="TCt-gC-caj" customClass="PerformExerciseRoutineViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ibn-pe-Fdx"/>
                         <viewControllerLayoutGuide type="bottom" id="3be-YD-lYP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nzg-Ve-CgX">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R7x-Cd-jLC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" id="HkF-gM-BdM">
+                                        <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3be-YD-lYP" firstAttribute="top" secondItem="R7x-Cd-jLC" secondAttribute="bottom" id="61S-NS-nVM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="R7x-Cd-jLC" secondAttribute="trailing" constant="-16" id="nAN-uF-RWk"/>
+                            <constraint firstItem="R7x-Cd-jLC" firstAttribute="leading" secondItem="nzg-Ve-CgX" secondAttribute="leadingMargin" constant="-16" id="yV4-fe-kgd"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="R7x-Cd-jLC"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="nAN-uF-RWk"/>
+                                <exclude reference="yV4-fe-kgd"/>
+                                <exclude reference="61S-NS-nVM"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="R7x-Cd-jLC"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="nAN-uF-RWk"/>
+                                <include reference="yV4-fe-kgd"/>
+                                <include reference="61S-NS-nVM"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Leg day" id="AmJ-TR-QPF">
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="5G3-ER-3Hl">
                             <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qFI-Bn-gGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
