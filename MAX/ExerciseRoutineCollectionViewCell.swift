@@ -10,6 +10,6 @@ import UIKit
 
 class ExerciseRoutineCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var exerciseRoutinePrintScreenImageView: UIImageView!
+    @IBOutlet weak var exerciseRoutinePrintScreenImageView: UIImageView?
     
 }

@@ -73,21 +73,24 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
             
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("leftRoutineCell", forIndexPath: indexPath) as! ExerciseRoutineCollectionViewCell
             
-            cell.exerciseRoutinePrintScreenImageView = UIImageView(image: UIImage(contentsOfFile: "prtscreen.png"))
+            
+            //FIX THE IMAGE LOADING
+            //cell.exerciseRoutinePrintScreenImageView?.
+            //cell.exerciseRoutinePrintScreenImageView?.image = UIImage(contentsOfFile: "prtscreen.png")
             
         }
         else if (indexPath.row % numerOfCellsOnScreenWidth()) == (numerOfCellsOnScreenWidth()-1) {
             
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("rightRoutineCell", forIndexPath: indexPath) as! ExerciseRoutineCollectionViewCell
             
-            cell.exerciseRoutinePrintScreenImageView = UIImageView(image: UIImage(contentsOfFile: "prtscreen.png"))
+            cell.exerciseRoutinePrintScreenImageView?.image = UIImage(contentsOfFile: "prtscreen.png")
             
         }
         else{
             
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("middleRoutineCell", forIndexPath: indexPath) as! ExerciseRoutineCollectionViewCell
             
-            cell.exerciseRoutinePrintScreenImageView = UIImageView(image: UIImage(contentsOfFile: "prtscreen.png"))
+            cell.exerciseRoutinePrintScreenImageView?.image = UIImage(contentsOfFile: "prtscreen.png")
             
         }
         
@@ -139,7 +142,6 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
         
         
         

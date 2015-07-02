@@ -549,7 +549,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y3u-ES-HxJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="Start training" id="n81-z0-zDA"/>
+                                    <barButtonItem title="Start training" id="n81-z0-zDA">
+                                        <connections>
+                                            <segue destination="TCt-gC-caj" kind="push" id="xxT-Yb-K1P"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Skjermbilde 2015-06-22 kl. 22.33.26.png" translatesAutoresizingMaskIntoConstraints="NO" id="4uf-dW-79B">
@@ -615,7 +619,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tos-Sz-zFF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5589" y="1829"/>
+            <point key="canvasLocation" x="4734" y="1155"/>
+        </scene>
+        <!--Leg day-->
+        <scene sceneID="40i-JA-QvS">
+            <objects>
+                <viewController id="TCt-gC-caj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ibn-pe-Fdx"/>
+                        <viewControllerLayoutGuide type="bottom" id="3be-YD-lYP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nzg-Ve-CgX">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Leg day" id="AmJ-TR-QPF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="5G3-ER-3Hl">
+                            <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qFI-Bn-gGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5625" y="1155"/>
         </scene>
         <!--Create new routine-->
         <scene sceneID="qmw-nA-M1y">
@@ -804,18 +830,33 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qvb-68-gVY">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="57" id="Hg2-6x-6e8"/>
+                                                        <constraint firstAttribute="width" constant="45" id="LFp-XK-5Et"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="70"/>
                                                     <state key="normal" title="+">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="25" y="39" width="45" height="57"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Hg2-6x-6e8"/>
+                                                            <exclude reference="LFp-XK-5Et"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="Hg2-6x-6e8"/>
+                                                            <include reference="LFp-XK-5Et"/>
+                                                        </mask>
                                                     </variation>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="Qvb-68-gVY" secondAttribute="centerY" constant="3.5" id="C5z-h0-K6D"/>
                                                 <constraint firstAttribute="height" constant="142" id="VCt-FP-MRP"/>
+                                                <constraint firstAttribute="centerX" secondItem="Qvb-68-gVY" secondAttribute="centerX" constant="-0.5" id="YKa-aC-WUr"/>
                                                 <constraint firstAttribute="width" constant="94" id="itR-Q0-qv3"/>
                                             </constraints>
                                             <variation key="default">
@@ -825,6 +866,8 @@
                                                 <mask key="constraints">
                                                     <exclude reference="VCt-FP-MRP"/>
                                                     <exclude reference="itR-Q0-qv3"/>
+                                                    <exclude reference="C5z-h0-K6D"/>
+                                                    <exclude reference="YKa-aC-WUr"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -834,6 +877,8 @@
                                                 <mask key="constraints">
                                                     <include reference="VCt-FP-MRP"/>
                                                     <include reference="itR-Q0-qv3"/>
+                                                    <include reference="C5z-h0-K6D"/>
+                                                    <include reference="YKa-aC-WUr"/>
                                                 </mask>
                                             </variation>
                                         </view>
@@ -1004,7 +1049,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="t5F-6b-Zdo" kind="show" id="ET1-HA-PQy"/>
+                                    <segue destination="t5F-6b-Zdo" kind="push" id="Z4H-gu-cTi"/>
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="rightRoutineCell" id="xSJ-cf-Mfc" customClass="ExerciseRoutineCollectionViewCell" customModule="MAX" customModuleProvider="target">
@@ -1129,7 +1174,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="t5F-6b-Zdo" kind="show" id="ARK-4p-e8e"/>
+                                    <segue destination="t5F-6b-Zdo" kind="push" id="ClM-cT-aMW"/>
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="leftRoutineCell" id="ltJ-kB-Uc9" customClass="ExerciseRoutineCollectionViewCell" customModule="MAX" customModuleProvider="target">
@@ -1252,7 +1297,7 @@
                                 </variation>
                                 <connections>
                                     <outlet property="exerciseRoutinePrintScreenImageView" destination="xv3-9G-xcD" id="bau-nL-RDH"/>
-                                    <segue destination="t5F-6b-Zdo" kind="show" id="3HP-xM-qax"/>
+                                    <segue destination="t5F-6b-Zdo" kind="push" id="mm0-ba-r1z"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -1741,6 +1786,6 @@
         <image name="squats.png" width="400" height="236"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ET1-HA-PQy"/>
+        <segue reference="mm0-ba-r1z"/>
     </inferredMetricsTieBreakers>
 </document>

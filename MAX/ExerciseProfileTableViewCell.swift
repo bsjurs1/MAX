@@ -16,8 +16,6 @@ class ExerciseProfileTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lastPerformanceDateLabel : UILabel?
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
