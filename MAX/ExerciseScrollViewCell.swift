@@ -12,11 +12,10 @@ import CoreGraphics
 class ExerciseScrollViewCell: UIView {
     
     let baseLayerCollapsedSize = CGRectMake(0, 0, 300, 50)
-    let baseLayerEnlargedSize = CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, 400)
+    let baseLayerEnlargedSize = CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, 300)
     var exerciseNameLabel : UILabel
     var baseLayer : CALayer
     var collapsedState : Bool = true
-    
 
     convenience init(center : CGPoint, inputexerciseNameLabel : String){
         
@@ -25,18 +24,15 @@ class ExerciseScrollViewCell: UIView {
         var tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "changeState:")
         
         self.addGestureRecognizer(tapGestureRecognizer)
-        
         self.center = center
         
     }
     
     init(inputexerciseNameLabel : String){
         
-        exerciseNameLabel = UILabel()
-        exerciseNameLabel.center = CGPointMake(UIScreen.mainScreen().bounds.width/2, 25)
-        exerciseNameLabel.bounds.size = CGSizeMake(300, 50)
-        exerciseNameLabel.textAlignment = NSTextAlignment.Center
+        exerciseNameLabel = UILabel(frame: baseLayerCollapsedSize)
         exerciseNameLabel.text = inputexerciseNameLabel
+        exerciseNameLabel.textAlignment = NSTextAlignment.Center
         
         
         baseLayer = CALayer()
@@ -58,53 +54,60 @@ class ExerciseScrollViewCell: UIView {
         
         if(collapsedState){
             
+            maximizeBaseLayerBoundsWithAnimation(0.2)
+            
             collapsedState = false
             
             baseLayer.borderColor = UIColor.orangeColor().CGColor
             baseLayer.borderWidth = 1
             
-            var animation = CABasicAnimation(keyPath: "bounds")
-            animation.fromValue = NSValue(CGRect: baseLayerCollapsedSize)
-            animation.toValue = NSValue(CGRect: baseLayerEnlargedSize)
-            animation.duration = 0.3
-            baseLayer.bounds = baseLayerEnlargedSize
-            baseLayer.addAnimation(animation, forKey: "bounds")
-            
-            UIView.animateWithDuration(0.3, animations: {
-
+            UIView.animateWithDuration(0.2, animations: {
+                
+                self.center.y += 115
                 self.frame.size = self.baseLayerEnlargedSize.size
-                self.exerciseNameLabel.textAlignment = NSTextAlignment.Left
+                self.exerciseNameLabel.center.y -= 115
                 
             })
             
+        } else{
             
-        }
-        else{
+            minimizeBaseLayerBoundsWithAnimation(0.2)
             
             collapsedState = true
             
             baseLayer.borderColor = UIColor.grayColor().CGColor
             baseLayer.borderWidth = 0.5
             
-            var animation = CABasicAnimation(keyPath: "bounds")
-            animation.fromValue = NSValue(CGRect: baseLayerEnlargedSize)
-            animation.toValue = NSValue(CGRect: baseLayerCollapsedSize)
-            animation.duration = 0.3
-            baseLayer.bounds = baseLayerCollapsedSize
-            baseLayer.addAnimation(animation, forKey: "bounds")
-            
-            UIView.animateWithDuration(0.3, animations: {
+            UIView.animateWithDuration(0.25, animations: {
                 
+                self.exerciseNameLabel.frame.origin.y = self.baseLayerCollapsedSize.origin.y
                 self.frame.size = self.baseLayerCollapsedSize.size
-                self.exerciseNameLabel.textAlignment = NSTextAlignment.Center
+                self.center.y -= 115
                 
             })
-
-            
-            
-            
-            
         }
+        
+    }
+    
+    func minimizeBaseLayerBoundsWithAnimation(duration : Double){
+        
+        var animation = CABasicAnimation(keyPath: "bounds")
+        animation.fromValue = NSValue(CGRect: baseLayerEnlargedSize)
+        animation.toValue = NSValue(CGRect: baseLayerCollapsedSize)
+        animation.duration = duration
+        baseLayer.bounds = baseLayerCollapsedSize
+        baseLayer.addAnimation(animation, forKey: "bounds")
+        
+    }
+    
+    func maximizeBaseLayerBoundsWithAnimation(duration : Double){
+        
+        var animation = CABasicAnimation(keyPath: "bounds")
+        animation.fromValue = NSValue(CGRect: self.baseLayerCollapsedSize)
+        animation.toValue = NSValue(CGRect: self.baseLayerEnlargedSize)
+        animation.duration = duration
+        self.baseLayer.bounds = self.baseLayerEnlargedSize
+        self.baseLayer.addAnimation(animation, forKey: "bounds")
         
     }
 
