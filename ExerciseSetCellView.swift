@@ -12,6 +12,7 @@ class ExerciseSetCellView: UIView {
     
     var baseLayer : CALayer
     var baseLayerCollapsedSize = CGRectMake(0, 0, 70, 70)
+    var baseLayerEnlargedSize = CGRectMake(0, 0, 150, 150)
     var setNumberLabel : UILabel
     var reptitionsLabel : UILabel
     var weightLabel : UILabel
@@ -41,7 +42,31 @@ class ExerciseSetCellView: UIView {
         self.layer.addSublayer(baseLayer)
         self.addSubview(setNumberLabel)
         
+        var tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "changeState:")
+        self.addGestureRecognizer(tapGestureRecognizer)
+        
     
+    }
+    
+    func changeState(tapGestureRecognizer : UITapGestureRecognizer){
+        
+        self.frame.size = baseLayerEnlargedSize.size
+        
+        var sizeAnimation = CABasicAnimation(keyPath: "bounds")
+        sizeAnimation.fromValue = NSValue(CGRect: self.baseLayerCollapsedSize)
+        sizeAnimation.toValue = NSValue(CGRect: self.baseLayerEnlargedSize)
+        sizeAnimation.duration = 0.3
+        self.baseLayer.bounds = self.baseLayerEnlargedSize
+        self.baseLayer.addAnimation(sizeAnimation, forKey: "bounds")
+        
+        var sizeAnimation = CABasicAnimation(keyPath: "bounds")
+        sizeAnimation.fromValue = NSValue(CGRect: self.baseLayerCollapsedSize)
+        sizeAnimation.toValue = NSValue(CGRect: self.baseLayerEnlargedSize)
+        sizeAnimation.duration = 0.3
+        self.baseLayer.bounds = self.baseLayerEnlargedSize
+        self.baseLayer.addAnimation(sizeAnimation, forKey: "bounds")
+        
+        
     }
     
     required init(coder aDecoder: NSCoder) {
