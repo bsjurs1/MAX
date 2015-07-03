@@ -15,6 +15,10 @@ class PerformExerciseRoutineViewController: UIViewController {
         
         var tmp = ExerciseScrollViewCell(center: CGPointMake((UIScreen.mainScreen().bounds.width/2)-0.5, 100), inputexerciseNameLabel: "Squats")
         
+        var tmpSet = ExerciseSetCellView(center: CGPointMake((UIScreen.mainScreen().bounds.width/2)-0.5, 300), inputExerciseNameLabel: "")
+        
+        self.view.addSubview(tmpSet)
+        
         self.view.addSubview(tmp)
         
     }
@@ -22,7 +26,7 @@ class PerformExerciseRoutineViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
     }
     
 
