@@ -11,22 +11,35 @@ import UIKit
 class ExerciseSetCellView: UIView {
     
     var baseLayer : CALayer
-    var baseLayerCollapsedSize = CGSizeMake(70, 70)
+    var baseLayerCollapsedSize = CGRectMake(0, 0, 70, 70)
+    var setNumberLabel : UILabel
+    var reptitionsLabel : UILabel
+    var weightLabel : UILabel
     
-    init(center : CGPoint, inputExerciseNameLabel : String){
+    
+    init(center : CGPoint, setNumber : String){
         
         baseLayer = CALayer()
         baseLayer.borderColor = UIColor.grayColor().CGColor
         baseLayer.backgroundColor = UIColor.clearColor().CGColor
         baseLayer.borderWidth = 0.5
-        baseLayer.frame.size = baseLayerCollapsedSize
-        baseLayer.frame.origin = CGPointMake(0, 0)
+        baseLayer.frame = baseLayerCollapsedSize
         baseLayer.cornerRadius = 35
         
-        super.init(frame: CGRectMake(0, 0, baseLayerCollapsedSize.width, baseLayerCollapsedSize.height))
+        setNumberLabel = UILabel(frame: baseLayerCollapsedSize)
+        setNumberLabel.text = setNumber
+        setNumberLabel.textAlignment = NSTextAlignment.Center
+        setNumberLabel.textColor = UIColor.lightGrayColor()
+        
+        
+        reptitionsLabel = UILabel()
+        weightLabel = UILabel()
+        
+        super.init(frame: baseLayerCollapsedSize)
         
         self.center = center
         self.layer.addSublayer(baseLayer)
+        self.addSubview(setNumberLabel)
         
     
     }
@@ -34,6 +47,12 @@ class ExerciseSetCellView: UIView {
     required init(coder aDecoder: NSCoder) {
         
         self.baseLayer = CALayer()
+        
+        setNumberLabel = UILabel()
+        
+        reptitionsLabel = UILabel()
+        
+        weightLabel = UILabel()
         
         super.init(coder: aDecoder)
         

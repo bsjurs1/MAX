@@ -15,7 +15,7 @@ class PerformExerciseRoutineViewController: UIViewController {
         
         var tmp = ExerciseScrollViewCell(center: CGPointMake((UIScreen.mainScreen().bounds.width/2)-0.5, 100), inputexerciseNameLabel: "Squats")
         
-        var tmpSet = ExerciseSetCellView(center: CGPointMake((UIScreen.mainScreen().bounds.width/2)-0.5, 300), inputExerciseNameLabel: "")
+        var tmpSet = ExerciseSetCellView(center: CGPointMake((UIScreen.mainScreen().bounds.width/2)-0.5, 300), setNumber: "Set 1")
         
         self.view.addSubview(tmpSet)
         
