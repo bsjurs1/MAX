@@ -42,7 +42,13 @@ class ExerciseSetCellView: UIView {
         repetitionsLabel.textAlignment = NSTextAlignment.Center
         repetitionsLabel.hidden = true
         
-        weightLabel = UILabel()
+        weightLabel = UILabel(frame: baseLayerCollapsedSize)
+        weightLabel.text = "155 kg"
+        weightLabel.textColor = UIColor.whiteColor()
+        weightLabel.textAlignment = NSTextAlignment.Center
+        weightLabel.hidden = true
+
+        
         
         super.init(frame: baseLayerCollapsedSize)
         
@@ -50,6 +56,7 @@ class ExerciseSetCellView: UIView {
         self.layer.addSublayer(baseLayer)
         self.addSubview(setNumberLabel)
         self.addSubview(repetitionsLabel)
+        self.addSubview(weightLabel)
         
         var tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "changeState:")
         self.addGestureRecognizer(tapGestureRecognizer)
@@ -69,6 +76,8 @@ class ExerciseSetCellView: UIView {
                 self.setNumberLabel.textColor = UIColor.whiteColor()
                 self.setNumberLabel.frame.origin.y -= 50
                 self.repetitionsLabel.hidden = false
+                self.weightLabel.hidden = false
+                self.weightLabel.frame.origin.y += 50
                 
             })
             
@@ -139,6 +148,8 @@ class ExerciseSetCellView: UIView {
                 self.setNumberLabel.textColor = UIColor.lightGrayColor()
                 self.setNumberLabel.frame.origin.y += 50
                 self.repetitionsLabel.hidden = true
+                self.weightLabel.hidden = true
+                self.weightLabel.frame.origin.y -= 50
                 
             })
             
