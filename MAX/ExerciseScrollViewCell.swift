@@ -11,11 +11,15 @@ import CoreGraphics
 
 class ExerciseScrollViewCell: UIView {
     
+    var appDelegate = AppDelegate()
+    
     let baseLayerCollapsedSize = CGRectMake(0, 0, 300, 50)
+    let exerciseNameLabelSize = CGRectMake(100, 0, 100, 50)
     let baseLayerEnlargedSize = CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, 300)
     var exerciseNameLabel : UILabel
     var baseLayer : CALayer
     var collapsedState : Bool = true
+    var informationButton : UIButton
 
     convenience init(center : CGPoint, inputexerciseNameLabel : String){
         
@@ -30,7 +34,7 @@ class ExerciseScrollViewCell: UIView {
     
     init(inputexerciseNameLabel : String){
         
-        exerciseNameLabel = UILabel(frame: baseLayerCollapsedSize)
+        exerciseNameLabel = UILabel(frame: exerciseNameLabelSize)
         exerciseNameLabel.text = inputexerciseNameLabel
         exerciseNameLabel.textAlignment = NSTextAlignment.Center
         
@@ -40,13 +44,19 @@ class ExerciseScrollViewCell: UIView {
         baseLayer.backgroundColor = UIColor.whiteColor().CGColor
         baseLayer.borderWidth = 0.5
         baseLayer.frame = baseLayerCollapsedSize
-        
+
+        self.informationButton = UIButton.buttonWithType(UIButtonType.InfoLight) as! UIButton
+        self.informationButton.frame = CGRectMake(UIScreen.mainScreen().bounds.width-100, 0, 50, 50)
+        self.informationButton.tintColor = appDelegate.maxTintColor
+        self.informationButton.hidden = true
         
         super.init(frame: baseLayerCollapsedSize)
         
         self.addSubview(exerciseNameLabel)
         self.layer.addSublayer(baseLayer)
         self.bringSubviewToFront(exerciseNameLabel)
+        self.addSubview(informationButton)
+        self.bringSubviewToFront(informationButton)
         
     }
     
@@ -66,6 +76,8 @@ class ExerciseScrollViewCell: UIView {
                 self.center.y += 115
                 self.frame.size = self.baseLayerEnlargedSize.size
                 self.exerciseNameLabel.center.y -= 115
+                self.informationButton.hidden = false
+                self.informationButton.frame.origin.y -= 115
                 
             })
             
@@ -83,6 +95,8 @@ class ExerciseScrollViewCell: UIView {
                 self.exerciseNameLabel.frame.origin.y = self.baseLayerCollapsedSize.origin.y
                 self.frame.size = self.baseLayerCollapsedSize.size
                 self.center.y -= 115
+                self.informationButton.hidden = true
+                self.informationButton.frame.origin.y += 115
                 
             })
         }
@@ -116,6 +130,8 @@ class ExerciseScrollViewCell: UIView {
         self.exerciseNameLabel = UILabel()
         
         self.baseLayer = CALayer()
+        
+        self.informationButton = UIButton()
         
         super.init(coder: aDecoder)
         
