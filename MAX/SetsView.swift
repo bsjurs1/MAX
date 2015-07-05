@@ -14,6 +14,8 @@ class SetsView: UIView {
     
     var widthOfView : CGFloat
     
+    var arrayOfSets : Array<ExerciseSetCellView> = [ExerciseSetCellView]()
+    
     init(){
         
         var numberOfSets = 4
@@ -23,8 +25,6 @@ class SetsView: UIView {
         var sizeOfSetsView = CGRectMake(0.0, 0.0, widthOfView, heightOfSetsView)
         
         super.init(frame: sizeOfSetsView)
-        
-        var arrayOfSets : Array<ExerciseSetCellView> = [ExerciseSetCellView]()
         
         for var i = 1; i <= numberOfSets; ++i {
             
@@ -36,9 +36,19 @@ class SetsView: UIView {
         
         for elem in arrayOfSets {
             
+            for set in arrayOfSets {
+            
+                if(set != elem){
+                    elem.registerChangeListener(set)
+                }
+            
+            }
+            
             self.addSubview(elem)
             
         }
+        
+        arrayOfSets[0].changeState()
         
     }
 

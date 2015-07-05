@@ -16,9 +16,23 @@ class ExerciseSetCellView: UIView {
     var setNumberLabel : UILabel
     var repetitionsLabel : UILabel
     var weightLabel : UILabel
-    var collapsedState : Bool = true
-    var completed : Bool = false
+    var isCollapsed : Bool = true
+    var isCompleted : Bool = false
+    var setStateListeners : Array<ExerciseSetCellView> = [ExerciseSetCellView]()
     
+    func registerChangeListener(exerciseSetCellView : ExerciseSetCellView){
+     
+        setStateListeners.append(exerciseSetCellView)
+        
+    }
+    
+    func updateListeners(){
+        for listener in setStateListeners {
+            if(listener.isCollapsed == false){
+                listener.changeState()
+            }
+        }
+    }
     
     init(center : CGPoint, setNumber : String){
         
@@ -59,17 +73,39 @@ class ExerciseSetCellView: UIView {
         self.addSubview(repetitionsLabel)
         self.addSubview(weightLabel)
         
-        var tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "changeState:")
+        var tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "gotTapped:")
         self.addGestureRecognizer(tapGestureRecognizer)
         
     
     }
     
-    func changeState(tapGestureRecognizer : UITapGestureRecognizer){
+    func gotTapped(tapGestureRecognizer : UITapGestureRecognizer){
         
-        if(collapsedState == true && completed == false){
+        changeState()
+        
+        updateListeners()
+        
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        
+        self.baseLayer = CALayer()
+        
+        setNumberLabel = UILabel()
+        
+        repetitionsLabel = UILabel()
+        
+        weightLabel = UILabel()
+        
+        super.init(coder: aDecoder)
+        
+    }
+    
+    func changeState(){
+        
+        if(isCollapsed == true && isCompleted == false){
             
-            collapsedState = false
+            isCollapsed = false
             
             UIView.animateWithDuration(0.2, animations: {
                 
@@ -112,9 +148,9 @@ class ExerciseSetCellView: UIView {
             
             
         }
-        else if (collapsedState == false && completed == false){
+        else if (isCollapsed == false && isCompleted == false){
             
-            collapsedState = true
+            isCollapsed = true
             
             var sizeAnimation = CABasicAnimation(keyPath: "bounds")
             sizeAnimation.fromValue = NSValue(CGRect: self.baseLayerEnlargedSize)
@@ -145,7 +181,7 @@ class ExerciseSetCellView: UIView {
             self.baseLayer.addAnimation(borderAnimation, forKey: "borderColor")
             
             UIView.animateWithDuration(0.2, animations: {
-            
+                
                 self.frame.size = self.baseLayerCollapsedSize.size
                 self.setNumberLabel.textColor = UIColor.lightGrayColor()
                 self.setNumberLabel.frame.origin.y += 50
@@ -156,9 +192,9 @@ class ExerciseSetCellView: UIView {
             })
             
         }
-        else if (collapsedState == false && completed == true){
+        else if (isCollapsed == false && isCompleted == true){
             
-            //collapsedState = true
+            isCollapsed = true
             
             var sizeAnimation = CABasicAnimation(keyPath: "bounds")
             sizeAnimation.fromValue = NSValue(CGRect: self.baseLayerEnlargedSize)
@@ -199,12 +235,12 @@ class ExerciseSetCellView: UIView {
                 self.weightLabel.frame.origin.y -= 50
                 
             })
-
+            
             
         }
-        else if(collapsedState == true && completed == true){
+        else if(isCollapsed == true && isCompleted == true){
             
-            collapsedState = false
+            isCollapsed = false
             
             UIView.animateWithDuration(0.2, animations: {
                 
@@ -244,22 +280,10 @@ class ExerciseSetCellView: UIView {
             borderAnimation.duration = 0.2
             self.baseLayer.borderColor = UIColor.greenColor().CGColor
             self.baseLayer.addAnimation(borderAnimation, forKey: "borderColor")
-
+            
             
         }
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        
-        self.baseLayer = CALayer()
-        
-        setNumberLabel = UILabel()
-        
-        repetitionsLabel = UILabel()
-        
-        weightLabel = UILabel()
-        
-        super.init(coder: aDecoder)
+
         
     }
     
