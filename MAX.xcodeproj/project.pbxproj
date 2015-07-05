@@ -35,6 +35,7 @@
 		919B4E1E1B38A8B800C82A54 /* Skjermbilde 2015-06-22 kl. 22.33.26.png in Resources */ = {isa = PBXBuildFile; fileRef = 919B4E1D1B38A8B800C82A54 /* Skjermbilde 2015-06-22 kl. 22.33.26.png */; };
 		919B4E201B39A9DA00C82A54 /* ExerciseProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B4E1F1B39A9DA00C82A54 /* ExerciseProfileViewController.swift */; };
 		919B4E241B39E40C00C82A54 /* bjarte.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 919B4E231B39E40C00C82A54 /* bjarte.jpg */; };
+		91B639171B49B62200EEE48B /* SetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B639161B49B62200EEE48B /* SetsView.swift */; };
 		91BDBC391B3DD0570014AD41 /* CreateRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BDBC381B3DD0570014AD41 /* CreateRoutineViewController.swift */; };
 		91BDBC3B1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BDBC3A1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift */; };
 		91BDBC3D1B3DEACF0014AD41 /* CreateExerciseForLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BDBC3C1B3DEACF0014AD41 /* CreateExerciseForLibraryViewController.swift */; };
@@ -83,6 +84,7 @@
 		919B4E1D1B38A8B800C82A54 /* Skjermbilde 2015-06-22 kl. 22.33.26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Skjermbilde 2015-06-22 kl. 22.33.26.png"; path = "../../../../Desktop/Skjermbilde 2015-06-22 kl. 22.33.26.png"; sourceTree = "<group>"; };
 		919B4E1F1B39A9DA00C82A54 /* ExerciseProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseProfileViewController.swift; sourceTree = "<group>"; };
 		919B4E231B39E40C00C82A54 /* bjarte.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bjarte.jpg; path = ../../../../Desktop/bjarte.jpg; sourceTree = "<group>"; };
+		91B639161B49B62200EEE48B /* SetsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetsView.swift; sourceTree = "<group>"; };
 		91BDBC381B3DD0570014AD41 /* CreateRoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRoutineViewController.swift; sourceTree = "<group>"; };
 		91BDBC3A1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLibraryViewController.swift; sourceTree = "<group>"; };
 		91BDBC3C1B3DEACF0014AD41 /* CreateExerciseForLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateExerciseForLibraryViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		910BC43A1B3A9BF50078FF8B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				91B639161B49B62200EEE48B /* SetsView.swift */,
 				9126E8F91B453045006EA187 /* ExerciseScrollViewCell.swift */,
 				917403901B46AE7100A58E9C /* ExerciseSetCellView.swift */,
 				9114E8C61B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift */,
@@ -333,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				919B4E141B38995300C82A54 /* ExerciseRoutineTableViewController.swift in Sources */,
+				91B639171B49B62200EEE48B /* SetsView.swift in Sources */,
 				91BDBC391B3DD0570014AD41 /* CreateRoutineViewController.swift in Sources */,
 				9114E8C51B3C39220034127B /* ExerciseRoutinesCollectionViewController.swift in Sources */,
 				917403911B46AE7100A58E9C /* ExerciseSetCellView.swift in Sources */,

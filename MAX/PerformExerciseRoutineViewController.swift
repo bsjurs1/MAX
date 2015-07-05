@@ -10,16 +10,20 @@ import UIKit
 
 class PerformExerciseRoutineViewController: UIViewController {
 
+    @IBOutlet weak var tmpScrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         var tmp = ExerciseScrollViewCell(center: CGPointMake((UIScreen.mainScreen().bounds.width/2)-0.5, 100), inputexerciseNameLabel: "Squats")
         
-        var tmpSet = ExerciseSetCellView(center: CGPointMake((UIScreen.mainScreen().bounds.width/2)-0.5, 300), setNumber: "Set 1")
-        
-        self.view.addSubview(tmpSet)
-        
         self.view.addSubview(tmp)
+        
+        var tmpView = SetsView()
+        
+        tmpScrollView.contentSize = CGSizeMake(tmpView.widthOfView, 250)
+        
+        tmpScrollView.addSubview(tmpView)
         
     }
 
