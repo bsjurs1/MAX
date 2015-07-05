@@ -17,6 +17,7 @@ class ExerciseSetCellView: UIView {
     var repetitionsLabel : UILabel
     var weightLabel : UILabel
     var collapsedState : Bool = true
+    var completed : Bool = false
     
     
     init(center : CGPoint, setNumber : String){
@@ -66,7 +67,7 @@ class ExerciseSetCellView: UIView {
     
     func changeState(tapGestureRecognizer : UITapGestureRecognizer){
         
-        if(collapsedState){
+        if(collapsedState == true && completed == false){
             
             collapsedState = false
             
@@ -96,8 +97,8 @@ class ExerciseSetCellView: UIView {
             self.baseLayer.addAnimation(cornerAnimation, forKey: "cornerRadius")
             
             var fillAnimation = CABasicAnimation(keyPath: "backgroundColor")
-            fillAnimation.fromValue = UIColor.clearColor().CGColor
-            fillAnimation.toValue = UIColor.orangeColor().CGColor
+            fillAnimation.fromValue = CGColorCreateCopy(UIColor.clearColor().CGColor)
+            fillAnimation.toValue = CGColorCreateCopy(UIColor.orangeColor().CGColor)
             fillAnimation.duration = 0.2
             self.baseLayer.backgroundColor = UIColor.orangeColor().CGColor
             self.baseLayer.addAnimation(cornerAnimation, forKey: "backgroundColor")
@@ -110,7 +111,8 @@ class ExerciseSetCellView: UIView {
             self.baseLayer.addAnimation(borderAnimation, forKey: "borderColor")
             
             
-        } else{
+        }
+        else if (collapsedState == false && completed == false){
             
             collapsedState = true
             
@@ -152,6 +154,97 @@ class ExerciseSetCellView: UIView {
                 self.weightLabel.frame.origin.y -= 50
                 
             })
+            
+        }
+        else if (collapsedState == false && completed == true){
+            
+            //collapsedState = true
+            
+            var sizeAnimation = CABasicAnimation(keyPath: "bounds")
+            sizeAnimation.fromValue = NSValue(CGRect: self.baseLayerEnlargedSize)
+            sizeAnimation.toValue = NSValue(CGRect: self.baseLayerCollapsedSize)
+            sizeAnimation.duration = 0.2
+            self.baseLayer.bounds = self.baseLayerCollapsedSize
+            self.baseLayer.addAnimation(sizeAnimation, forKey: "bounds")
+            
+            var cornerAnimation = CABasicAnimation(keyPath: "cornerRadius")
+            cornerAnimation.fromValue = NSNumber(double: 75)
+            cornerAnimation.toValue = NSNumber(double: 35)
+            cornerAnimation.duration = 0.2
+            self.baseLayer.cornerRadius = 35
+            self.baseLayer.addAnimation(cornerAnimation, forKey: "cornerRadius")
+            
+            var fillAnimation = CABasicAnimation(keyPath: "backgroundColor")
+            fillAnimation.fromValue = UIColor.orangeColor().CGColor
+            fillAnimation.toValue = UIColor.greenColor().CGColor
+            fillAnimation.duration = 0.2
+            self.baseLayer.backgroundColor = UIColor.greenColor().CGColor
+            self.baseLayer.addAnimation(cornerAnimation, forKey: "backgroundColor")
+            
+            var borderAnimation = CABasicAnimation(keyPath: "borderColor")
+            borderAnimation.fromValue = UIColor.orangeColor().CGColor
+            borderAnimation.toValue = UIColor.greenColor().CGColor
+            borderAnimation.duration = 0.2
+            self.baseLayer.borderColor = UIColor.greenColor().CGColor
+            self.baseLayer.addAnimation(borderAnimation, forKey: "borderColor")
+            
+            UIView.animateWithDuration(0.2, animations: {
+                
+                self.frame.size = self.baseLayerCollapsedSize.size
+                self.setNumberLabel.text = "Set 1 ✓"
+                self.setNumberLabel.textColor = UIColor.whiteColor()
+                self.setNumberLabel.frame.origin.y += 50
+                self.repetitionsLabel.hidden = true
+                self.weightLabel.hidden = true
+                self.weightLabel.frame.origin.y -= 50
+                
+            })
+
+            
+        }
+        else if(collapsedState == true && completed == true){
+            
+            collapsedState = false
+            
+            UIView.animateWithDuration(0.2, animations: {
+                
+                self.frame.size = self.baseLayerEnlargedSize.size
+                self.setNumberLabel.textColor = UIColor.whiteColor()
+                self.setNumberLabel.frame.origin.y -= 50
+                self.repetitionsLabel.hidden = false
+                self.weightLabel.hidden = false
+                self.weightLabel.frame.origin.y += 50
+                
+            })
+            
+            var sizeAnimation = CABasicAnimation(keyPath: "bounds")
+            sizeAnimation.fromValue = NSValue(CGRect: self.baseLayerCollapsedSize)
+            sizeAnimation.toValue = NSValue(CGRect: self.baseLayerEnlargedSize)
+            sizeAnimation.duration = 0.2
+            self.baseLayer.bounds = self.baseLayerEnlargedSize
+            self.baseLayer.addAnimation(sizeAnimation, forKey: "bounds")
+            
+            var cornerAnimation = CABasicAnimation(keyPath: "cornerRadius")
+            cornerAnimation.fromValue = NSNumber(double: 35)
+            cornerAnimation.toValue = NSNumber(double: 75)
+            cornerAnimation.duration = 0.2
+            self.baseLayer.cornerRadius = 75
+            self.baseLayer.addAnimation(cornerAnimation, forKey: "cornerRadius")
+            
+            var fillAnimation = CABasicAnimation(keyPath: "backgroundColor")
+            fillAnimation.fromValue = UIColor.orangeColor().CGColor
+            fillAnimation.toValue = UIColor.greenColor().CGColor
+            fillAnimation.duration = 0.2
+            self.baseLayer.backgroundColor = UIColor.greenColor().CGColor
+            self.baseLayer.addAnimation(cornerAnimation, forKey: "backgroundColor")
+            
+            var borderAnimation = CABasicAnimation(keyPath: "borderColor")
+            borderAnimation.fromValue = UIColor.orangeColor().CGColor
+            borderAnimation.toValue = UIColor.greenColor().CGColor
+            borderAnimation.duration = 0.2
+            self.baseLayer.borderColor = UIColor.greenColor().CGColor
+            self.baseLayer.addAnimation(borderAnimation, forKey: "borderColor")
+
             
         }
     }
