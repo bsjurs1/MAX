@@ -11,21 +11,26 @@ import UIKit
 class ExerciseSetCellView: UIView {
     
     var baseLayer : CALayer
-    var baseLayerCollapsedSize = CGRectMake(0, 0, 70, 70)
-    var baseLayerEnlargedSize = CGRectMake(0, 0, 150, 150)
+    let baseLayerCollapsedSize = CGRectMake(0, 0, 70, 70)
+    let baseLayerEnlargedSize = CGRectMake(0, 0, 150, 150)
     var setNumberLabel : UILabel
     var repetitionsLabel : UILabel
     var weightLabel : UILabel
     var isCollapsed : Bool = true
     var isCompleted : Bool = false
+    var centerOfFrame : CGPoint
     var setStateListeners : Array<ExerciseSetCellView> = [ExerciseSetCellView]()
     
+    
+    // Part og the listener pattern
     func registerChangeListener(exerciseSetCellView : ExerciseSetCellView){
      
         setStateListeners.append(exerciseSetCellView)
         
     }
     
+    
+    // Part og the listener pattern
     func updateListeners(){
         for listener in setStateListeners {
             if(listener.isCollapsed == false){
@@ -48,10 +53,10 @@ class ExerciseSetCellView: UIView {
         setNumberLabel.textAlignment = NSTextAlignment.Center
         setNumberLabel.textColor = UIColor.lightGrayColor()
         
-        
         repetitionsLabel = UILabel(frame: baseLayerCollapsedSize)
         repetitionsLabel.frame.size.width += 50
-        repetitionsLabel.frame.origin.x -= 25
+        repetitionsLabel.frame.origin.x += 10
+        repetitionsLabel.frame.origin.y += 40
         repetitionsLabel.text = "10 repetitions"
         repetitionsLabel.textColor = UIColor.whiteColor()
         repetitionsLabel.textAlignment = NSTextAlignment.Center
@@ -59,11 +64,17 @@ class ExerciseSetCellView: UIView {
         
         weightLabel = UILabel(frame: baseLayerCollapsedSize)
         weightLabel.text = "155 kg"
+        weightLabel.frame.origin.y += 80
+        weightLabel.frame.origin.x += 35
         weightLabel.textColor = UIColor.whiteColor()
         weightLabel.textAlignment = NSTextAlignment.Center
         weightLabel.hidden = true
         
+        centerOfFrame = center
+        
         super.init(frame: baseLayerCollapsedSize)
+        
+        self.backgroundColor = randomColor()
         
         self.center = center
         self.layer.addSublayer(baseLayer)
@@ -73,10 +84,9 @@ class ExerciseSetCellView: UIView {
         
         var tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "gotTapped:")
         self.addGestureRecognizer(tapGestureRecognizer)
-        
-    
     }
     
+    // When exerciseSetCellView object gets tapped it responds with this function
     func gotTapped(tapGestureRecognizer : UITapGestureRecognizer){
         
         changeState()
@@ -95,10 +105,14 @@ class ExerciseSetCellView: UIView {
         
         weightLabel = UILabel()
         
+        centerOfFrame = CGPoint()
+        
         super.init(coder: aDecoder)
         
     }
     
+    
+    // Animate and show relevant information in the set cell view, or hide if it is enlarged, also changes background color based on completion
     func changeState(){
         
         if(isCollapsed == true && isCompleted == false){
@@ -109,19 +123,19 @@ class ExerciseSetCellView: UIView {
                 
                 self.frame.size = self.baseLayerEnlargedSize.size
                 self.setNumberLabel.textColor = UIColor.whiteColor()
-                self.setNumberLabel.frame.origin.y -= 50
+                self.setNumberLabel.frame.origin.x += 40
                 self.repetitionsLabel.hidden = false
                 self.weightLabel.hidden = false
-                self.weightLabel.frame.origin.y += 50
+                self.center = self.centerOfFrame
                 
             })
             
-            var sizeAnimation = CABasicAnimation(keyPath: "bounds")
+            var sizeAnimation = CABasicAnimation(keyPath: "frame")
             sizeAnimation.fromValue = NSValue(CGRect: self.baseLayerCollapsedSize)
             sizeAnimation.toValue = NSValue(CGRect: self.baseLayerEnlargedSize)
             sizeAnimation.duration = 0.2
-            self.baseLayer.bounds = self.baseLayerEnlargedSize
-            self.baseLayer.addAnimation(sizeAnimation, forKey: "bounds")
+            self.baseLayer.frame = self.baseLayerEnlargedSize
+            self.baseLayer.addAnimation(sizeAnimation, forKey: "frame")
             
             var cornerAnimation = CABasicAnimation(keyPath: "cornerRadius")
             cornerAnimation.fromValue = NSNumber(double: 35)
@@ -150,12 +164,12 @@ class ExerciseSetCellView: UIView {
             
             isCollapsed = true
             
-            var sizeAnimation = CABasicAnimation(keyPath: "bounds")
+            var sizeAnimation = CABasicAnimation(keyPath: "frame")
             sizeAnimation.fromValue = NSValue(CGRect: self.baseLayerEnlargedSize)
             sizeAnimation.toValue = NSValue(CGRect: self.baseLayerCollapsedSize)
             sizeAnimation.duration = 0.2
-            self.baseLayer.bounds = self.baseLayerCollapsedSize
-            self.baseLayer.addAnimation(sizeAnimation, forKey: "bounds")
+            self.baseLayer.frame = self.baseLayerCollapsedSize
+            self.baseLayer.addAnimation(sizeAnimation, forKey: "frame")
             
             var cornerAnimation = CABasicAnimation(keyPath: "cornerRadius")
             cornerAnimation.fromValue = NSNumber(double: 75)
@@ -182,10 +196,12 @@ class ExerciseSetCellView: UIView {
                 
                 self.frame.size = self.baseLayerCollapsedSize.size
                 self.setNumberLabel.textColor = UIColor.lightGrayColor()
-                self.setNumberLabel.frame.origin.y += 50
                 self.repetitionsLabel.hidden = true
                 self.weightLabel.hidden = true
-                self.weightLabel.frame.origin.y -= 50
+                self.center = self.centerOfFrame
+                self.setNumberLabel.frame.origin.x -= 40
+                //self.repetitionsLabel.frame.origin.y -= 50
+                //self.weightLabel.center.y -= 50
                 
             })
             
@@ -231,6 +247,7 @@ class ExerciseSetCellView: UIView {
                 self.repetitionsLabel.hidden = true
                 self.weightLabel.hidden = true
                 self.weightLabel.frame.origin.y -= 50
+                self.center = self.centerOfFrame
                 
             })
             
@@ -248,6 +265,7 @@ class ExerciseSetCellView: UIView {
                 self.repetitionsLabel.hidden = false
                 self.weightLabel.hidden = false
                 self.weightLabel.frame.origin.y += 50
+                self.center = self.centerOfFrame
                 
             })
             
@@ -282,6 +300,23 @@ class ExerciseSetCellView: UIView {
             
         }
 
+        
+    }
+    
+    func randomColor() -> UIColor {
+        
+        switch(arc4random()%4){
+        case 0:
+            return UIColor.greenColor()
+        case 1:
+            return UIColor.blueColor()
+        case 2:
+            return UIColor.redColor()
+        case 3:
+            return UIColor.purpleColor()
+        default:
+            return UIColor.grayColor()
+        }
         
     }
     

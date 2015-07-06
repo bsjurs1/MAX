@@ -21,7 +21,7 @@ class PerformExerciseRoutineViewController: UIViewController {
         
         var tmpView = SetsView()
         
-        tmpScrollView.contentSize = CGSizeMake(tmpView.widthOfView, 250)
+        tmpScrollView.contentSize = CGSizeMake(tmpView.setsViewFrame.size.width, 250)
         
         tmpScrollView.addSubview(tmpView)
         

@@ -10,9 +10,12 @@ import UIKit
 
 class SetsView: UIView {
     
-    var arrayOfSets : Array<ExerciseSetCellView> = [ExerciseSetCellView]()
+    var sets : Array<ExerciseSetCellView> = [ExerciseSetCellView]()
+    
+    var setsViewFrame : CGRect
     
     init(){
+        
         
         var numberOfSets = 4
         
@@ -23,24 +26,22 @@ class SetsView: UIView {
         let widthOfEnlargedCircle = CGFloat(150)
         var spaceBetweenSetCircles = CGFloat((numberOfSets+1) * 25)
         var widthOfView = widthOfCollapsedSetCircles + widthOfEnlargedCircle + spaceBetweenSetCircles
-        let setsViewFrame = CGRectMake(0.0, 0.0, widthOfView, heightOfSetsView)
-        
+        setsViewFrame = CGRectMake(0.0, 0.0, widthOfView, heightOfSetsView)
         
         
         super.init(frame: setsViewFrame)
-        
-        
+
         // Initialize all the exerciseSetCellViews and add them to self as subviews
         for var i = 1; i <= numberOfSets; ++i {
             
             var set = ExerciseSetCellView(center: CGPointMake(CGFloat(85*i), CGFloat(125)) , setNumber: "Set \(i)")
             
-            arrayOfSets.append(set)
+            sets.append(set)
             
         }
-        for elem in arrayOfSets {
+        for elem in sets {
             
-            for set in arrayOfSets {
+            for set in sets {
             
                 if(set != elem){
                     elem.registerChangeListener(set)
@@ -54,11 +55,14 @@ class SetsView: UIView {
         
         
         // Animate the first setView to show its information
-        arrayOfSets[0].changeState()
+        sets[0].changeState()
         
     }
 
     required init(coder aDecoder: NSCoder) {
+        
+        setsViewFrame = CGRect()
+        
         super.init(coder: aDecoder)
     }
     
