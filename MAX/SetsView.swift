@@ -10,22 +10,27 @@ import UIKit
 
 class SetsView: UIView {
     
-    let heightOfSetsView : CGFloat = 250
-    
-    var widthOfView : CGFloat
-    
     var arrayOfSets : Array<ExerciseSetCellView> = [ExerciseSetCellView]()
     
     init(){
         
         var numberOfSets = 4
         
-        widthOfView = CGFloat((numberOfSets-1)*70) + CGFloat(150) + CGFloat((numberOfSets+1) * 25)
         
-        var sizeOfSetsView = CGRectMake(0.0, 0.0, widthOfView, heightOfSetsView)
+        // Calculating the width of the view frame based on the number of sets
+        let heightOfSetsView : CGFloat = 250
+        var widthOfCollapsedSetCircles = CGFloat((numberOfSets-1)*70)
+        let widthOfEnlargedCircle = CGFloat(150)
+        var spaceBetweenSetCircles = CGFloat((numberOfSets+1) * 25)
+        var widthOfView = widthOfCollapsedSetCircles + widthOfEnlargedCircle + spaceBetweenSetCircles
+        let setsViewFrame = CGRectMake(0.0, 0.0, widthOfView, heightOfSetsView)
         
-        super.init(frame: sizeOfSetsView)
         
+        
+        super.init(frame: setsViewFrame)
+        
+        
+        // Initialize all the exerciseSetCellViews and add them to self as subviews
         for var i = 1; i <= numberOfSets; ++i {
             
             var set = ExerciseSetCellView(center: CGPointMake(CGFloat(85*i), CGFloat(125)) , setNumber: "Set \(i)")
@@ -33,7 +38,6 @@ class SetsView: UIView {
             arrayOfSets.append(set)
             
         }
-        
         for elem in arrayOfSets {
             
             for set in arrayOfSets {
@@ -48,14 +52,13 @@ class SetsView: UIView {
             
         }
         
+        
+        // Animate the first setView to show its information
         arrayOfSets[0].changeState()
         
     }
 
     required init(coder aDecoder: NSCoder) {
-        
-        widthOfView = CGFloat()
-        
         super.init(coder: aDecoder)
     }
     

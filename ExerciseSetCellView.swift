@@ -62,8 +62,6 @@ class ExerciseSetCellView: UIView {
         weightLabel.textColor = UIColor.whiteColor()
         weightLabel.textAlignment = NSTextAlignment.Center
         weightLabel.hidden = true
-
-        
         
         super.init(frame: baseLayerCollapsedSize)
         
