@@ -19,28 +19,61 @@ class ExerciseSetCellView: UIView {
     var isCollapsed : Bool = true
     var isCompleted : Bool = false
     var centerOfFrame : CGPoint
+    var tappedBefore : Bool = false
     var setStateListeners : Array<ExerciseSetCellView> = [ExerciseSetCellView]()
     
+    // Part of the listener pattern
+    func updateListenersState(){
+        for listener in setStateListeners {
+            if(listener.isCollapsed == false){
+                listener.changeState()
+            }
+            listener.tappedBefore = false
+        }
+    }
     
-    // Part og the listener pattern
+    func updateListenerPosition(){
+        
+        for listener in setStateListeners {
+            
+            listener.moveToOriginalPosition()
+            
+            if (listener.center.x > self.center.x){
+                listener.moveRight()
+            }
+            else {
+                listener.moveLeft()
+            }
+        }
+    }
+    
+    // Part of the listener pattern
     func registerChangeListener(exerciseSetCellView : ExerciseSetCellView){
      
         setStateListeners.append(exerciseSetCellView)
         
     }
     
+    func moveRight(){
+        UIView.animateWithDuration(0.2, animations: {
+            self.center.x += 40
+        })
+    }
     
-    // Part og the listener pattern
-    func updateListeners(){
-        for listener in setStateListeners {
-            if(listener.isCollapsed == false){
-                listener.changeState()
-            }
-        }
+    func moveToOriginalPosition(){
+        UIView.animateWithDuration(0.2, animations: {
+            self.center.x = self.centerOfFrame.x
+        })
+    }
+    
+    func moveLeft(){
+        UIView.animateWithDuration(0.2, animations: {
+            self.center.x -= 40
+        })
     }
     
     init(center : CGPoint, setNumber : String){
-        
+
         baseLayer = CALayer()
         baseLayer.borderColor = UIColor.grayColor().CGColor
         baseLayer.backgroundColor = UIColor.clearColor().CGColor
@@ -74,8 +107,6 @@ class ExerciseSetCellView: UIView {
         
         super.init(frame: baseLayerCollapsedSize)
         
-        self.backgroundColor = randomColor()
-        
         self.center = center
         self.layer.addSublayer(baseLayer)
         self.addSubview(setNumberLabel)
@@ -91,7 +122,23 @@ class ExerciseSetCellView: UIView {
         
         changeState()
         
-        updateListeners()
+        updateListenersState()
+        
+        moveToOriginalPosition()
+        
+        if(tappedBefore == false){
+            tappedBefore = true
+            updateListenerPosition()
+            
+        } else{
+            tappedBefore = false
+            
+            for listener in setStateListeners {
+                
+                listener.moveToOriginalPosition()
+                
+            }
+        }
         
     }
     
@@ -110,7 +157,6 @@ class ExerciseSetCellView: UIView {
         super.init(coder: aDecoder)
         
     }
-    
     
     // Animate and show relevant information in the set cell view, or hide if it is enlarged, also changes background color based on completion
     func changeState(){

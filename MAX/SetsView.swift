@@ -16,21 +16,18 @@ class SetsView: UIView {
     
     init(){
         
-        
         var numberOfSets = 4
-        
         
         // Calculating the width of the view frame based on the number of sets
         let heightOfSetsView : CGFloat = 250
         var widthOfCollapsedSetCircles = CGFloat((numberOfSets-1)*70)
         let widthOfEnlargedCircle = CGFloat(150)
-        var spaceBetweenSetCircles = CGFloat((numberOfSets+1) * 25)
+        var spaceBetweenSetCircles = CGFloat((numberOfSets+1) * 12)
         var widthOfView = widthOfCollapsedSetCircles + widthOfEnlargedCircle + spaceBetweenSetCircles
         setsViewFrame = CGRectMake(0.0, 0.0, widthOfView, heightOfSetsView)
         
-        
         super.init(frame: setsViewFrame)
-
+        
         // Initialize all the exerciseSetCellViews and add them to self as subviews
         for var i = 1; i <= numberOfSets; ++i {
             
@@ -53,10 +50,12 @@ class SetsView: UIView {
             
         }
         
-        
         // Animate the first setView to show its information
         sets[0].changeState()
-        
+        sets[0].updateListenersState()
+        sets[0].updateListenerPosition()
+        sets[0].tappedBefore = true
+    
     }
 
     required init(coder aDecoder: NSCoder) {
