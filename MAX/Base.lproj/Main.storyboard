@@ -642,31 +642,48 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zuC-BN-mRg">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="3be-YD-lYP" firstAttribute="top" secondItem="R7x-Cd-jLC" secondAttribute="bottom" id="61S-NS-nVM"/>
+                            <constraint firstItem="zuC-BN-mRg" firstAttribute="leading" secondItem="nzg-Ve-CgX" secondAttribute="leadingMargin" constant="-16" id="6KB-P2-tEY"/>
+                            <constraint firstItem="R7x-Cd-jLC" firstAttribute="top" secondItem="zuC-BN-mRg" secondAttribute="bottom" id="du4-H2-aXl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zuC-BN-mRg" secondAttribute="trailing" constant="-16" id="exE-DY-iad"/>
+                            <constraint firstItem="zuC-BN-mRg" firstAttribute="top" secondItem="ibn-pe-Fdx" secondAttribute="bottom" id="mmv-Yp-BH6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="R7x-Cd-jLC" secondAttribute="trailing" constant="-16" id="nAN-uF-RWk"/>
                             <constraint firstItem="R7x-Cd-jLC" firstAttribute="leading" secondItem="nzg-Ve-CgX" secondAttribute="leadingMargin" constant="-16" id="yV4-fe-kgd"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="R7x-Cd-jLC"/>
+                                <exclude reference="zuC-BN-mRg"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="61S-NS-nVM"/>
+                                <exclude reference="6KB-P2-tEY"/>
+                                <exclude reference="exE-DY-iad"/>
+                                <exclude reference="mmv-Yp-BH6"/>
+                                <exclude reference="du4-H2-aXl"/>
                                 <exclude reference="nAN-uF-RWk"/>
                                 <exclude reference="yV4-fe-kgd"/>
+                                <exclude reference="61S-NS-nVM"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="R7x-Cd-jLC"/>
+                                <include reference="zuC-BN-mRg"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="61S-NS-nVM"/>
+                                <include reference="6KB-P2-tEY"/>
+                                <include reference="exE-DY-iad"/>
+                                <include reference="mmv-Yp-BH6"/>
+                                <include reference="du4-H2-aXl"/>
                                 <include reference="nAN-uF-RWk"/>
                                 <include reference="yV4-fe-kgd"/>
+                                <include reference="61S-NS-nVM"/>
                             </mask>
                         </variation>
                     </view>
@@ -676,6 +693,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="exercisesScrollView" destination="zuC-BN-mRg" id="63f-hK-eaz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qFI-Bn-gGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

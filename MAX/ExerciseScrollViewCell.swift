@@ -29,7 +29,7 @@ class ExerciseScrollViewCell: UIView {
         
         self.init(inputexerciseNameLabel: inputexerciseNameLabel)
         
-        var tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "changeState:")
+        var tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "gotTapped:")
         
         self.addGestureRecognizer(tapGestureRecognizer)
         self.centerOfView = center
@@ -74,7 +74,7 @@ class ExerciseScrollViewCell: UIView {
         
     }
     
-    func changeState(tapGestureRecognizer : UITapGestureRecognizer){
+    func changeState(){
         
         if(collapsedState){
             
@@ -107,7 +107,8 @@ class ExerciseScrollViewCell: UIView {
                 
             })
             
-        } else{
+        }
+        else{
             
             minimizeBaseLayerBoundsWithAnimation(0.2)
             
@@ -127,6 +128,12 @@ class ExerciseScrollViewCell: UIView {
                 self.exerciseImageView.hidden = true
             })
         }
+        
+    }
+    
+    func gotTapped(tapGestureRecognizer : UITapGestureRecognizer){
+        
+        changeState()
         
     }
     
