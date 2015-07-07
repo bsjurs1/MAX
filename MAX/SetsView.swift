@@ -16,7 +16,7 @@ class SetsView: UIView {
     
     init(){
         
-        var numberOfSets = 4
+        var numberOfSets = 10
         
         // Calculating the width of the view frame based on the number of sets
         let heightOfSetsView : CGFloat = 250
@@ -50,6 +50,14 @@ class SetsView: UIView {
             
         }
         
+        self.backgroundColor = UIColor.clearColor()
+        
+        var lineView = UIView(frame: CGRectMake(70, 125, self.setsViewFrame.width-125, 1))
+        lineView.backgroundColor = UIColor.lightGrayColor()
+        self.addSubview(lineView)
+        self.sendSubviewToBack(lineView)
+        
+        
         // Animate the first setView to show its information
         sets[0].changeState()
         sets[0].updateListenersState()
@@ -67,12 +75,11 @@ class SetsView: UIView {
     
     
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
+    
+    /*// Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
-        // Drawing code
+        
     }
     */
-
 }

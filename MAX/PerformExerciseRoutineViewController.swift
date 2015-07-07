@@ -15,7 +15,7 @@ class PerformExerciseRoutineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var tmp = ExerciseScrollViewCell(center: CGPointMake((UIScreen.mainScreen().bounds.width/2)-0.5, 200), inputexerciseNameLabel: "Squats")
+        var tmp = ExerciseScrollViewCell(center: CGPointMake((UIScreen.mainScreen().bounds.width/2)-0.5, 250), inputexerciseNameLabel: "Squats")
         
         self.view.addSubview(tmp)
         

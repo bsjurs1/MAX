@@ -40,6 +40,7 @@ class ExerciseScrollViewCell: UIView {
     init(inputexerciseNameLabel : String){
         
         exerciseNameLabel = UILabel(frame: baseLayerCollapsedSize)
+        exerciseNameLabel.textColor = UIColor.lightGrayColor()
         exerciseNameLabel.text = inputexerciseNameLabel
         exerciseNameLabel.textAlignment = NSTextAlignment.Center
         
@@ -51,7 +52,7 @@ class ExerciseScrollViewCell: UIView {
         baseLayer.frame = baseLayerCollapsedSize
         
         exerciseImageView = UIImageView(frame: CGRectMake(5, 0, 100, 100))
-        exerciseImageView.image = UIImage(contentsOfFile: "/Users/Bjarte/Documents/MAX_projectFolder/squats.png")
+        exerciseImageView.image = UIImage(contentsOfFile: "/Users/Bjarte/Documents/MAX_projectFolder/MAX/squats.png")
         exerciseImageView.hidden = true
         exerciseImageView.contentMode = UIViewContentMode.ScaleAspectFit
 

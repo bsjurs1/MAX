@@ -73,10 +73,10 @@ class ExerciseSetCellView: UIView {
     }
     
     init(center : CGPoint, setNumber : String){
-
+        
         baseLayer = CALayer()
         baseLayer.borderColor = UIColor.grayColor().CGColor
-        baseLayer.backgroundColor = UIColor.clearColor().CGColor
+        baseLayer.backgroundColor = UIColor.whiteColor().CGColor
         baseLayer.borderWidth = 0.5
         baseLayer.frame = baseLayerCollapsedSize
         baseLayer.cornerRadius = 35
@@ -191,7 +191,7 @@ class ExerciseSetCellView: UIView {
             self.baseLayer.addAnimation(cornerAnimation, forKey: "cornerRadius")
             
             var fillAnimation = CABasicAnimation(keyPath: "backgroundColor")
-            fillAnimation.fromValue = CGColorCreateCopy(UIColor.clearColor().CGColor)
+            fillAnimation.fromValue = CGColorCreateCopy(UIColor.whiteColor().CGColor)
             fillAnimation.toValue = CGColorCreateCopy(UIColor.orangeColor().CGColor)
             fillAnimation.duration = 0.2
             self.baseLayer.backgroundColor = UIColor.orangeColor().CGColor
@@ -226,9 +226,9 @@ class ExerciseSetCellView: UIView {
             
             var fillAnimation = CABasicAnimation(keyPath: "backgroundColor")
             fillAnimation.fromValue = UIColor.orangeColor().CGColor
-            fillAnimation.toValue = UIColor.clearColor().CGColor
+            fillAnimation.toValue = UIColor.whiteColor().CGColor
             fillAnimation.duration = 0.2
-            self.baseLayer.backgroundColor = UIColor.clearColor().CGColor
+            self.baseLayer.backgroundColor = UIColor.whiteColor().CGColor
             self.baseLayer.addAnimation(cornerAnimation, forKey: "backgroundColor")
             
             var borderAnimation = CABasicAnimation(keyPath: "borderColor")
