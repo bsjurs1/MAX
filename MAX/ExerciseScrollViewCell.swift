@@ -33,6 +33,7 @@ class ExerciseScrollViewCell: UIView {
         
         self.addGestureRecognizer(tapGestureRecognizer)
         self.centerOfView = center
+        self.backgroundColor = UIColor.whiteColor()
         self.center = center
         
     }

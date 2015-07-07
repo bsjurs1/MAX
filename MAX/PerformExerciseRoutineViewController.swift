@@ -9,27 +9,21 @@
 import UIKit
 
 class PerformExerciseRoutineViewController: UIViewController {
-    
-    var setStateListeners : Array<ExerciseScrollViewCell> = [ExerciseScrollViewCell]()
 
     @IBOutlet weak var exercisesScrollView: UIScrollView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var exerciseView = ExercisesView()
         
-        for var i = 1; i<10; ++i {
-            
-            var tmp = ExerciseScrollViewCell(center: CGPointMake((UIScreen.mainScreen().bounds.width/2)-0.5, CGFloat(100*i)), inputexerciseNameLabel: "Squats")
-            
-            self.view.addSubview(tmp)
-            
-        }
+        exercisesScrollView.contentSize = CGSizeMake(exerciseView.exercisesViewFrame.width, exerciseView.exercisesViewFrame.height)
+        
+        exercisesScrollView.addSubview(exerciseView)
+        
         
         
     }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
