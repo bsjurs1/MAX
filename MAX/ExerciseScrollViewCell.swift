@@ -20,6 +20,10 @@ class ExerciseScrollViewCell: UIView {
     var baseLayer : CALayer
     var collapsedState : Bool = true
     var informationButton : UIButton
+    var setsScrollView : UIScrollView?
+    var setsView : SetsView?
+    var centerOfView = CGPoint()
+    var exerciseImageView : UIImageView
 
     convenience init(center : CGPoint, inputexerciseNameLabel : String){
         
@@ -28,35 +32,44 @@ class ExerciseScrollViewCell: UIView {
         var tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "changeState:")
         
         self.addGestureRecognizer(tapGestureRecognizer)
+        self.centerOfView = center
         self.center = center
         
     }
     
     init(inputexerciseNameLabel : String){
         
-        exerciseNameLabel = UILabel(frame: exerciseNameLabelSize)
+        exerciseNameLabel = UILabel(frame: baseLayerCollapsedSize)
         exerciseNameLabel.text = inputexerciseNameLabel
         exerciseNameLabel.textAlignment = NSTextAlignment.Center
         
         
         baseLayer = CALayer()
         baseLayer.borderColor = UIColor.grayColor().CGColor
-        baseLayer.backgroundColor = UIColor.whiteColor().CGColor
+        baseLayer.backgroundColor = UIColor.clearColor().CGColor
         baseLayer.borderWidth = 0.5
         baseLayer.frame = baseLayerCollapsedSize
+        
+        exerciseImageView = UIImageView(frame: CGRectMake(5, 0, 100, 100))
+        exerciseImageView.image = UIImage(contentsOfFile: "/Users/Bjarte/Documents/MAX_projectFolder/squats.png")
+        exerciseImageView.hidden = true
+        exerciseImageView.contentMode = UIViewContentMode.ScaleAspectFit
 
         self.informationButton = UIButton.buttonWithType(UIButtonType.InfoLight) as! UIButton
-        self.informationButton.frame = CGRectMake(UIScreen.mainScreen().bounds.width-100, 0, 50, 50)
+        self.informationButton.frame = CGRectMake(UIScreen.mainScreen().bounds.width-50, 0, 50, 50)
         self.informationButton.tintColor = appDelegate.maxTintColor
         self.informationButton.hidden = true
         
-        super.init(frame: baseLayerCollapsedSize)
+        self.setsView = SetsView()
         
+        super.init(frame: baseLayerCollapsedSize)
+    
         self.addSubview(exerciseNameLabel)
         self.layer.addSublayer(baseLayer)
         self.bringSubviewToFront(exerciseNameLabel)
         self.addSubview(informationButton)
         self.bringSubviewToFront(informationButton)
+        self.addSubview(exerciseImageView)
         
     }
     
@@ -73,11 +86,23 @@ class ExerciseScrollViewCell: UIView {
             
             UIView.animateWithDuration(0.2, animations: {
                 
-                self.center.y += 115
+                self.setsScrollView = UIScrollView(frame: CGRectMake(0 , 50, UIScreen.mainScreen().bounds.size.width, 250))
+                
+                self.setsScrollView!.contentSize = CGSizeMake(self.setsView!.setsViewFrame.size.width, 250)
+                
+                self.setsScrollView!.addSubview(self.setsView!)
+                
+                self.bringSubviewToFront(self.setsScrollView!)
+                self.setsScrollView!.bringSubviewToFront(self.setsView!)
+                
+                self.addSubview(self.setsScrollView!)
+
                 self.frame.size = self.baseLayerEnlargedSize.size
-                self.exerciseNameLabel.center.y -= 115
+                self.center = self.centerOfView
                 self.informationButton.hidden = false
-                self.informationButton.frame.origin.y -= 115
+                self.exerciseNameLabel.center.x = UIScreen.mainScreen().bounds.width/2
+                
+                self.exerciseImageView.hidden = false
                 
             })
             
@@ -90,14 +115,15 @@ class ExerciseScrollViewCell: UIView {
             baseLayer.borderColor = UIColor.grayColor().CGColor
             baseLayer.borderWidth = 0.5
             
-            UIView.animateWithDuration(0.25, animations: {
+            UIView.animateWithDuration(0.2, animations: {
                 
-                self.exerciseNameLabel.frame.origin.y = self.baseLayerCollapsedSize.origin.y
                 self.frame.size = self.baseLayerCollapsedSize.size
-                self.center.y -= 115
                 self.informationButton.hidden = true
-                self.informationButton.frame.origin.y += 115
+                self.setsScrollView!.hidden = true
+                self.center = self.centerOfView
+                self.exerciseNameLabel.center.x = self.baseLayerCollapsedSize.width/2
                 
+                self.exerciseImageView.hidden = true
             })
         }
         
@@ -105,23 +131,23 @@ class ExerciseScrollViewCell: UIView {
     
     func minimizeBaseLayerBoundsWithAnimation(duration : Double){
         
-        var animation = CABasicAnimation(keyPath: "bounds")
+        var animation = CABasicAnimation(keyPath: "frame")
         animation.fromValue = NSValue(CGRect: baseLayerEnlargedSize)
         animation.toValue = NSValue(CGRect: baseLayerCollapsedSize)
         animation.duration = duration
-        baseLayer.bounds = baseLayerCollapsedSize
-        baseLayer.addAnimation(animation, forKey: "bounds")
+        baseLayer.frame = baseLayerCollapsedSize
+        baseLayer.addAnimation(animation, forKey: "frame")
         
     }
     
     func maximizeBaseLayerBoundsWithAnimation(duration : Double){
         
-        var animation = CABasicAnimation(keyPath: "bounds")
-        animation.fromValue = NSValue(CGRect: self.baseLayerCollapsedSize)
-        animation.toValue = NSValue(CGRect: self.baseLayerEnlargedSize)
+        var animation = CABasicAnimation(keyPath: "frame")
+        animation.fromValue = NSValue(CGRect: baseLayerCollapsedSize)
+        animation.toValue = NSValue(CGRect: baseLayerEnlargedSize)
         animation.duration = duration
-        self.baseLayer.bounds = self.baseLayerEnlargedSize
-        self.baseLayer.addAnimation(animation, forKey: "bounds")
+        baseLayer.frame = self.baseLayerEnlargedSize
+        baseLayer.addAnimation(animation, forKey: "frame")
         
     }
 
@@ -132,6 +158,12 @@ class ExerciseScrollViewCell: UIView {
         self.baseLayer = CALayer()
         
         self.informationButton = UIButton()
+        
+        self.setsScrollView = UIScrollView()
+        
+        self.setsView = SetsView()
+        
+        self.exerciseImageView = UIImageView()
         
         super.init(coder: aDecoder)
         

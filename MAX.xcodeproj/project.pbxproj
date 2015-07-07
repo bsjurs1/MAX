@@ -25,6 +25,7 @@
 		9114E8C71B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E8C61B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift */; };
 		9126E8F81B452EB4006EA187 /* PerformExerciseRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126E8F71B452EB4006EA187 /* PerformExerciseRoutineViewController.swift */; };
 		9126E8FA1B453045006EA187 /* ExerciseScrollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126E8F91B453045006EA187 /* ExerciseScrollViewCell.swift */; };
+		9128F3EB1B4C059A00B2475B /* 1230_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9128F3EA1B4C059A00B2475B /* 1230_0.jpg */; };
 		913004F31B3723C800F7BC80 /* situp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 913004F11B3723C800F7BC80 /* situp.jpg */; };
 		913004F41B3723C800F7BC80 /* squats.png in Resources */ = {isa = PBXBuildFile; fileRef = 913004F21B3723C800F7BC80 /* squats.png */; };
 		9130C26B1B3C9A4500368E54 /* ExerciseRoutineCollectionSearchBarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9130C26A1B3C9A4500368E54 /* ExerciseRoutineCollectionSearchBarHeaderView.swift */; };
@@ -74,6 +75,7 @@
 		9114E8C61B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineCollectionViewCell.swift; sourceTree = "<group>"; };
 		9126E8F71B452EB4006EA187 /* PerformExerciseRoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformExerciseRoutineViewController.swift; sourceTree = "<group>"; };
 		9126E8F91B453045006EA187 /* ExerciseScrollViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseScrollViewCell.swift; sourceTree = "<group>"; };
+		9128F3EA1B4C059A00B2475B /* 1230_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1230_0.jpg; path = ../1230_0.jpg; sourceTree = "<group>"; };
 		913004F11B3723C800F7BC80 /* situp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = situp.jpg; path = ../../situp.jpg; sourceTree = "<group>"; };
 		913004F21B3723C800F7BC80 /* squats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = squats.png; path = ../../squats.png; sourceTree = "<group>"; };
 		9130C26A1B3C9A4500368E54 /* ExerciseRoutineCollectionSearchBarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineCollectionSearchBarHeaderView.swift; sourceTree = "<group>"; };
@@ -201,13 +203,14 @@
 		91121D0F1B36F1EB004BAC11 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				91121D1B1B36F1EB004BAC11 /* Images.xcassets */,
+				9128F3EA1B4C059A00B2475B /* 1230_0.jpg */,
 				913004F11B3723C800F7BC80 /* situp.jpg */,
 				913004F21B3723C800F7BC80 /* squats.png */,
-				91121D1D1B36F1EB004BAC11 /* LaunchScreen.xib */,
 				919B4E231B39E40C00C82A54 /* bjarte.jpg */,
 				9114E8C21B3C38B20034127B /* prtscreen.png */,
 				919B4E1D1B38A8B800C82A54 /* Skjermbilde 2015-06-22 kl. 22.33.26.png */,
+				91121D1B1B36F1EB004BAC11 /* Images.xcassets */,
+				91121D1D1B36F1EB004BAC11 /* LaunchScreen.xib */,
 				91121D101B36F1EB004BAC11 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -311,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				913004F31B3723C800F7BC80 /* situp.jpg in Resources */,
+				9128F3EB1B4C059A00B2475B /* 1230_0.jpg in Resources */,
 				9114E8C31B3C38B20034127B /* prtscreen.png in Resources */,
 				919B4E1E1B38A8B800C82A54 /* Skjermbilde 2015-06-22 kl. 22.33.26.png in Resources */,
 				913004F41B3723C800F7BC80 /* squats.png in Resources */,
