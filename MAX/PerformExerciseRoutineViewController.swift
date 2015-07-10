@@ -13,11 +13,12 @@ class PerformExerciseRoutineViewController: UIViewController {
     @IBOutlet weak var exercisesScrollView: UIScrollView!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
-        var exerciseView = ExercisesView()
+        var exerciseView = ExerciseRoutineTrainingView()
         
-        exercisesScrollView.contentSize = CGSizeMake(exerciseView.exercisesViewFrame.width, exerciseView.exercisesViewFrame.height)
+        exercisesScrollView.contentSize = CGSizeMake(exerciseView.exerciseRoutineTrainingViewFrame.width, exerciseView.exerciseRoutineTrainingViewFrame.height)
         
         exercisesScrollView.addSubview(exerciseView)
         

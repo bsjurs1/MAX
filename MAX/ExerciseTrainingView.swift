@@ -1,5 +1,5 @@
 //
-//  ExerciseScrollViewCell.swift
+//  ExerciseTrainingView.swift
 //  MAX
 //
 //  Created by Bjarte Sjursen on 02.07.15.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreGraphics
 
-class ExerciseScrollViewCell: UIView {
+class ExerciseTrainingView: UIView {
     
     var appDelegate = AppDelegate()
     
@@ -18,12 +18,28 @@ class ExerciseScrollViewCell: UIView {
     let baseLayerEnlargedSize = CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, 300)
     var exerciseNameLabel : UILabel
     var baseLayer : CALayer
-    var collapsedState : Bool = true
+    var isCollapsed : Bool = true
     var informationButton : UIButton
     var setsScrollView : UIScrollView?
     var setsView : SetsView?
     var centerOfView = CGPoint()
     var exerciseImageView : UIImageView
+    var changeListeners : Array<ExerciseTrainingView> = [ExerciseTrainingView]()
+    
+    func registerChangeListener(listener : ExerciseTrainingView){
+        if(listener != self){
+            changeListeners.append(listener)
+        }
+    }
+    
+    func updateListenersState(){
+        for listener in changeListeners {
+            if(listener.isCollapsed == false){
+                listener.changeState()
+            }
+        }
+        
+    }
 
     convenience init(center : CGPoint, inputexerciseNameLabel : String){
         
@@ -77,11 +93,11 @@ class ExerciseScrollViewCell: UIView {
     
     func changeState(){
         
-        if(collapsedState){
+        if(isCollapsed){
             
             maximizeBaseLayerBoundsWithAnimation(0.2)
             
-            collapsedState = false
+            isCollapsed = false
             
             baseLayer.borderColor = UIColor.orangeColor().CGColor
             baseLayer.borderWidth = 1
@@ -113,7 +129,7 @@ class ExerciseScrollViewCell: UIView {
             
             minimizeBaseLayerBoundsWithAnimation(0.2)
             
-            collapsedState = true
+            isCollapsed = true
             
             baseLayer.borderColor = UIColor.grayColor().CGColor
             baseLayer.borderWidth = 0.5
@@ -135,6 +151,7 @@ class ExerciseScrollViewCell: UIView {
     func gotTapped(tapGestureRecognizer : UITapGestureRecognizer){
         
         changeState()
+        updateListenersState()
         
     }
     
@@ -159,6 +176,8 @@ class ExerciseScrollViewCell: UIView {
         baseLayer.addAnimation(animation, forKey: "frame")
         
     }
+    
+    
 
     required init(coder aDecoder: NSCoder) {
         

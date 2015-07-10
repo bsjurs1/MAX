@@ -1,5 +1,5 @@
 //
-//  ExerciseSetCellView.swift
+//  SetView.swift
 //  MAX
 //
 //  Created by Bjarte Sjursen on 03.07.15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExerciseSetCellView: UIView {
+class SetView: UIView {
     
     var baseLayer : CALayer
     let baseLayerCollapsedSize = CGRectMake(0, 0, 70, 70)
@@ -20,11 +20,11 @@ class ExerciseSetCellView: UIView {
     var isCompleted : Bool = false
     var centerOfFrame : CGPoint
     var tappedBefore : Bool = false
-    var setStateListeners : Array<ExerciseSetCellView> = [ExerciseSetCellView]()
+    var changeListeners : Array<SetView> = [SetView]()
     
     // Part of the listener pattern
     func updateListenersState(){
-        for listener in setStateListeners {
+        for listener in changeListeners {
             if(listener.isCollapsed == false){
                 listener.changeState()
             }
@@ -34,7 +34,7 @@ class ExerciseSetCellView: UIView {
     
     func updateListenerPosition(){
         
-        for listener in setStateListeners {
+        for listener in changeListeners {
             
             listener.moveToOriginalPosition()
             
@@ -48,9 +48,9 @@ class ExerciseSetCellView: UIView {
     }
     
     // Part of the listener pattern
-    func registerChangeListener(exerciseSetCellView : ExerciseSetCellView){
+    func registerChangeListener(setView : SetView){
      
-        setStateListeners.append(exerciseSetCellView)
+        changeListeners.append(setView)
         
     }
     
@@ -117,7 +117,7 @@ class ExerciseSetCellView: UIView {
         self.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    // When exerciseSetCellView object gets tapped it responds with this function
+    // When SetView object gets tapped it responds with this function
     func gotTapped(tapGestureRecognizer : UITapGestureRecognizer){
         
         changeState()
@@ -133,7 +133,7 @@ class ExerciseSetCellView: UIView {
         } else{
             tappedBefore = false
             
-            for listener in setStateListeners {
+            for listener in changeListeners {
                 
                 listener.moveToOriginalPosition()
                 
@@ -367,6 +367,11 @@ class ExerciseSetCellView: UIView {
     }
     
 
+    
+    
+    
+    
+    
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

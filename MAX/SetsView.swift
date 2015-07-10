@@ -10,7 +10,7 @@ import UIKit
 
 class SetsView: UIView {
     
-    var sets : Array<ExerciseSetCellView> = [ExerciseSetCellView]()
+    var sets : Array<SetView> = [SetView]()
     
     var setsViewFrame : CGRect
     
@@ -28,10 +28,10 @@ class SetsView: UIView {
         
         super.init(frame: setsViewFrame)
         
-        // Initialize all the exerciseSetCellViews and add them to self as subviews
+        // Initialize all the SetViews and add them to self as subviews
         for var i = 1; i <= numberOfSets; ++i {
             
-            var set = ExerciseSetCellView(center: CGPointMake(CGFloat(85*i), CGFloat(125)) , setNumber: "Set \(i)")
+            var set = SetView(center: CGPointMake(CGFloat(85*i), CGFloat(125)) , setNumber: "Set \(i)")
             
             sets.append(set)
             
@@ -39,7 +39,6 @@ class SetsView: UIView {
         for elem in sets {
             
             for set in sets {
-            
                 if(set != elem){
                     elem.registerChangeListener(set)
                 }
