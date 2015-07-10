@@ -12,7 +12,6 @@ import CoreGraphics
 class ExerciseTrainingView: UIView {
     
     var appDelegate = AppDelegate()
-    
     let baseLayerCollapsedSize = CGRectMake(0, 0, 300, 50)
     let exerciseNameLabelSize = CGRectMake(100, 0, 100, 50)
     let baseLayerEnlargedSize = CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, 300)
@@ -24,7 +23,10 @@ class ExerciseTrainingView: UIView {
     var setsView : SetsView?
     var centerOfView = CGPoint()
     var exerciseImageView : UIImageView
+    var tappedBefore : Bool = false
     var changeListeners : Array<ExerciseTrainingView> = [ExerciseTrainingView]()
+    var superView : ExerciseRoutineTrainingView
+    
     
     func registerChangeListener(listener : ExerciseTrainingView){
         if(listener != self){
@@ -37,13 +39,31 @@ class ExerciseTrainingView: UIView {
             if(listener.isCollapsed == false){
                 listener.changeState()
             }
+            listener.tappedBefore = false
         }
         
     }
-
-    convenience init(center : CGPoint, inputexerciseNameLabel : String){
+    
+    func updateListenerPosition(){
         
-        self.init(inputexerciseNameLabel: inputexerciseNameLabel)
+        for listener in changeListeners {
+            
+            listener.moveToOriginalPosition()
+            
+            if (listener.center.y > self.center.y){
+                listener.moveDown()
+            }
+            else {
+                listener.moveUp()
+            }
+        }
+    }
+
+
+    convenience init(center : CGPoint, inputexerciseNameLabel : String, superView : ExerciseRoutineTrainingView){
+        
+        
+        self.init(inputexerciseNameLabel: inputexerciseNameLabel, superView : superView)
         
         var tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "gotTapped:")
         
@@ -54,7 +74,7 @@ class ExerciseTrainingView: UIView {
         
     }
     
-    init(inputexerciseNameLabel : String){
+    init(inputexerciseNameLabel : String, superView : ExerciseRoutineTrainingView){
         
         exerciseNameLabel = UILabel(frame: baseLayerCollapsedSize)
         exerciseNameLabel.textColor = UIColor.lightGrayColor()
@@ -79,6 +99,8 @@ class ExerciseTrainingView: UIView {
         self.informationButton.hidden = true
         
         self.setsView = SetsView()
+        
+        self.superView = superView
         
         super.init(frame: baseLayerCollapsedSize)
     
@@ -153,6 +175,21 @@ class ExerciseTrainingView: UIView {
         changeState()
         updateListenersState()
         
+        if(tappedBefore == false){
+            tappedBefore = true
+            updateListenerPosition()
+            
+        } else{
+            tappedBefore = false
+            
+            for listener in changeListeners {
+                
+                listener.moveToOriginalPosition()
+                
+            }
+        }
+
+        
     }
     
     func minimizeBaseLayerBoundsWithAnimation(duration : Double){
@@ -177,7 +214,26 @@ class ExerciseTrainingView: UIView {
         
     }
     
+    func moveDown() {
+        UIView.animateWithDuration(0.2, animations: {
+            self.center.y += 100
+            self.superView.lineView.center.y-=300
+        })
+    }
     
+    func moveUp(){
+        UIView.animateWithDuration(0.2, animations: {
+            self.center.y -= 100
+            self.superView.lineView.center.y+=300
+        })
+    }
+    
+    func moveToOriginalPosition(){
+        UIView.animateWithDuration(0.2, animations: {
+            self.center.y = self.centerOfView.y
+            self.superView.lineView.center.y = (((self.superView.exerciseRoutineTrainingViewFrame.height/2)-320/2)+150)
+        })
+    }
 
     required init(coder aDecoder: NSCoder) {
         
@@ -192,6 +248,8 @@ class ExerciseTrainingView: UIView {
         self.setsView = SetsView()
         
         self.exerciseImageView = UIImageView()
+        
+        self.superView = ExerciseRoutineTrainingView()
         
         super.init(coder: aDecoder)
         

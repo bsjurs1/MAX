@@ -14,6 +14,8 @@ class ExerciseRoutineTrainingView: UIView {
     
     var exerciseRoutineTrainingViewFrame : CGRect
     
+    var lineView : UIView
+    
     init(){
         
         var numberOfExercises = 10
@@ -26,10 +28,14 @@ class ExerciseRoutineTrainingView: UIView {
         var heightOfView = heightOfEnlargedExerciseCell + heightOfEnlargedExerciseCell + spaceBetweenExerciseCells
         exerciseRoutineTrainingViewFrame = CGRectMake(0.0, 0.0, widthOfView, heightOfView)
         
+        lineView = UIView(frame: CGRectMake(self.exerciseRoutineTrainingViewFrame.size.width/2, -500, 0.5, self.exerciseRoutineTrainingViewFrame.height+500))
+        
+        lineView.backgroundColor = UIColor.lightGrayColor()
+        
         super.init(frame: exerciseRoutineTrainingViewFrame)
 
         for var i = 1; i<10; ++i {
-            var tmp = ExerciseTrainingView(center: CGPointMake((UIScreen.mainScreen().bounds.width/2)-0.5, CGFloat(150*i)), inputexerciseNameLabel: "Squats")
+            var tmp = ExerciseTrainingView(center: CGPointMake((UIScreen.mainScreen().bounds.width/2)-0.5, CGFloat(150*i)), inputexerciseNameLabel: "Squats", superView: self)
             self.addSubview(tmp)
             exercises.append(tmp)
         }
@@ -40,9 +46,19 @@ class ExerciseRoutineTrainingView: UIView {
             }
         }
         
+        self.exercises[0].changeState()
+        self.exercises[0].updateListenersState()
+        self.exercises[0].updateListenerPosition()
+        self.exercises[0].tappedBefore = true
+        
+        self.addSubview(lineView)
+        self.sendSubviewToBack(lineView)
+        
     }
     
     required init(coder aDecoder: NSCoder) {
+        
+        lineView = UIView()
         
         exerciseRoutineTrainingViewFrame = CGRect()
         
