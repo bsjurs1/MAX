@@ -13,10 +13,16 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
     @IBOutlet weak var editExerciseRoutineBarButton: UIBarButtonItem!
     @IBOutlet weak var addExerciseRoutineBarButton: UIBarButtonItem!
     
+    var animator : UIDynamicAnimator?
+    var gravity : UIGravityBehavior?
+    var collider : UICollisionBehavior?
+    
     var appDelegate = AppDelegate()
     var profileViewController : ExerciseProfileViewController?
     
     override func viewDidLoad() {
+        
+        animator = UIDynamicAnimator(referenceView: self.view)
         
         addExerciseRoutineBarButton.tintColor = appDelegate.maxTintColor
         editExerciseRoutineBarButton.tintColor = appDelegate.maxTintColor
@@ -42,9 +48,30 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
         
         profileViewController!.view.addGestureRecognizer(gestureRecognizer)
         
+        gravity = UIGravityBehavior(items: [profileViewController!.view])
+        
+        animator?.addBehavior(gravity!)
+        
+        collider = UICollisionBehavior(items: [profileViewController!.view])
+        
+        animator?.addBehavior(collider!)
+        
+        collider?.addBoundaryWithIdentifier("bottomFallBoundary", forPath: UIBezierPath(rect: CGRectMake(0, (UIScreen.mainScreen().bounds.size.height*2)-59, UIScreen.mainScreen().bounds.size.width, 1)))
+
+        
     }
     
     func moveView(gestureRecognizer : UIPanGestureRecognizer){
+        
+        if (gestureRecognizer.state == UIGestureRecognizerState.Began){
+            animator?.removeAllBehaviors()
+        }
+        
+        else if (gestureRecognizer.state == UIGestureRecognizerState.Ended){
+            animator?.addBehavior(gravity)
+            animator?.addBehavior(collider)
+            collider?.addBoundaryWithIdentifier("bottomFallBoundary", forPath: UIBezierPath(rect: CGRectMake(0, (UIScreen.mainScreen().bounds.size.height*2)-59, UIScreen.mainScreen().bounds.size.width, 1)))
+        }
         
         var translation : CGPoint = gestureRecognizer.translationInView(self.view)
         

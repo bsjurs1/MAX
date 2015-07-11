@@ -22,6 +22,8 @@ class PerformExerciseRoutineViewController: UIViewController {
         
         exercisesScrollView.addSubview(exerciseView)
         
+        exerciseView.exercises[0].changeState()
+        
         
         
     }

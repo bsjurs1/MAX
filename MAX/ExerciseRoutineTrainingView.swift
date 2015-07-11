@@ -45,8 +45,7 @@ class ExerciseRoutineTrainingView: UIView {
                 exercise.registerChangeListener(listenerToAdd)
             }
         }
-        
-        self.exercises[0].changeState()
+
         self.exercises[0].updateListenersState()
         self.exercises[0].updateListenerPosition()
         self.exercises[0].tappedBefore = true
