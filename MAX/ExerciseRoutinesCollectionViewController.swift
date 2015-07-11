@@ -16,6 +16,7 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
     var animator : UIDynamicAnimator?
     var gravity : UIGravityBehavior?
     var collider : UICollisionBehavior?
+    var snapBehavior : UISnapBehavior?
     
     var appDelegate = AppDelegate()
     var profileViewController : ExerciseProfileViewController?
@@ -62,15 +63,34 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
     }
     
     func moveView(gestureRecognizer : UIPanGestureRecognizer){
+
         
         if (gestureRecognizer.state == UIGestureRecognizerState.Began){
             animator?.removeAllBehaviors()
         }
-        
         else if (gestureRecognizer.state == UIGestureRecognizerState.Ended){
-            animator?.addBehavior(gravity)
-            animator?.addBehavior(collider)
-            collider?.addBoundaryWithIdentifier("bottomFallBoundary", forPath: UIBezierPath(rect: CGRectMake(0, (UIScreen.mainScreen().bounds.size.height*2)-59, UIScreen.mainScreen().bounds.size.width, 1)))
+            
+            if(profileViewController!.view.frame.origin.y <= UIScreen.mainScreen().bounds.size.height-300){
+                
+                snapBehavior = UISnapBehavior(item: profileViewController!.view, snapToPoint: CGPointMake(UIScreen.mainScreen().bounds.size.width/2, 400))
+                
+                animator!.addBehavior(snapBehavior)
+                
+                animator?.addBehavior(collider)
+                
+                collider?.addBoundaryWithIdentifier("leftBoundary", forPath: UIBezierPath(rect: CGRectMake(-1, 0, 1, UIScreen.mainScreen().bounds.size.height)))
+                
+                collider?.addBoundaryWithIdentifier("rightBoundary", forPath: UIBezierPath(rect: CGRectMake(UIScreen.mainScreen().bounds.size.width+1, 0, 1, UIScreen.mainScreen().bounds.size.height)))
+                
+            }
+            else {
+                animator?.addBehavior(gravity)
+                animator?.addBehavior(collider)
+                collider?.addBoundaryWithIdentifier("bottomFallBoundary", forPath: UIBezierPath(rect: CGRectMake(0, (UIScreen.mainScreen().bounds.size.height*2)-59, UIScreen.mainScreen().bounds.size.width, 1)))
+                collider?.addBoundaryWithIdentifier("leftBoundary", forPath: UIBezierPath(rect: CGRectMake(-1, 0, 1, UIScreen.mainScreen().bounds.size.height)))
+                
+                collider?.addBoundaryWithIdentifier("rightBoundary", forPath: UIBezierPath(rect: CGRectMake(UIScreen.mainScreen().bounds.size.width+1, 0, 1, UIScreen.mainScreen().bounds.size.height)))
+            }
         }
         
         var translation : CGPoint = gestureRecognizer.translationInView(self.view)
