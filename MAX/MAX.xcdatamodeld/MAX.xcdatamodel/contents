@@ -11,7 +11,7 @@
     <entity name="ExerciseRoutine" syncable="YES">
         <attribute name="backGroundImage" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="exercises" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Exercise" inverseName="exerciseRoutine" inverseEntity="Exercise" syncable="YES"/>
+        <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercise" inverseName="exerciseRoutine" inverseEntity="Exercise" syncable="YES"/>
         <relationship name="performedExerciseRoutineData" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PerformedExerciseRoutineData" inverseName="didExerciseRoutine" inverseEntity="PerformedExerciseRoutineData" syncable="YES"/>
     </entity>
     <entity name="ExerciseVideo" syncable="YES">
