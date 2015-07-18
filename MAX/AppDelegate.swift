@@ -16,10 +16,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var maxTintColor: UIColor = UIColor.orangeColor()
 
-
+ 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        println(getArrayOfExercises())
+        
         return true
+    }
+    
+    func getArrayOfExercises() -> NSArray {
+        
+        var dataPath : String = NSBundle.mainBundle().pathForResource("exercises", ofType: "json")!
+        var data : NSData = NSData(contentsOfFile: dataPath)!
+        
+        let json : AnyObject! = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil)
+        
+        let jsonObject = json as? NSArray
+        
+        return jsonObject!
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {

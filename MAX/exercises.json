@@ -1,0 +1,4 @@
+ [{ "name": "Squats", "description": "do squats"},
+  { "name": "Dead lifts", "description": "do dead lifts"},
+  { "name": "Bench press", "description": "do bench press"},
+  { "name": "Hamtring curls", "description": "do hamstring curls"}]
