@@ -19,7 +19,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        println(getArrayOfExercises())
+        
+        var exercises = getArrayOfExercises()
+
+        var managedContext = self.managedObjectContext
+        
+        
+        for exercise in exercises{
+            
+            var exerciseDict: NSDictionary = exercise as! NSDictionary
+            var exerciseName : String = exerciseDict["name"] as! String
+            var exerciseDescription : String = exerciseDict["description"] as! String
+            
+            var exerciseToInsert: AnyObject = NSEntityDescription.insertNewObjectForEntityForName("Exercise", inManagedObjectContext: managedObjectContext!)
+            
+            exerciseToInsert.setValue(exerciseName, forKey: "name")
+            exerciseToInsert.setValue(exerciseDescription, forKey: "exerciseDescription")
+            
+        }
+
+        var entityDescription : NSEntityDescription = NSEntityDescription.entityForName("Exercise", inManagedObjectContext: managedContext!)!
+        
+        var request = NSFetchRequest(entityName: "Exercise")
+        
+        var sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        request.sortDescriptors = [sortDescriptor]
+        
+        var array = managedObjectContext?.executeFetchRequest(request, error: nil)
+
+        for elem in array! {
+            
+            println(elem)
+            
+        }
+
+        
         
         return true
     }
