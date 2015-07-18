@@ -7,20 +7,59 @@
 //
 
 import UIKit
+import CoreData
 
-class ExerciseTableViewController: UITableViewController {
+class ExerciseTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     var sSampleArray : [String] = ["Squats", "Sit-ups"]
     var samplePicArray : [String] = ["squats.png", "situp.jpg"]
-    var appDelegate : AppDelegate = AppDelegate()
+    var appDelegate : AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
+    var fetchedResultsController = NSFetchedResultsController()
+    var managedContext = NSManagedObjectContext()
     
     override func viewDidLoad() {
+        
+        managedContext = appDelegate.managedObjectContext!
+        
+        let exercisesFetchRequest = NSFetchRequest(entityName: "Exercise")
+        let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        exercisesFetchRequest.sortDescriptors = [primarySortDescriptor]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: exercisesFetchRequest, managedObjectContext: self.managedContext, sectionNameKeyPath: "name", cacheName: nil)
+        
         super.viewDidLoad()
         
         self.navigationItem.title = "Exercises"
         
         self.view.tintColor = appDelegate.maxTintColor
         
+        var error: NSError? = nil
+        if (fetchedResultsController.performFetch(&error) == false) {
+            print("An error occurred: \(error?.localizedDescription)")
+        }
+        
+        
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        
+        if let sections = fetchedResultsController.sections {
+            return sections.count
+        }
+        
+        return 0
+        
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if let sections = fetchedResultsController.sections {
+            let currentSection = sections[section] as! NSFetchedResultsSectionInfo
+            return currentSection.numberOfObjects
+        }
+        
+        return 0
         
     }
 
@@ -33,10 +72,12 @@ class ExerciseTableViewController: UITableViewController {
         
         var cell : ExerciseProfileTableViewCell = tableView.dequeueReusableCellWithIdentifier("exerciseCell", forIndexPath: indexPath) as! ExerciseProfileTableViewCell
         
+        let exercise = fetchedResultsController.objectAtIndexPath(indexPath) as! Exercise
+        
         cell.backgroundColor = UIColor.clearColor()
         
-        cell.exerciseImageView?.image = UIImage(named: samplePicArray[indexPath.row])
-        cell.exerciseNameLabel?.text = sSampleArray[indexPath.row]
+        //cell.exerciseImageView?.image = UIImage(named: samplePicArray[indexPath.row])
+        cell.exerciseNameLabel?.text = exercise.name
         cell.lastPerformanceDateLabel?.text = "Last performed 20.may.2015"
 
         return cell

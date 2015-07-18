@@ -26,24 +26,6 @@ class ExerciseLibraryTableViewController: ExerciseTableViewController {
         return alphabetArray
     }
     
-    // MARK: - Table view data source
-    
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 26
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if (alphabetArray[section] == "s") {
-            
-            return sSampleArray.count
-            
-        } else {
-            
-            return 0
-            
-        }
-    }
     
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

@@ -24,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         var managedContext = self.managedObjectContext
         
-        
         for exercise in exercises{
             
             var exerciseDict: NSDictionary = exercise as! NSDictionary
@@ -37,8 +36,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             exerciseToInsert.setValue(exerciseDescription, forKey: "exerciseDescription")
             
         }
+        
+        testCoreData()
 
-        var entityDescription : NSEntityDescription = NSEntityDescription.entityForName("Exercise", inManagedObjectContext: managedContext!)!
+        return true
+    }
+    
+    func testCoreData(){
+        
+        var entityDescription : NSEntityDescription = NSEntityDescription.entityForName("Exercise", inManagedObjectContext: self.managedObjectContext!)!
         
         var request = NSFetchRequest(entityName: "Exercise")
         
@@ -46,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         request.sortDescriptors = [sortDescriptor]
         
         var array = managedObjectContext?.executeFetchRequest(request, error: nil)
-
+        
         for elem in array! {
             
             println(elem)
@@ -54,8 +60,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         
-        
-        return true
     }
     
     func getArrayOfExercises() -> NSArray {
