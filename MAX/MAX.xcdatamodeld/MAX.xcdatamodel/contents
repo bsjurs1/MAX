@@ -8,51 +8,51 @@
         <relationship name="exerciseVideo" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="ExerciseVideo" inverseName="belongsToExercise" inverseEntity="ExerciseVideo" syncable="YES"/>
         <relationship name="performedExerciseData" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="PerformedExerciseData" inverseName="didExercise" inverseEntity="PerformedExerciseData" syncable="YES"/>
     </entity>
-    <entity name="ExerciseRoutine" representedClassName="PRODUCT_MODULE_NAME.ExerciseRoutine" syncable="YES">
+    <entity name="ExerciseRoutine" representedClassName="MAX.ExerciseRoutine" syncable="YES">
         <attribute name="backGroundImage" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercise" inverseName="exerciseRoutine" inverseEntity="Exercise" syncable="YES"/>
         <relationship name="performedExerciseRoutineData" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PerformedExerciseRoutineData" inverseName="didExerciseRoutine" inverseEntity="PerformedExerciseRoutineData" syncable="YES"/>
     </entity>
-    <entity name="ExerciseVideo" representedClassName="PRODUCT_MODULE_NAME.ExerciseVideo" syncable="YES">
+    <entity name="ExerciseVideo" representedClassName="MAX.ExerciseVideo" syncable="YES">
         <attribute name="video" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="belongsToExercise" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="Exercise" inverseName="exerciseVideo" inverseEntity="Exercise" syncable="YES"/>
     </entity>
-    <entity name="PerformedExerciseData" representedClassName="PRODUCT_MODULE_NAME.PerformedExerciseData" syncable="YES">
+    <entity name="PerformedExerciseData" representedClassName="MAX.PerformedExerciseData" syncable="YES">
         <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="didExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="performedExerciseData" inverseEntity="Exercise" syncable="YES"/>
     </entity>
-    <entity name="PerformedExerciseRoutineData" representedClassName="PRODUCT_MODULE_NAME.PerformedExerciseRoutineData" syncable="YES">
+    <entity name="PerformedExerciseRoutineData" representedClassName="MAX.PerformedExerciseRoutineData" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="didExerciseRoutine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExerciseRoutine" inverseName="performedExerciseRoutineData" inverseEntity="ExerciseRoutine" syncable="YES"/>
     </entity>
-    <entity name="PerformedRepetitionSet" representedClassName="PRODUCT_MODULE_NAME.PerformedRepetitionSet" parentEntity="PerformedSet" syncable="YES">
+    <entity name="PerformedRepetitionSet" representedClassName="MAX.PerformedRepetitionSet" parentEntity="PerformedSet" syncable="YES">
         <attribute name="performedRepetitions" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="performedWeightInKg" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="didSet" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="RepetitionSet" inverseName="sets" inverseEntity="RepetitionSet" syncable="YES"/>
     </entity>
-    <entity name="PerformedSet" representedClassName="PRODUCT_MODULE_NAME.PerformedSet" syncable="YES">
+    <entity name="PerformedSet" representedClassName="MAX.PerformedSet" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="postBreakLength" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
-    <entity name="PerformedTimeSet" representedClassName="PRODUCT_MODULE_NAME.PerformedTimeSet" parentEntity="PerformedSet" syncable="YES">
+    <entity name="PerformedTimeSet" representedClassName="MAX.PerformedTimeSet" parentEntity="PerformedSet" syncable="YES">
         <attribute name="performedTimeInSeconds" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="didSet" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="TimeSet" inverseName="sets" inverseEntity="TimeSet" syncable="YES"/>
     </entity>
-    <entity name="RepetitionExercise" representedClassName="PRODUCT_MODULE_NAME.RepetitionExercise" parentEntity="Exercise" syncable="YES">
+    <entity name="RepetitionExercise" representedClassName="MAX.RepetitionExercise" parentEntity="Exercise" syncable="YES">
         <relationship name="sets" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="RepetitionSet" inverseName="belongsToExercise" inverseEntity="RepetitionSet" syncable="YES"/>
     </entity>
-    <entity name="RepetitionSet" representedClassName="PRODUCT_MODULE_NAME.RepetitionSet" syncable="YES">
+    <entity name="RepetitionSet" representedClassName="MAX.RepetitionSet" syncable="YES">
         <attribute name="numberOfRepetitions" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="setNr" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="weightToLift" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="belongsToExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RepetitionExercise" inverseName="sets" inverseEntity="RepetitionExercise" syncable="YES"/>
         <relationship name="sets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PerformedRepetitionSet" inverseName="didSet" inverseEntity="PerformedRepetitionSet" syncable="YES"/>
     </entity>
-    <entity name="TimeExercise" representedClassName="PRODUCT_MODULE_NAME.TimeExercise" parentEntity="Exercise" syncable="YES">
+    <entity name="TimeExercise" representedClassName="MAX.TimeExercise" parentEntity="Exercise" syncable="YES">
         <relationship name="sets" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="TimeSet" inverseName="belongsToExercise" inverseEntity="TimeSet" syncable="YES"/>
     </entity>
-    <entity name="TimeSet" representedClassName="PRODUCT_MODULE_NAME.TimeSet" syncable="YES">
+    <entity name="TimeSet" representedClassName="MAX.TimeSet" syncable="YES">
         <attribute name="secondsToPerform" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="setNr" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="belongsToExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TimeExercise" inverseName="sets" inverseEntity="TimeExercise" syncable="YES"/>

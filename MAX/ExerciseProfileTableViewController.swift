@@ -10,13 +10,5 @@ import UIKit
 
 class ExerciseProfileTableViewController : ExerciseLibraryTableViewController {
     
-    override func viewDidLoad() {
-
-        self.view.backgroundColor = UIColor.clearColor()
-        
-        self.view.tintColor = appDelegate.maxTintColor
-        
-    }
-    
     
 }

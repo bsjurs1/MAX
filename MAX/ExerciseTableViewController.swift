@@ -20,6 +20,8 @@ class ExerciseTableViewController: UITableViewController, NSFetchedResultsContro
     
     override func viewDidLoad() {
         
+        self.view.backgroundColor = UIColor.clearColor()
+        
         managedContext = appDelegate.managedObjectContext!
         
         let exercisesFetchRequest = NSFetchRequest(entityName: "Exercise")
