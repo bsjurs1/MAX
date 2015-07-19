@@ -78,7 +78,7 @@ class ExerciseTableViewController: UITableViewController, NSFetchedResultsContro
         
         cell.backgroundColor = UIColor.clearColor()
         
-        //cell.exerciseImageView?.image = UIImage(named: samplePicArray[indexPath.row])
+        cell.exerciseImageView?.image = exercise.getImage()
         cell.exerciseNameLabel?.text = exercise.name
         cell.lastPerformanceDateLabel?.text = "Last performed 20.may.2015"
 
