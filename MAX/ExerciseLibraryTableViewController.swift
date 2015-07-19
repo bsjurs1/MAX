@@ -17,20 +17,20 @@ class ExerciseLibraryTableViewController: ExerciseTableViewController {
         "t","u","v","w","x","y","z"]
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
+        super.viewDidLoad()
         
     }
     
     override func sectionIndexTitlesForTableView(tableView: UITableView) -> [AnyObject]! {
-        return alphabetArray
+        return fetchedResultsController.sectionIndexTitles
     }
     
     
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        return alphabetArray[section].uppercaseString
+        return fetchedResultsController.sectionIndexTitles[section] as? String
         
     }
     
