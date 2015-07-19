@@ -18,6 +18,9 @@ class ExerciseDescriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        exerciseDescriptionTextView.backgroundColor = UIColor.clearColor()
+        exerciseDescriptionTextView.textColor = UIColor.whiteColor()
+        
         self.view.backgroundColor = UIColor.clearColor()
         self.doneButton.tintColor = appDelegate.maxTintColor
         
