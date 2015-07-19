@@ -1425,15 +1425,87 @@
         <!--Exercise Description View Controller-->
         <scene sceneID="WOE-Fy-T7q">
             <objects>
-                <viewController id="Ks6-Ic-k6A" customClass="ExerciseDescriptionViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="descriptionController" id="Ks6-Ic-k6A" customClass="ExerciseDescriptionViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gHc-gi-rU7"/>
                         <viewControllerLayoutGuide type="bottom" id="EOU-jU-Zob"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Udq-Mt-hie">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h8d-tP-JuF">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoE-K7-Btz">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="-61" y="90" width="48" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="cancelExerciseCreation:" destination="8qd-hE-sPZ" eventType="touchUpInside" id="bbh-Go-Jbd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmB-Su-NMu">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneViewing:" destination="Ks6-Ic-k6A" eventType="touchUpInside" id="1CP-cl-ZAG"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h8d-tP-JuF" firstAttribute="trailing" secondItem="Udq-Mt-hie" secondAttribute="trailingMargin" id="2AS-CV-Ac4"/>
+                            <constraint firstItem="vmB-Su-NMu" firstAttribute="top" secondItem="gHc-gi-rU7" secondAttribute="bottom" id="7Uh-bQ-l0x"/>
+                            <constraint firstItem="vmB-Su-NMu" firstAttribute="trailing" secondItem="Udq-Mt-hie" secondAttribute="trailingMargin" id="LVz-bP-ocR"/>
+                            <constraint firstItem="EOU-jU-Zob" firstAttribute="top" secondItem="h8d-tP-JuF" secondAttribute="bottom" constant="20" id="VIO-w8-h8e"/>
+                            <constraint firstItem="h8d-tP-JuF" firstAttribute="top" secondItem="gHc-gi-rU7" secondAttribute="bottom" constant="145" id="n7v-Bz-fAc"/>
+                            <constraint firstItem="h8d-tP-JuF" firstAttribute="leading" secondItem="Udq-Mt-hie" secondAttribute="leadingMargin" id="tJI-Z7-3vf"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="h8d-tP-JuF"/>
+                                <exclude reference="FoE-K7-Btz"/>
+                                <exclude reference="vmB-Su-NMu"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="2AS-CV-Ac4"/>
+                                <exclude reference="n7v-Bz-fAc"/>
+                                <exclude reference="tJI-Z7-3vf"/>
+                                <exclude reference="7Uh-bQ-l0x"/>
+                                <exclude reference="LVz-bP-ocR"/>
+                                <exclude reference="VIO-w8-h8e"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="h8d-tP-JuF"/>
+                                <include reference="FoE-K7-Btz"/>
+                                <include reference="vmB-Su-NMu"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="2AS-CV-Ac4"/>
+                                <include reference="n7v-Bz-fAc"/>
+                                <include reference="tJI-Z7-3vf"/>
+                                <include reference="7Uh-bQ-l0x"/>
+                                <include reference="LVz-bP-ocR"/>
+                                <include reference="VIO-w8-h8e"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="doneButton" destination="vmB-Su-NMu" id="u2N-JW-HUg"/>
+                        <outlet property="exerciseDescriptionTextView" destination="h8d-tP-JuF" id="769-zZ-gvf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Qd-PV-8Sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

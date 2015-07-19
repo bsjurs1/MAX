@@ -34,6 +34,33 @@ class ExerciseLibraryTableViewController: ExerciseTableViewController {
         
     }
     
+    override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+        
+        var exerciseTapped = fetchedResultsController.objectAtIndexPath(indexPath) as! Exercise
+        
+        println(exerciseTapped)
+        
+        var exerciseDescription = self.storyboard?.instantiateViewControllerWithIdentifier("descriptionController") as? ExerciseDescriptionViewController
+        
+        exerciseDescription!.exerciseDescription = exerciseTapped.exerciseDescription
+        
+        exerciseDescription?.view.frame = CGRectMake(0, 0,UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height)
+        
+        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        var beView = UIVisualEffectView(effect: blurEffect)
+        beView.frame = UIScreen.mainScreen().bounds
+        
+        exerciseDescription!.view.frame = UIScreen.mainScreen().bounds
+        exerciseDescription!.view.backgroundColor = UIColor.clearColor()
+        exerciseDescription!.view.insertSubview(beView, atIndex: 0)
+        exerciseDescription!.modalPresentationStyle = UIModalPresentationStyle.OverFullScreen
+        
+        self.presentViewController(exerciseDescription!, animated: true, completion: nil)
+        
+        println(indexPath.row)
+        
+    }
+    
 }
 
 /*

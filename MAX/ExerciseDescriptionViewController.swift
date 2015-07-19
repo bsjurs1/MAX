@@ -9,9 +9,19 @@
 import UIKit
 
 class ExerciseDescriptionViewController: UIViewController {
+    
+    @IBOutlet weak var doneButton: UIButton!
+    var appDelegate = AppDelegate()
+    @IBOutlet weak var exerciseDescriptionTextView: UITextView!
+    var exerciseDescription = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.clearColor()
+        self.doneButton.tintColor = appDelegate.maxTintColor
+        
+        self.exerciseDescriptionTextView.text = exerciseDescription
 
         // Do any additional setup after loading the view.
     }
@@ -21,6 +31,11 @@ class ExerciseDescriptionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func doneViewing(sender: AnyObject) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+
+    }
 
     /*
     // MARK: - Navigation
