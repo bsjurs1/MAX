@@ -37,6 +37,7 @@
 		9105AEEC1B5C1A4C001558EE /* Sit-ups.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9105AED01B5C1A0D001558EE /* Sit-ups.png */; };
 		9105AEED1B5C1A4C001558EE /* Squats.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9105AED11B5C1A0D001558EE /* Squats.png */; };
 		9105AEEE1B5C1A4C001558EE /* Triceps press.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9105AED21B5C1A0D001558EE /* Triceps press.png */; };
+		9105AEF01B5C1AE1001558EE /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9105AEEF1B5C1AE1001558EE /* Exercise.swift */; };
 		9109067E1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9109067D1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift */; };
 		910ACB531B5A8C5800F5A1FB /* bjarte.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 910ACB521B5A8C5800F5A1FB /* bjarte.jpg */; };
 		910ACB551B5A8DCA00F5A1FB /* exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = 910ACB541B5A8DCA00F5A1FB /* exercises.json */; };
@@ -77,7 +78,6 @@
 		919B4E181B389D3A00C82A54 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B4E171B389D3A00C82A54 /* ExerciseTableViewCell.swift */; };
 		919B4E1A1B38A0F600C82A54 /* ExerciseRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B4E191B38A0F600C82A54 /* ExerciseRoutineViewController.swift */; };
 		919B4E201B39A9DA00C82A54 /* ExerciseProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B4E1F1B39A9DA00C82A54 /* ExerciseProfileViewController.swift */; };
-		91B4EE201B5B7D060068CC10 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4EE1F1B5B7D060068CC10 /* Exercise.swift */; };
 		91B639171B49B62200EEE48B /* SetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B639161B49B62200EEE48B /* SetsView.swift */; };
 		91BDBC391B3DD0570014AD41 /* CreateRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BDBC381B3DD0570014AD41 /* CreateRoutineViewController.swift */; };
 		91BDBC3B1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BDBC3A1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift */; };
@@ -138,6 +138,7 @@
 		9105AED01B5C1A0D001558EE /* Sit-ups.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sit-ups.png"; sourceTree = "<group>"; };
 		9105AED11B5C1A0D001558EE /* Squats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Squats.png; sourceTree = "<group>"; };
 		9105AED21B5C1A0D001558EE /* Triceps press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Triceps press.png"; sourceTree = "<group>"; };
+		9105AEEF1B5C1AE1001558EE /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = ../Exercise.swift; sourceTree = "<group>"; };
 		9109067D1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLibraryTableViewController.swift; sourceTree = "<group>"; };
 		910ACB521B5A8C5800F5A1FB /* bjarte.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bjarte.jpg; sourceTree = "<group>"; };
 		910ACB541B5A8DCA00F5A1FB /* exercises.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = exercises.json; sourceTree = "<group>"; };
@@ -181,7 +182,6 @@
 		919B4E171B389D3A00C82A54 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseTableViewCell.swift; path = ../ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		919B4E191B38A0F600C82A54 /* ExerciseRoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineViewController.swift; sourceTree = "<group>"; };
 		919B4E1F1B39A9DA00C82A54 /* ExerciseProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseProfileViewController.swift; sourceTree = "<group>"; };
-		91B4EE1F1B5B7D060068CC10 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = ../Exercise.swift; sourceTree = "<group>"; };
 		91B639161B49B62200EEE48B /* SetsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetsView.swift; sourceTree = "<group>"; };
 		91BDBC381B3DD0570014AD41 /* CreateRoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRoutineViewController.swift; sourceTree = "<group>"; };
 		91BDBC3A1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLibraryViewController.swift; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 				910ACBA81B5AC07A00F5A1FB /* PerformedRepetitionSet.swift */,
 				910ACBA61B5AC07A00F5A1FB /* ExerciseRoutine.swift */,
 				910ACBA21B5AC07A00F5A1FB /* PerformedExerciseData.swift */,
-				91B4EE1F1B5B7D060068CC10 /* Exercise.swift */,
+				9105AEEF1B5C1AE1001558EE /* Exercise.swift */,
 				910ACB541B5A8DCA00F5A1FB /* exercises.json */,
 				91121D131B36F1EB004BAC11 /* MAX.xcdatamodeld */,
 			);
@@ -519,7 +519,6 @@
 				910ACBAD1B5AC07B00F5A1FB /* RepetitionExercise.swift in Sources */,
 				910ACBB91B5AC07B00F5A1FB /* TimeExercise.swift in Sources */,
 				919B4E1A1B38A0F600C82A54 /* ExerciseRoutineViewController.swift in Sources */,
-				91B4EE201B5B7D060068CC10 /* Exercise.swift in Sources */,
 				91BDBC3D1B3DEACF0014AD41 /* CreateExerciseForLibraryViewController.swift in Sources */,
 				919447F61B4C62C300C752D6 /* ExerciseRoutineTrainingView.swift in Sources */,
 				919B4E181B389D3A00C82A54 /* ExerciseTableViewCell.swift in Sources */,
@@ -527,6 +526,7 @@
 				9114E8C71B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift in Sources */,
 				9103F9E11B37123C00735BF7 /* ExerciseTableViewController.swift in Sources */,
 				910ACBB71B5AC07B00F5A1FB /* TimeSet.swift in Sources */,
+				9105AEF01B5C1AE1001558EE /* Exercise.swift in Sources */,
 				9126E8FA1B453045006EA187 /* ExerciseTrainingView.swift in Sources */,
 				91121D151B36F1EB004BAC11 /* MAX.xcdatamodeld in Sources */,
 				91121D121B36F1EB004BAC11 /* AppDelegate.swift in Sources */,

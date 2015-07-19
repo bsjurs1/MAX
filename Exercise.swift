@@ -12,7 +12,7 @@ import CoreData
 class Exercise: NSManagedObject {
 
     @NSManaged var exerciseDescription: String
-    @NSManaged var exerciseImage: NSData
+    @NSManaged var exerciseImagePath: String
     @NSManaged var name: String
     @NSManaged var sectionId: String
     @NSManaged var exerciseRoutine: NSSet

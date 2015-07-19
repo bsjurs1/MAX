@@ -2,7 +2,7 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Exercise" representedClassName="MAX.Exercise" syncable="YES">
         <attribute name="exerciseDescription" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="exerciseImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="exerciseImagePath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sectionId" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="exerciseRoutine" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="ExerciseRoutine" inverseName="exercises" inverseEntity="ExerciseRoutine" syncable="YES"/>
@@ -60,7 +60,7 @@
         <relationship name="sets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PerformedTimeSet" inverseName="didSet" inverseEntity="PerformedTimeSet" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Exercise" positionX="-1980" positionY="-3438" width="128" height="150"/>
+        <element name="Exercise" positionX="-1980" positionY="-3438" width="128" height="148"/>
         <element name="ExerciseRoutine" positionX="-2250" positionY="-3591" width="171" height="103"/>
         <element name="ExerciseVideo" positionX="-1773" positionY="-3430" width="128" height="73"/>
         <element name="PerformedExerciseData" positionX="-1773" positionY="-3321" width="128" height="73"/>

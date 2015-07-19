@@ -1431,6 +1431,7 @@
                         <viewControllerLayoutGuide type="bottom" id="EOU-jU-Zob"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Udq-Mt-hie">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8d-tP-JuF">
@@ -1481,12 +1482,12 @@
                                 <exclude reference="vmB-Su-NMu"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="VIO-w8-h8e"/>
+                                <exclude reference="7Uh-bQ-l0x"/>
+                                <exclude reference="LVz-bP-ocR"/>
                                 <exclude reference="2AS-CV-Ac4"/>
                                 <exclude reference="n7v-Bz-fAc"/>
                                 <exclude reference="tJI-Z7-3vf"/>
-                                <exclude reference="7Uh-bQ-l0x"/>
-                                <exclude reference="LVz-bP-ocR"/>
-                                <exclude reference="VIO-w8-h8e"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1496,12 +1497,12 @@
                                 <include reference="vmB-Su-NMu"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="VIO-w8-h8e"/>
+                                <include reference="7Uh-bQ-l0x"/>
+                                <include reference="LVz-bP-ocR"/>
                                 <include reference="2AS-CV-Ac4"/>
                                 <include reference="n7v-Bz-fAc"/>
                                 <include reference="tJI-Z7-3vf"/>
-                                <include reference="7Uh-bQ-l0x"/>
-                                <include reference="LVz-bP-ocR"/>
-                                <include reference="VIO-w8-h8e"/>
                             </mask>
                         </variation>
                     </view>
