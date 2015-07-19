@@ -1,4 +1,15 @@
  [{ "name": "Squats", "description": "do squats"},
   { "name": "Dead lifts", "description": "do dead lifts"},
   { "name": "Bench press", "description": "do bench press"},
-  { "name": "Hamtring curls", "description": "do hamstring curls"}]
+  { "name": "Hamtring curls", "description": "do hamstring curls"},
+  { "name": "Leg press", "description": "do hamstring curls"},
+  { "name": "EZ-Curls", "description": "do hamstring curls"},
+  { "name": "Sit-ups", "description": "do hamstring curls"},
+  { "name": "Shoulder press", "description": "do hamstring curls"},
+  { "name": "Chin-up", "description": "do hamstring curls"},
+  { "name": "Row", "description": "do hamstring curls"},
+  { "name": "Back flies", "description": "do hamstring curls"},
+  { "name": "Barbell curls", "description": "do hamstring curls"},
+  { "name": "Decline crunch", "description": "do hamstring curls"},
+  { "name": "Triceps press", "description": "do hamstring curls"},
+  ]

@@ -28,7 +28,7 @@ class ExerciseTableViewController: UITableViewController, NSFetchedResultsContro
         let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         exercisesFetchRequest.sortDescriptors = [primarySortDescriptor]
         
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: exercisesFetchRequest, managedObjectContext: self.managedContext, sectionNameKeyPath: "name", cacheName: nil)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: exercisesFetchRequest, managedObjectContext: self.managedContext, sectionNameKeyPath: "sectionId", cacheName: nil)
         
         super.viewDidLoad()
         

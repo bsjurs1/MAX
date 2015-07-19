@@ -32,8 +32,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             var exerciseToInsert: AnyObject = NSEntityDescription.insertNewObjectForEntityForName("Exercise", inManagedObjectContext: managedObjectContext!)
             
+            
+            var sectionID = String(exerciseName[exerciseName.startIndex])
+            
             exerciseToInsert.setValue(exerciseName, forKey: "name")
             exerciseToInsert.setValue(exerciseDescription, forKey: "exerciseDescription")
+            exerciseToInsert.setValue(sectionID, forKey: "sectionId")
             
         }
         
@@ -43,6 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func testCoreData(){
+        
+        println("test about to start")
         
         var entityDescription : NSEntityDescription = NSEntityDescription.entityForName("Exercise", inManagedObjectContext: self.managedObjectContext!)!
         

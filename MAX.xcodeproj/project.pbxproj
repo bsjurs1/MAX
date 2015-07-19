@@ -14,7 +14,6 @@
 		910ACB551B5A8DCA00F5A1FB /* exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = 910ACB541B5A8DCA00F5A1FB /* exercises.json */; };
 		910ACB591B5AB3A800F5A1FB /* exercises.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 910ACB541B5A8DCA00F5A1FB /* exercises.json */; };
 		910ACBA31B5AC07A00F5A1FB /* PerformedExerciseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910ACBA21B5AC07A00F5A1FB /* PerformedExerciseData.swift */; };
-		910ACBA51B5AC07A00F5A1FB /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910ACBA41B5AC07A00F5A1FB /* Exercise.swift */; };
 		910ACBA71B5AC07A00F5A1FB /* ExerciseRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910ACBA61B5AC07A00F5A1FB /* ExerciseRoutine.swift */; };
 		910ACBA91B5AC07A00F5A1FB /* PerformedRepetitionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910ACBA81B5AC07A00F5A1FB /* PerformedRepetitionSet.swift */; };
 		910ACBAB1B5AC07A00F5A1FB /* PerformedTimeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910ACBAA1B5AC07A00F5A1FB /* PerformedTimeSet.swift */; };
@@ -49,6 +48,7 @@
 		919B4E181B389D3A00C82A54 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B4E171B389D3A00C82A54 /* ExerciseTableViewCell.swift */; };
 		919B4E1A1B38A0F600C82A54 /* ExerciseRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B4E191B38A0F600C82A54 /* ExerciseRoutineViewController.swift */; };
 		919B4E201B39A9DA00C82A54 /* ExerciseProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B4E1F1B39A9DA00C82A54 /* ExerciseProfileViewController.swift */; };
+		91B4EE201B5B7D060068CC10 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4EE1F1B5B7D060068CC10 /* Exercise.swift */; };
 		91B639171B49B62200EEE48B /* SetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B639161B49B62200EEE48B /* SetsView.swift */; };
 		91BDBC391B3DD0570014AD41 /* CreateRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BDBC381B3DD0570014AD41 /* CreateRoutineViewController.swift */; };
 		91BDBC3B1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BDBC3A1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift */; };
@@ -85,7 +85,6 @@
 		910ACB521B5A8C5800F5A1FB /* bjarte.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bjarte.jpg; sourceTree = "<group>"; };
 		910ACB541B5A8DCA00F5A1FB /* exercises.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = exercises.json; sourceTree = "<group>"; };
 		910ACBA21B5AC07A00F5A1FB /* PerformedExerciseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerformedExerciseData.swift; path = ../PerformedExerciseData.swift; sourceTree = "<group>"; };
-		910ACBA41B5AC07A00F5A1FB /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = ../Exercise.swift; sourceTree = "<group>"; };
 		910ACBA61B5AC07A00F5A1FB /* ExerciseRoutine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseRoutine.swift; path = ../ExerciseRoutine.swift; sourceTree = "<group>"; };
 		910ACBA81B5AC07A00F5A1FB /* PerformedRepetitionSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerformedRepetitionSet.swift; path = ../PerformedRepetitionSet.swift; sourceTree = "<group>"; };
 		910ACBAA1B5AC07A00F5A1FB /* PerformedTimeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerformedTimeSet.swift; path = ../PerformedTimeSet.swift; sourceTree = "<group>"; };
@@ -124,6 +123,7 @@
 		919B4E171B389D3A00C82A54 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseTableViewCell.swift; path = ../ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		919B4E191B38A0F600C82A54 /* ExerciseRoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineViewController.swift; sourceTree = "<group>"; };
 		919B4E1F1B39A9DA00C82A54 /* ExerciseProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseProfileViewController.swift; sourceTree = "<group>"; };
+		91B4EE1F1B5B7D060068CC10 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = ../Exercise.swift; sourceTree = "<group>"; };
 		91B639161B49B62200EEE48B /* SetsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetsView.swift; sourceTree = "<group>"; };
 		91BDBC381B3DD0570014AD41 /* CreateRoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRoutineViewController.swift; sourceTree = "<group>"; };
 		91BDBC3A1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLibraryViewController.swift; sourceTree = "<group>"; };
@@ -188,8 +188,8 @@
 				910ACBAA1B5AC07A00F5A1FB /* PerformedTimeSet.swift */,
 				910ACBA81B5AC07A00F5A1FB /* PerformedRepetitionSet.swift */,
 				910ACBA61B5AC07A00F5A1FB /* ExerciseRoutine.swift */,
-				910ACBA41B5AC07A00F5A1FB /* Exercise.swift */,
 				910ACBA21B5AC07A00F5A1FB /* PerformedExerciseData.swift */,
+				91B4EE1F1B5B7D060068CC10 /* Exercise.swift */,
 				910ACB541B5A8DCA00F5A1FB /* exercises.json */,
 				91121D131B36F1EB004BAC11 /* MAX.xcdatamodeld */,
 			);
@@ -418,12 +418,12 @@
 				910ACBAF1B5AC07B00F5A1FB /* PerformedSet.swift in Sources */,
 				910ACBA71B5AC07A00F5A1FB /* ExerciseRoutine.swift in Sources */,
 				910ACBAB1B5AC07A00F5A1FB /* PerformedTimeSet.swift in Sources */,
-				910ACBA51B5AC07A00F5A1FB /* Exercise.swift in Sources */,
 				910BC4361B3A9A230078FF8B /* ExerciseProfileTableViewController.swift in Sources */,
 				9130C26B1B3C9A4500368E54 /* ExerciseRoutineCollectionSearchBarHeaderView.swift in Sources */,
 				910ACBAD1B5AC07B00F5A1FB /* RepetitionExercise.swift in Sources */,
 				910ACBB91B5AC07B00F5A1FB /* TimeExercise.swift in Sources */,
 				919B4E1A1B38A0F600C82A54 /* ExerciseRoutineViewController.swift in Sources */,
+				91B4EE201B5B7D060068CC10 /* Exercise.swift in Sources */,
 				91BDBC3D1B3DEACF0014AD41 /* CreateExerciseForLibraryViewController.swift in Sources */,
 				919447F61B4C62C300C752D6 /* ExerciseRoutineTrainingView.swift in Sources */,
 				919B4E181B389D3A00C82A54 /* ExerciseTableViewCell.swift in Sources */,
