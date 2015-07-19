@@ -9,20 +9,6 @@
 /* Begin PBXBuildFile section */
 		9103F9E11B37123C00735BF7 /* ExerciseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9103F9E01B37123C00735BF7 /* ExerciseTableViewController.swift */; };
 		9103F9E31B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9103F9E21B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift */; };
-		9105AED31B5C1A0D001558EE /* Back flies.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9105AEC51B5C1A0D001558EE /* Back flies.gif */; };
-		9105AED41B5C1A0D001558EE /* Barbell curls.png in Resources */ = {isa = PBXBuildFile; fileRef = 9105AEC61B5C1A0D001558EE /* Barbell curls.png */; };
-		9105AED51B5C1A0D001558EE /* Bench press.png in Resources */ = {isa = PBXBuildFile; fileRef = 9105AEC71B5C1A0D001558EE /* Bench press.png */; };
-		9105AED61B5C1A0D001558EE /* Chin-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 9105AEC81B5C1A0D001558EE /* Chin-up.png */; };
-		9105AED71B5C1A0D001558EE /* Dead lifts.png in Resources */ = {isa = PBXBuildFile; fileRef = 9105AEC91B5C1A0D001558EE /* Dead lifts.png */; };
-		9105AED81B5C1A0D001558EE /* Decline crunch.png in Resources */ = {isa = PBXBuildFile; fileRef = 9105AECA1B5C1A0D001558EE /* Decline crunch.png */; };
-		9105AED91B5C1A0D001558EE /* EZ-Curls.png in Resources */ = {isa = PBXBuildFile; fileRef = 9105AECB1B5C1A0D001558EE /* EZ-Curls.png */; };
-		9105AEDA1B5C1A0D001558EE /* Hamtring curls.png in Resources */ = {isa = PBXBuildFile; fileRef = 9105AECC1B5C1A0D001558EE /* Hamtring curls.png */; };
-		9105AEDB1B5C1A0D001558EE /* Leg press.png in Resources */ = {isa = PBXBuildFile; fileRef = 9105AECD1B5C1A0D001558EE /* Leg press.png */; };
-		9105AEDC1B5C1A0D001558EE /* Row.png in Resources */ = {isa = PBXBuildFile; fileRef = 9105AECE1B5C1A0D001558EE /* Row.png */; };
-		9105AEDD1B5C1A0D001558EE /* Shoulder press.png in Resources */ = {isa = PBXBuildFile; fileRef = 9105AECF1B5C1A0D001558EE /* Shoulder press.png */; };
-		9105AEDE1B5C1A0D001558EE /* Sit-ups.png in Resources */ = {isa = PBXBuildFile; fileRef = 9105AED01B5C1A0D001558EE /* Sit-ups.png */; };
-		9105AEDF1B5C1A0D001558EE /* Squats.png in Resources */ = {isa = PBXBuildFile; fileRef = 9105AED11B5C1A0D001558EE /* Squats.png */; };
-		9105AEE01B5C1A0D001558EE /* Triceps press.png in Resources */ = {isa = PBXBuildFile; fileRef = 9105AED21B5C1A0D001558EE /* Triceps press.png */; };
 		9105AEF41B5C1E0C001558EE /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9105AEF31B5C1E0C001558EE /* Exercise.swift */; };
 		9109067E1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9109067D1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift */; };
 		910ACB531B5A8C5800F5A1FB /* bjarte.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 910ACB521B5A8C5800F5A1FB /* bjarte.jpg */; };
@@ -96,20 +82,6 @@
 /* Begin PBXFileReference section */
 		9103F9E01B37123C00735BF7 /* ExerciseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewController.swift; sourceTree = "<group>"; };
 		9103F9E21B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseProfileTableViewCell.swift; sourceTree = "<group>"; };
-		9105AEC51B5C1A0D001558EE /* Back flies.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Back flies.gif"; sourceTree = "<group>"; };
-		9105AEC61B5C1A0D001558EE /* Barbell curls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Barbell curls.png"; sourceTree = "<group>"; };
-		9105AEC71B5C1A0D001558EE /* Bench press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bench press.png"; sourceTree = "<group>"; };
-		9105AEC81B5C1A0D001558EE /* Chin-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Chin-up.png"; sourceTree = "<group>"; };
-		9105AEC91B5C1A0D001558EE /* Dead lifts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dead lifts.png"; sourceTree = "<group>"; };
-		9105AECA1B5C1A0D001558EE /* Decline crunch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Decline crunch.png"; sourceTree = "<group>"; };
-		9105AECB1B5C1A0D001558EE /* EZ-Curls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EZ-Curls.png"; sourceTree = "<group>"; };
-		9105AECC1B5C1A0D001558EE /* Hamtring curls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hamtring curls.png"; sourceTree = "<group>"; };
-		9105AECD1B5C1A0D001558EE /* Leg press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Leg press.png"; sourceTree = "<group>"; };
-		9105AECE1B5C1A0D001558EE /* Row.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Row.png; sourceTree = "<group>"; };
-		9105AECF1B5C1A0D001558EE /* Shoulder press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shoulder press.png"; sourceTree = "<group>"; };
-		9105AED01B5C1A0D001558EE /* Sit-ups.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sit-ups.png"; sourceTree = "<group>"; };
-		9105AED11B5C1A0D001558EE /* Squats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Squats.png; sourceTree = "<group>"; };
-		9105AED21B5C1A0D001558EE /* Triceps press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Triceps press.png"; sourceTree = "<group>"; };
 		9105AEF31B5C1E0C001558EE /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = ../Exercise.swift; sourceTree = "<group>"; };
 		9109067D1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLibraryTableViewController.swift; sourceTree = "<group>"; };
 		910ACB521B5A8C5800F5A1FB /* bjarte.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bjarte.jpg; sourceTree = "<group>"; };
@@ -178,27 +150,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9105AEC41B5C1A0D001558EE /* exerciseImages */ = {
-			isa = PBXGroup;
-			children = (
-				9105AEC51B5C1A0D001558EE /* Back flies.gif */,
-				9105AEC61B5C1A0D001558EE /* Barbell curls.png */,
-				9105AEC71B5C1A0D001558EE /* Bench press.png */,
-				9105AEC81B5C1A0D001558EE /* Chin-up.png */,
-				9105AEC91B5C1A0D001558EE /* Dead lifts.png */,
-				9105AECA1B5C1A0D001558EE /* Decline crunch.png */,
-				9105AECB1B5C1A0D001558EE /* EZ-Curls.png */,
-				9105AECC1B5C1A0D001558EE /* Hamtring curls.png */,
-				9105AECD1B5C1A0D001558EE /* Leg press.png */,
-				9105AECE1B5C1A0D001558EE /* Row.png */,
-				9105AECF1B5C1A0D001558EE /* Shoulder press.png */,
-				9105AED01B5C1A0D001558EE /* Sit-ups.png */,
-				9105AED11B5C1A0D001558EE /* Squats.png */,
-				9105AED21B5C1A0D001558EE /* Triceps press.png */,
-			);
-			path = exerciseImages;
-			sourceTree = "<group>";
-		};
 		910BC4371B3A9B470078FF8B /* ExerciseTableViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,7 +258,6 @@
 		91121D0F1B36F1EB004BAC11 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9105AEC41B5C1A0D001558EE /* exerciseImages */,
 				910ACB521B5A8C5800F5A1FB /* bjarte.jpg */,
 				9128F3EC1B4C0A3A00B2475B /* squats.png */,
 				9128F3EA1B4C059A00B2475B /* 1230_0.jpg */,
@@ -420,25 +370,11 @@
 			files = (
 				9128F3EB1B4C059A00B2475B /* 1230_0.jpg in Resources */,
 				910ACB551B5A8DCA00F5A1FB /* exercises.json in Resources */,
-				9105AED71B5C1A0D001558EE /* Dead lifts.png in Resources */,
-				9105AED31B5C1A0D001558EE /* Back flies.gif in Resources */,
 				919447F41B4C39CF00C752D6 /* prtscreen.png in Resources */,
 				9128F3ED1B4C0A3A00B2475B /* squats.png in Resources */,
-				9105AEDD1B5C1A0D001558EE /* Shoulder press.png in Resources */,
-				9105AEDE1B5C1A0D001558EE /* Sit-ups.png in Resources */,
-				9105AEDC1B5C1A0D001558EE /* Row.png in Resources */,
-				9105AEDB1B5C1A0D001558EE /* Leg press.png in Resources */,
-				9105AED41B5C1A0D001558EE /* Barbell curls.png in Resources */,
-				9105AEE01B5C1A0D001558EE /* Triceps press.png in Resources */,
 				91121D1A1B36F1EB004BAC11 /* Main.storyboard in Resources */,
-				9105AEDA1B5C1A0D001558EE /* Hamtring curls.png in Resources */,
-				9105AED91B5C1A0D001558EE /* EZ-Curls.png in Resources */,
 				91121D1F1B36F1EB004BAC11 /* LaunchScreen.xib in Resources */,
 				91121D1C1B36F1EB004BAC11 /* Images.xcassets in Resources */,
-				9105AEDF1B5C1A0D001558EE /* Squats.png in Resources */,
-				9105AED51B5C1A0D001558EE /* Bench press.png in Resources */,
-				9105AED61B5C1A0D001558EE /* Chin-up.png in Resources */,
-				9105AED81B5C1A0D001558EE /* Decline crunch.png in Resources */,
 				910ACB531B5A8C5800F5A1FB /* bjarte.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

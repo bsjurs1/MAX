@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var exerciseName : String = exerciseDict["name"] as! String
             var exerciseDescription : String = exerciseDict["description"] as! String
             
-            var exerciseToInsert: AnyObject = NSEntityDescription.insertNewObjectForEntityForName("Exercise", inManagedObjectContext: managedObjectContext!)
+            var exerciseToInsert: AnyObject = NSEntityDescription.insertNewObjectForEntityForName("Exercise", inManagedObjectContext: managedObjectContext!) as! Exercise
             
             
             var sectionID = String(exerciseName[exerciseName.startIndex])
@@ -38,6 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             exerciseToInsert.setValue(exerciseName, forKey: "name")
             exerciseToInsert.setValue(exerciseDescription, forKey: "exerciseDescription")
             exerciseToInsert.setValue(sectionID, forKey: "sectionId")
+            
+            var image = UIImage(named: exerciseName + ".png")
+            
+            exerciseToInsert.setValue(UIImagePNGRepresentation(image), forKey: "exerciseImage")
             
         }
         
