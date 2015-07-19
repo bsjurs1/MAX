@@ -23,21 +23,7 @@
 		9105AEDE1B5C1A0D001558EE /* Sit-ups.png in Resources */ = {isa = PBXBuildFile; fileRef = 9105AED01B5C1A0D001558EE /* Sit-ups.png */; };
 		9105AEDF1B5C1A0D001558EE /* Squats.png in Resources */ = {isa = PBXBuildFile; fileRef = 9105AED11B5C1A0D001558EE /* Squats.png */; };
 		9105AEE01B5C1A0D001558EE /* Triceps press.png in Resources */ = {isa = PBXBuildFile; fileRef = 9105AED21B5C1A0D001558EE /* Triceps press.png */; };
-		9105AEE11B5C1A4C001558EE /* Back flies.gif in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9105AEC51B5C1A0D001558EE /* Back flies.gif */; };
-		9105AEE21B5C1A4C001558EE /* Barbell curls.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9105AEC61B5C1A0D001558EE /* Barbell curls.png */; };
-		9105AEE31B5C1A4C001558EE /* Bench press.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9105AEC71B5C1A0D001558EE /* Bench press.png */; };
-		9105AEE41B5C1A4C001558EE /* Chin-up.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9105AEC81B5C1A0D001558EE /* Chin-up.png */; };
-		9105AEE51B5C1A4C001558EE /* Dead lifts.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9105AEC91B5C1A0D001558EE /* Dead lifts.png */; };
-		9105AEE61B5C1A4C001558EE /* Decline crunch.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9105AECA1B5C1A0D001558EE /* Decline crunch.png */; };
-		9105AEE71B5C1A4C001558EE /* EZ-Curls.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9105AECB1B5C1A0D001558EE /* EZ-Curls.png */; };
-		9105AEE81B5C1A4C001558EE /* Hamtring curls.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9105AECC1B5C1A0D001558EE /* Hamtring curls.png */; };
-		9105AEE91B5C1A4C001558EE /* Leg press.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9105AECD1B5C1A0D001558EE /* Leg press.png */; };
-		9105AEEA1B5C1A4C001558EE /* Row.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9105AECE1B5C1A0D001558EE /* Row.png */; };
-		9105AEEB1B5C1A4C001558EE /* Shoulder press.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9105AECF1B5C1A0D001558EE /* Shoulder press.png */; };
-		9105AEEC1B5C1A4C001558EE /* Sit-ups.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9105AED01B5C1A0D001558EE /* Sit-ups.png */; };
-		9105AEED1B5C1A4C001558EE /* Squats.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9105AED11B5C1A0D001558EE /* Squats.png */; };
-		9105AEEE1B5C1A4C001558EE /* Triceps press.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9105AED21B5C1A0D001558EE /* Triceps press.png */; };
-		9105AEF01B5C1AE1001558EE /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9105AEEF1B5C1AE1001558EE /* Exercise.swift */; };
+		9105AEF41B5C1E0C001558EE /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9105AEF31B5C1E0C001558EE /* Exercise.swift */; };
 		9109067E1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9109067D1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift */; };
 		910ACB531B5A8C5800F5A1FB /* bjarte.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 910ACB521B5A8C5800F5A1FB /* bjarte.jpg */; };
 		910ACB551B5A8DCA00F5A1FB /* exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = 910ACB541B5A8DCA00F5A1FB /* exercises.json */; };
@@ -102,20 +88,6 @@
 			dstSubfolderSpec = 16;
 			files = (
 				910ACB591B5AB3A800F5A1FB /* exercises.json in CopyFiles */,
-				9105AEE11B5C1A4C001558EE /* Back flies.gif in CopyFiles */,
-				9105AEE21B5C1A4C001558EE /* Barbell curls.png in CopyFiles */,
-				9105AEE31B5C1A4C001558EE /* Bench press.png in CopyFiles */,
-				9105AEE41B5C1A4C001558EE /* Chin-up.png in CopyFiles */,
-				9105AEE51B5C1A4C001558EE /* Dead lifts.png in CopyFiles */,
-				9105AEE61B5C1A4C001558EE /* Decline crunch.png in CopyFiles */,
-				9105AEE71B5C1A4C001558EE /* EZ-Curls.png in CopyFiles */,
-				9105AEE81B5C1A4C001558EE /* Hamtring curls.png in CopyFiles */,
-				9105AEE91B5C1A4C001558EE /* Leg press.png in CopyFiles */,
-				9105AEEA1B5C1A4C001558EE /* Row.png in CopyFiles */,
-				9105AEEB1B5C1A4C001558EE /* Shoulder press.png in CopyFiles */,
-				9105AEEC1B5C1A4C001558EE /* Sit-ups.png in CopyFiles */,
-				9105AEED1B5C1A4C001558EE /* Squats.png in CopyFiles */,
-				9105AEEE1B5C1A4C001558EE /* Triceps press.png in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +110,7 @@
 		9105AED01B5C1A0D001558EE /* Sit-ups.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sit-ups.png"; sourceTree = "<group>"; };
 		9105AED11B5C1A0D001558EE /* Squats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Squats.png; sourceTree = "<group>"; };
 		9105AED21B5C1A0D001558EE /* Triceps press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Triceps press.png"; sourceTree = "<group>"; };
-		9105AEEF1B5C1AE1001558EE /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = ../Exercise.swift; sourceTree = "<group>"; };
+		9105AEF31B5C1E0C001558EE /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = ../Exercise.swift; sourceTree = "<group>"; };
 		9109067D1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLibraryTableViewController.swift; sourceTree = "<group>"; };
 		910ACB521B5A8C5800F5A1FB /* bjarte.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bjarte.jpg; sourceTree = "<group>"; };
 		910ACB541B5A8DCA00F5A1FB /* exercises.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = exercises.json; sourceTree = "<group>"; };
@@ -269,7 +241,7 @@
 				910ACBA81B5AC07A00F5A1FB /* PerformedRepetitionSet.swift */,
 				910ACBA61B5AC07A00F5A1FB /* ExerciseRoutine.swift */,
 				910ACBA21B5AC07A00F5A1FB /* PerformedExerciseData.swift */,
-				9105AEEF1B5C1AE1001558EE /* Exercise.swift */,
+				9105AEF31B5C1E0C001558EE /* Exercise.swift */,
 				910ACB541B5A8DCA00F5A1FB /* exercises.json */,
 				91121D131B36F1EB004BAC11 /* MAX.xcdatamodeld */,
 			);
@@ -526,7 +498,7 @@
 				9114E8C71B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift in Sources */,
 				9103F9E11B37123C00735BF7 /* ExerciseTableViewController.swift in Sources */,
 				910ACBB71B5AC07B00F5A1FB /* TimeSet.swift in Sources */,
-				9105AEF01B5C1AE1001558EE /* Exercise.swift in Sources */,
+				9105AEF41B5C1E0C001558EE /* Exercise.swift in Sources */,
 				9126E8FA1B453045006EA187 /* ExerciseTrainingView.swift in Sources */,
 				91121D151B36F1EB004BAC11 /* MAX.xcdatamodeld in Sources */,
 				91121D121B36F1EB004BAC11 /* AppDelegate.swift in Sources */,

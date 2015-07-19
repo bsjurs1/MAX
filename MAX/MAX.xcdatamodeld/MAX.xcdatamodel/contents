@@ -2,7 +2,7 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Exercise" representedClassName="MAX.Exercise" syncable="YES">
         <attribute name="exerciseDescription" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="exerciseImagePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="exerciseImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sectionId" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="exerciseRoutine" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="ExerciseRoutine" inverseName="exercises" inverseEntity="ExerciseRoutine" syncable="YES"/>
