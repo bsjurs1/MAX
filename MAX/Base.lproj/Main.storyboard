@@ -1422,6 +1422,23 @@
             </objects>
             <point key="canvasLocation" x="4734" y="1829"/>
         </scene>
+        <!--Exercise Description View Controller-->
+        <scene sceneID="WOE-Fy-T7q">
+            <objects>
+                <viewController id="Ks6-Ic-k6A" customClass="ExerciseDescriptionViewController" customModule="MAX" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gHc-gi-rU7"/>
+                        <viewControllerLayoutGuide type="bottom" id="EOU-jU-Zob"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Udq-Mt-hie">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Qd-PV-8Sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2385" y="251"/>
+        </scene>
         <!--Exercise Library View Controller-->
         <scene sceneID="wSn-mb-1Ia">
             <objects>

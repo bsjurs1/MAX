@@ -40,8 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             exerciseToInsert.setValue(sectionID, forKey: "sectionId")
             
         }
-        
-        testCoreData()
 
         return true
     }
