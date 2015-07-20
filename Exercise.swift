@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Bjarte Sjursen. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 class Exercise: NSManagedObject {
@@ -18,5 +18,17 @@ class Exercise: NSManagedObject {
     @NSManaged var exerciseVideo: ExerciseVideo
     @NSManaged var performedExerciseData: NSSet
     @NSManaged var routineExercises: NSSet
+    
+    func insertImage(imagePath : String){
+        
+        self.exerciseImage = NSData(contentsOfFile: "/exerciseImage/" + imagePath)!
+        
+    }
+    func getImage()-> UIImage {
+        
+        return UIImage(data: self.exerciseImage)!
+        
+    }
+
 
 }
