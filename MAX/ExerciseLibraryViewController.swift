@@ -12,6 +12,7 @@ class ExerciseLibraryViewController: UIViewController {
     
     var appDelegate = AppDelegate()
     @IBOutlet weak var addExerciseButton: UIButton!
+    var exerciseLibraryTableViewController : ExerciseLibraryTableViewController?
     
     var parentNavigationController : UINavigationController?
     
@@ -25,13 +26,13 @@ class ExerciseLibraryViewController: UIViewController {
     
     func setUpExerciseLibraryTableViewController(){
         
-        var exerciseLibraryViewController = self.storyboard?.instantiateViewControllerWithIdentifier("libraryTableViewController") as? ExerciseLibraryTableViewController
+        exerciseLibraryTableViewController = self.storyboard?.instantiateViewControllerWithIdentifier("libraryTableViewController") as? ExerciseLibraryTableViewController
         
-        self.addChildViewController(exerciseLibraryViewController!)
+        self.addChildViewController(exerciseLibraryTableViewController!)
         
-        self.view.addSubview(exerciseLibraryViewController!.view)
+        self.view.addSubview(exerciseLibraryTableViewController!.view)
         
-        exerciseLibraryViewController?.view.frame = CGRectMake(0, 44,UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height-44)
+        exerciseLibraryTableViewController?.view.frame = CGRectMake(0, 44,UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height-44)
         
     }
     

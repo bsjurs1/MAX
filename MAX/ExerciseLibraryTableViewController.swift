@@ -12,6 +12,8 @@ class ExerciseLibraryTableViewController: ExerciseTableViewController, UIGesture
     
     @IBOutlet weak var exerciseSearchBar: UISearchBar!
     
+    var parentView : CreateRoutineViewController?
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -70,18 +72,13 @@ class ExerciseLibraryTableViewController: ExerciseTableViewController, UIGesture
         cell.exerciseNameLabel?.text = exercise.name
         cell.lastPerformanceDateLabel?.text = "Last performed 20.may.2015"
 
-        
-        var longPress = UILongPressGestureRecognizer(target: self, action: "dragCell:")
-        longPress.delegate = self
-        cell.addGestureRecognizer(longPress)
+        if(parentView != nil){
+            var longPress = UILongPressGestureRecognizer(target: parentView!, action: "longPressedCell:")
+            longPress.delegate = self
+            cell.addGestureRecognizer(longPress)
+        }
         
         return cell
-        
-    }
-    
-    func dragCell(recognizer : UILongPressGestureRecognizer){
-        
-        println("DRAG")
         
     }
 
