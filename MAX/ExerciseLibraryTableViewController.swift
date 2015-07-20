@@ -8,13 +8,9 @@
 
 import UIKit
 
-class ExerciseLibraryTableViewController: ExerciseTableViewController {
+class ExerciseLibraryTableViewController: ExerciseTableViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var exerciseSearchBar: UISearchBar!
-
-    
-    let alphabetArray : [String] = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s",
-        "t","u","v","w","x","y","z"]
     
     override func viewDidLoad() {
         
@@ -25,8 +21,6 @@ class ExerciseLibraryTableViewController: ExerciseTableViewController {
     override func sectionIndexTitlesForTableView(tableView: UITableView) -> [AnyObject]! {
         return fetchedResultsController.sectionIndexTitles
     }
-    
-    
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
@@ -62,6 +56,37 @@ class ExerciseLibraryTableViewController: ExerciseTableViewController {
         println(indexPath.row)
         
     }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        
+        var cell : ExerciseProfileTableViewCell = tableView.dequeueReusableCellWithIdentifier("exerciseCell", forIndexPath: indexPath) as! ExerciseProfileTableViewCell
+        
+        let exercise = fetchedResultsController.objectAtIndexPath(indexPath) as! Exercise
+        
+        cell.backgroundColor = UIColor.clearColor()
+        
+        cell.exerciseImageView?.image = exercise.getImage()
+        cell.exerciseNameLabel?.text = exercise.name
+        cell.lastPerformanceDateLabel?.text = "Last performed 20.may.2015"
+
+        
+        var longPress = UILongPressGestureRecognizer(target: self, action: "dragCell:")
+        longPress.delegate = self
+        cell.addGestureRecognizer(longPress)
+        
+        return cell
+        
+    }
+    
+    func dragCell(recognizer : UILongPressGestureRecognizer){
+        
+        println("DRAG")
+        
+    }
+
+    
+    
     
 }
 

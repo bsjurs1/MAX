@@ -908,6 +908,9 @@
                                                             <include reference="LFp-XK-5Et"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <segue destination="bmP-O9-yI8" kind="push" id="PGv-Up-EMs"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1467,19 +1470,32 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Back flies" translatesAutoresizingMaskIntoConstraints="NO" id="zxy-fZ-vfz">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="VHW-ep-2lp"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="VHW-ep-2lp"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="VHW-ep-2lp"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="h8d-tP-JuF" firstAttribute="trailing" secondItem="Udq-Mt-hie" secondAttribute="trailingMargin" id="2AS-CV-Ac4"/>
                             <constraint firstItem="vmB-Su-NMu" firstAttribute="top" secondItem="gHc-gi-rU7" secondAttribute="bottom" id="7Uh-bQ-l0x"/>
+                            <constraint firstAttribute="centerX" secondItem="zxy-fZ-vfz" secondAttribute="centerX" id="JYb-pt-p9J"/>
                             <constraint firstItem="vmB-Su-NMu" firstAttribute="trailing" secondItem="Udq-Mt-hie" secondAttribute="trailingMargin" id="LVz-bP-ocR"/>
-                            <constraint firstItem="zxy-fZ-vfz" firstAttribute="leading" secondItem="Udq-Mt-hie" secondAttribute="leadingMargin" constant="-16" id="NLq-T7-ZTs"/>
                             <constraint firstItem="EOU-jU-Zob" firstAttribute="top" secondItem="h8d-tP-JuF" secondAttribute="bottom" constant="20" id="VIO-w8-h8e"/>
-                            <constraint firstItem="zxy-fZ-vfz" firstAttribute="top" secondItem="Udq-Mt-hie" secondAttribute="topMargin" id="lKq-dD-DBn"/>
+                            <constraint firstItem="zxy-fZ-vfz" firstAttribute="top" secondItem="gHc-gi-rU7" secondAttribute="bottom" constant="8" id="msP-bF-U26"/>
                             <constraint firstItem="h8d-tP-JuF" firstAttribute="top" secondItem="gHc-gi-rU7" secondAttribute="bottom" constant="145" id="n7v-Bz-fAc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zxy-fZ-vfz" secondAttribute="trailing" constant="-16" id="piH-pG-1Cp"/>
                             <constraint firstItem="h8d-tP-JuF" firstAttribute="leading" secondItem="Udq-Mt-hie" secondAttribute="leadingMargin" id="tJI-Z7-3vf"/>
+                            <constraint firstAttribute="centerY" secondItem="zxy-fZ-vfz" secondAttribute="centerY" constant="207.5" id="utZ-Zr-iyS"/>
                             <constraint firstItem="h8d-tP-JuF" firstAttribute="top" secondItem="zxy-fZ-vfz" secondAttribute="bottom" constant="8" id="vrT-EY-Zn4"/>
                         </constraints>
                         <variation key="default">
@@ -1490,16 +1506,16 @@
                                 <exclude reference="zxy-fZ-vfz"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="NLq-T7-ZTs"/>
-                                <exclude reference="lKq-dD-DBn"/>
-                                <exclude reference="piH-pG-1Cp"/>
+                                <exclude reference="VIO-w8-h8e"/>
+                                <exclude reference="7Uh-bQ-l0x"/>
+                                <exclude reference="LVz-bP-ocR"/>
                                 <exclude reference="2AS-CV-Ac4"/>
                                 <exclude reference="n7v-Bz-fAc"/>
                                 <exclude reference="tJI-Z7-3vf"/>
                                 <exclude reference="vrT-EY-Zn4"/>
-                                <exclude reference="7Uh-bQ-l0x"/>
-                                <exclude reference="LVz-bP-ocR"/>
-                                <exclude reference="VIO-w8-h8e"/>
+                                <exclude reference="JYb-pt-p9J"/>
+                                <exclude reference="msP-bF-U26"/>
+                                <exclude reference="utZ-Zr-iyS"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1510,16 +1526,16 @@
                                 <include reference="zxy-fZ-vfz"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="NLq-T7-ZTs"/>
-                                <include reference="lKq-dD-DBn"/>
-                                <include reference="piH-pG-1Cp"/>
+                                <include reference="VIO-w8-h8e"/>
+                                <include reference="7Uh-bQ-l0x"/>
+                                <include reference="LVz-bP-ocR"/>
                                 <include reference="2AS-CV-Ac4"/>
                                 <include reference="n7v-Bz-fAc"/>
                                 <include reference="tJI-Z7-3vf"/>
                                 <include reference="vrT-EY-Zn4"/>
-                                <include reference="7Uh-bQ-l0x"/>
-                                <include reference="LVz-bP-ocR"/>
-                                <include reference="VIO-w8-h8e"/>
+                                <include reference="JYb-pt-p9J"/>
+                                <include reference="msP-bF-U26"/>
+                                <include reference="utZ-Zr-iyS"/>
                             </mask>
                         </variation>
                     </view>
@@ -1957,6 +1973,7 @@
         <image name="squats.png" width="400" height="236"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="RiR-bL-pGJ"/>
         <segue reference="mm0-ba-r1z"/>
     </inferredMetricsTieBreakers>
 </document>

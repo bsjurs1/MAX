@@ -24,9 +24,9 @@ class CreateRoutineViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = appDelegate.maxTintColor
         self.addRoutineImageButton.tintColor = appDelegate.maxTintColor
         
-        addExerciseLibraryViewController()
-        
         setUpButtons()
+        
+        addExerciseLibraryViewController()
         
     }
     
@@ -35,8 +35,6 @@ class CreateRoutineViewController: UIViewController {
         exerciseLibraryViewController = (self.storyboard?.instantiateViewControllerWithIdentifier("exerciseLibraryViewController") as? ExerciseLibraryViewController)!
         
         self.addChildViewController(exerciseLibraryViewController!)
-        
-        self.view.addSubview(exerciseLibraryViewController!.view)
     
         exerciseLibraryViewController!.view.frame = CGRectMake(0, (UIScreen.mainScreen().bounds.size.height/2) ,UIScreen.mainScreen().bounds.size.width, (UIScreen.mainScreen().bounds.size.height/2))
         
@@ -47,15 +45,17 @@ class CreateRoutineViewController: UIViewController {
         
         exerciseLibraryViewController!.view.addGestureRecognizer(gestureRecognizer)
         
-        self.view.bringSubviewToFront(exerciseLibraryViewController!.view)
+        self.view.addSubview(exerciseLibraryViewController!.view)
+
         
+        setUpButtons()
     }
     
     func setUpButtons(){
         
-        self.view.sendSubviewToBack(routineNameTextField)
-        self.view.sendSubviewToBack(addRoutineImageButton)
-        self.view.sendSubviewToBack(dragStaticLabel)
+        self.view.insertSubview(dragStaticLabel, belowSubview: exerciseLibraryViewController!.view)
+        self.view.insertSubview(routineNameTextField, belowSubview: exerciseLibraryViewController!.view)
+        self.view.insertSubview(addRoutineImageButton, belowSubview: exerciseLibraryViewController!.view)
         
     }
     
