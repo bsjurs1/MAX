@@ -29,6 +29,15 @@ class CreateRoutineViewController: UIViewController {
         addExerciseLibraryViewController()
         
         setUpButtons()
+        
+        addNewRoutineTableViewController()
+        
+    }
+    
+    func addNewRoutineTableViewController(){
+        
+        
+        
     }
     
     func addExerciseLibraryViewController(){
@@ -80,8 +89,6 @@ class CreateRoutineViewController: UIViewController {
     
     func longPressedCell(recognizer : UILongPressGestureRecognizer){
         
-        println("DRAG")
-        
         var cell : ExerciseProfileTableViewCell?
         
         switch (recognizer.state){
@@ -119,6 +126,10 @@ class CreateRoutineViewController: UIViewController {
             
             break
         case UIGestureRecognizerState.Ended:
+            
+            if(recognizer.locationInView(self.view).y < exerciseLibraryViewController?.view.frame.origin.y ){
+                dragStaticLabel.hidden = true
+            }
             
             break
         default:
