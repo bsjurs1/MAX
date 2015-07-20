@@ -9,22 +9,10 @@
 /* Begin PBXBuildFile section */
 		9103F9E11B37123C00735BF7 /* ExerciseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9103F9E01B37123C00735BF7 /* ExerciseTableViewController.swift */; };
 		9103F9E31B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9103F9E21B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift */; };
-		9105AEF41B5C1E0C001558EE /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9105AEF31B5C1E0C001558EE /* Exercise.swift */; };
 		9109067E1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9109067D1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift */; };
 		910ACB531B5A8C5800F5A1FB /* bjarte.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 910ACB521B5A8C5800F5A1FB /* bjarte.jpg */; };
 		910ACB551B5A8DCA00F5A1FB /* exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = 910ACB541B5A8DCA00F5A1FB /* exercises.json */; };
 		910ACB591B5AB3A800F5A1FB /* exercises.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 910ACB541B5A8DCA00F5A1FB /* exercises.json */; };
-		910ACBA31B5AC07A00F5A1FB /* PerformedExerciseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910ACBA21B5AC07A00F5A1FB /* PerformedExerciseData.swift */; };
-		910ACBA71B5AC07A00F5A1FB /* ExerciseRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910ACBA61B5AC07A00F5A1FB /* ExerciseRoutine.swift */; };
-		910ACBA91B5AC07A00F5A1FB /* PerformedRepetitionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910ACBA81B5AC07A00F5A1FB /* PerformedRepetitionSet.swift */; };
-		910ACBAB1B5AC07A00F5A1FB /* PerformedTimeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910ACBAA1B5AC07A00F5A1FB /* PerformedTimeSet.swift */; };
-		910ACBAD1B5AC07B00F5A1FB /* RepetitionExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910ACBAC1B5AC07B00F5A1FB /* RepetitionExercise.swift */; };
-		910ACBAF1B5AC07B00F5A1FB /* PerformedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910ACBAE1B5AC07B00F5A1FB /* PerformedSet.swift */; };
-		910ACBB11B5AC07B00F5A1FB /* RepetitionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910ACBB01B5AC07B00F5A1FB /* RepetitionSet.swift */; };
-		910ACBB31B5AC07B00F5A1FB /* ExerciseVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910ACBB21B5AC07B00F5A1FB /* ExerciseVideo.swift */; };
-		910ACBB51B5AC07B00F5A1FB /* PerformedExerciseRoutineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910ACBB41B5AC07B00F5A1FB /* PerformedExerciseRoutineData.swift */; };
-		910ACBB71B5AC07B00F5A1FB /* TimeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910ACBB61B5AC07B00F5A1FB /* TimeSet.swift */; };
-		910ACBB91B5AC07B00F5A1FB /* TimeExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910ACBB81B5AC07B00F5A1FB /* TimeExercise.swift */; };
 		910BC4361B3A9A230078FF8B /* ExerciseProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910BC4351B3A9A230078FF8B /* ExerciseProfileTableViewController.swift */; };
 		910BC43C1B3AA2D30078FF8B /* ExerciseEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910BC43B1B3AA2D30078FF8B /* ExerciseEditTableViewCell.swift */; };
 		910BC4401B3AAD000078FF8B /* EditExerciseSetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910BC43F1B3AAD000078FF8B /* EditExerciseSetTableViewCell.swift */; };
@@ -38,6 +26,21 @@
 		9114E8C51B3C39220034127B /* ExerciseRoutinesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E8C41B3C39220034127B /* ExerciseRoutinesCollectionViewController.swift */; };
 		9114E8C71B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E8C61B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift */; };
 		9116C3BD1B5BEE3C00D8F427 /* ExerciseDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9116C3BC1B5BEE3C00D8F427 /* ExerciseDescriptionViewController.swift */; };
+		911B82471B5D81BA009CAFF0 /* RepetitionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B82461B5D81BA009CAFF0 /* RepetitionSet.swift */; };
+		911B82491B5D81BA009CAFF0 /* RepetitionRoutineExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B82481B5D81BA009CAFF0 /* RepetitionRoutineExercise.swift */; };
+		911B824B1B5D81BA009CAFF0 /* TimeExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B824A1B5D81BA009CAFF0 /* TimeExercise.swift */; };
+		911B824D1B5D81BA009CAFF0 /* ExerciseVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B824C1B5D81BA009CAFF0 /* ExerciseVideo.swift */; };
+		911B824F1B5D81BA009CAFF0 /* PerformedExerciseRoutineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B824E1B5D81BA009CAFF0 /* PerformedExerciseRoutineData.swift */; };
+		911B82511B5D81BA009CAFF0 /* RepetitionExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B82501B5D81BA009CAFF0 /* RepetitionExercise.swift */; };
+		911B82531B5D81BA009CAFF0 /* PerformedExerciseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B82521B5D81BA009CAFF0 /* PerformedExerciseData.swift */; };
+		911B82551B5D81BA009CAFF0 /* TimeRoutineExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B82541B5D81BA009CAFF0 /* TimeRoutineExercise.swift */; };
+		911B82571B5D81BB009CAFF0 /* PerformedTimeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B82561B5D81BB009CAFF0 /* PerformedTimeSet.swift */; };
+		911B82591B5D81BB009CAFF0 /* ExerciseRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B82581B5D81BB009CAFF0 /* ExerciseRoutine.swift */; };
+		911B825B1B5D81BB009CAFF0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B825A1B5D81BB009CAFF0 /* Exercise.swift */; };
+		911B825D1B5D81BB009CAFF0 /* PerformedRepetitionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B825C1B5D81BB009CAFF0 /* PerformedRepetitionSet.swift */; };
+		911B825F1B5D81BB009CAFF0 /* PerformedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B825E1B5D81BB009CAFF0 /* PerformedSet.swift */; };
+		911B82611B5D81BB009CAFF0 /* TimeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B82601B5D81BB009CAFF0 /* TimeSet.swift */; };
+		911B82631B5D81BB009CAFF0 /* RoutineExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B82621B5D81BB009CAFF0 /* RoutineExercise.swift */; };
 		9126E8F81B452EB4006EA187 /* PerformExerciseRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126E8F71B452EB4006EA187 /* PerformExerciseRoutineViewController.swift */; };
 		9126E8FA1B453045006EA187 /* ExerciseTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126E8F91B453045006EA187 /* ExerciseTrainingView.swift */; };
 		9128F3EB1B4C059A00B2475B /* 1230_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9128F3EA1B4C059A00B2475B /* 1230_0.jpg */; };
@@ -82,21 +85,9 @@
 /* Begin PBXFileReference section */
 		9103F9E01B37123C00735BF7 /* ExerciseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewController.swift; sourceTree = "<group>"; };
 		9103F9E21B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseProfileTableViewCell.swift; sourceTree = "<group>"; };
-		9105AEF31B5C1E0C001558EE /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = ../Exercise.swift; sourceTree = "<group>"; };
 		9109067D1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLibraryTableViewController.swift; sourceTree = "<group>"; };
 		910ACB521B5A8C5800F5A1FB /* bjarte.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bjarte.jpg; sourceTree = "<group>"; };
 		910ACB541B5A8DCA00F5A1FB /* exercises.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = exercises.json; sourceTree = "<group>"; };
-		910ACBA21B5AC07A00F5A1FB /* PerformedExerciseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerformedExerciseData.swift; path = ../PerformedExerciseData.swift; sourceTree = "<group>"; };
-		910ACBA61B5AC07A00F5A1FB /* ExerciseRoutine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseRoutine.swift; path = ../ExerciseRoutine.swift; sourceTree = "<group>"; };
-		910ACBA81B5AC07A00F5A1FB /* PerformedRepetitionSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerformedRepetitionSet.swift; path = ../PerformedRepetitionSet.swift; sourceTree = "<group>"; };
-		910ACBAA1B5AC07A00F5A1FB /* PerformedTimeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerformedTimeSet.swift; path = ../PerformedTimeSet.swift; sourceTree = "<group>"; };
-		910ACBAC1B5AC07B00F5A1FB /* RepetitionExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepetitionExercise.swift; path = ../RepetitionExercise.swift; sourceTree = "<group>"; };
-		910ACBAE1B5AC07B00F5A1FB /* PerformedSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerformedSet.swift; path = ../PerformedSet.swift; sourceTree = "<group>"; };
-		910ACBB01B5AC07B00F5A1FB /* RepetitionSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepetitionSet.swift; path = ../RepetitionSet.swift; sourceTree = "<group>"; };
-		910ACBB21B5AC07B00F5A1FB /* ExerciseVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseVideo.swift; path = ../ExerciseVideo.swift; sourceTree = "<group>"; };
-		910ACBB41B5AC07B00F5A1FB /* PerformedExerciseRoutineData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerformedExerciseRoutineData.swift; path = ../PerformedExerciseRoutineData.swift; sourceTree = "<group>"; };
-		910ACBB61B5AC07B00F5A1FB /* TimeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeSet.swift; path = ../TimeSet.swift; sourceTree = "<group>"; };
-		910ACBB81B5AC07B00F5A1FB /* TimeExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeExercise.swift; path = ../TimeExercise.swift; sourceTree = "<group>"; };
 		910BC4351B3A9A230078FF8B /* ExerciseProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseProfileTableViewController.swift; sourceTree = "<group>"; };
 		910BC43B1B3AA2D30078FF8B /* ExerciseEditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseEditTableViewCell.swift; sourceTree = "<group>"; };
 		910BC43F1B3AAD000078FF8B /* EditExerciseSetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditExerciseSetTableViewCell.swift; sourceTree = "<group>"; };
@@ -114,6 +105,21 @@
 		9114E8C41B3C39220034127B /* ExerciseRoutinesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutinesCollectionViewController.swift; sourceTree = "<group>"; };
 		9114E8C61B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineCollectionViewCell.swift; sourceTree = "<group>"; };
 		9116C3BC1B5BEE3C00D8F427 /* ExerciseDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseDescriptionViewController.swift; sourceTree = "<group>"; };
+		911B82461B5D81BA009CAFF0 /* RepetitionSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepetitionSet.swift; path = ../RepetitionSet.swift; sourceTree = "<group>"; };
+		911B82481B5D81BA009CAFF0 /* RepetitionRoutineExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepetitionRoutineExercise.swift; path = ../RepetitionRoutineExercise.swift; sourceTree = "<group>"; };
+		911B824A1B5D81BA009CAFF0 /* TimeExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeExercise.swift; path = ../TimeExercise.swift; sourceTree = "<group>"; };
+		911B824C1B5D81BA009CAFF0 /* ExerciseVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseVideo.swift; path = ../ExerciseVideo.swift; sourceTree = "<group>"; };
+		911B824E1B5D81BA009CAFF0 /* PerformedExerciseRoutineData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerformedExerciseRoutineData.swift; path = ../PerformedExerciseRoutineData.swift; sourceTree = "<group>"; };
+		911B82501B5D81BA009CAFF0 /* RepetitionExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepetitionExercise.swift; path = ../RepetitionExercise.swift; sourceTree = "<group>"; };
+		911B82521B5D81BA009CAFF0 /* PerformedExerciseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerformedExerciseData.swift; path = ../PerformedExerciseData.swift; sourceTree = "<group>"; };
+		911B82541B5D81BA009CAFF0 /* TimeRoutineExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeRoutineExercise.swift; path = ../TimeRoutineExercise.swift; sourceTree = "<group>"; };
+		911B82561B5D81BB009CAFF0 /* PerformedTimeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerformedTimeSet.swift; path = ../PerformedTimeSet.swift; sourceTree = "<group>"; };
+		911B82581B5D81BB009CAFF0 /* ExerciseRoutine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseRoutine.swift; path = ../ExerciseRoutine.swift; sourceTree = "<group>"; };
+		911B825A1B5D81BB009CAFF0 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = ../Exercise.swift; sourceTree = "<group>"; };
+		911B825C1B5D81BB009CAFF0 /* PerformedRepetitionSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerformedRepetitionSet.swift; path = ../PerformedRepetitionSet.swift; sourceTree = "<group>"; };
+		911B825E1B5D81BB009CAFF0 /* PerformedSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerformedSet.swift; path = ../PerformedSet.swift; sourceTree = "<group>"; };
+		911B82601B5D81BB009CAFF0 /* TimeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeSet.swift; path = ../TimeSet.swift; sourceTree = "<group>"; };
+		911B82621B5D81BB009CAFF0 /* RoutineExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoutineExercise.swift; path = ../RoutineExercise.swift; sourceTree = "<group>"; };
 		9126E8F71B452EB4006EA187 /* PerformExerciseRoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformExerciseRoutineViewController.swift; sourceTree = "<group>"; };
 		9126E8F91B453045006EA187 /* ExerciseTrainingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTrainingView.swift; sourceTree = "<group>"; };
 		9128F3EA1B4C059A00B2475B /* 1230_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1230_0.jpg; path = ../1230_0.jpg; sourceTree = "<group>"; };
@@ -181,18 +187,21 @@
 		910BC4391B3A9BCA0078FF8B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				910ACBB81B5AC07B00F5A1FB /* TimeExercise.swift */,
-				910ACBB61B5AC07B00F5A1FB /* TimeSet.swift */,
-				910ACBB41B5AC07B00F5A1FB /* PerformedExerciseRoutineData.swift */,
-				910ACBB21B5AC07B00F5A1FB /* ExerciseVideo.swift */,
-				910ACBB01B5AC07B00F5A1FB /* RepetitionSet.swift */,
-				910ACBAE1B5AC07B00F5A1FB /* PerformedSet.swift */,
-				910ACBAC1B5AC07B00F5A1FB /* RepetitionExercise.swift */,
-				910ACBAA1B5AC07A00F5A1FB /* PerformedTimeSet.swift */,
-				910ACBA81B5AC07A00F5A1FB /* PerformedRepetitionSet.swift */,
-				910ACBA61B5AC07A00F5A1FB /* ExerciseRoutine.swift */,
-				910ACBA21B5AC07A00F5A1FB /* PerformedExerciseData.swift */,
-				9105AEF31B5C1E0C001558EE /* Exercise.swift */,
+				911B82621B5D81BB009CAFF0 /* RoutineExercise.swift */,
+				911B82601B5D81BB009CAFF0 /* TimeSet.swift */,
+				911B825E1B5D81BB009CAFF0 /* PerformedSet.swift */,
+				911B825C1B5D81BB009CAFF0 /* PerformedRepetitionSet.swift */,
+				911B825A1B5D81BB009CAFF0 /* Exercise.swift */,
+				911B82581B5D81BB009CAFF0 /* ExerciseRoutine.swift */,
+				911B82561B5D81BB009CAFF0 /* PerformedTimeSet.swift */,
+				911B82541B5D81BA009CAFF0 /* TimeRoutineExercise.swift */,
+				911B82521B5D81BA009CAFF0 /* PerformedExerciseData.swift */,
+				911B82501B5D81BA009CAFF0 /* RepetitionExercise.swift */,
+				911B824E1B5D81BA009CAFF0 /* PerformedExerciseRoutineData.swift */,
+				911B824C1B5D81BA009CAFF0 /* ExerciseVideo.swift */,
+				911B824A1B5D81BA009CAFF0 /* TimeExercise.swift */,
+				911B82481B5D81BA009CAFF0 /* RepetitionRoutineExercise.swift */,
+				911B82461B5D81BA009CAFF0 /* RepetitionSet.swift */,
 				910ACB541B5A8DCA00F5A1FB /* exercises.json */,
 				91121D131B36F1EB004BAC11 /* MAX.xcdatamodeld */,
 			);
@@ -409,7 +418,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				910ACBA31B5AC07A00F5A1FB /* PerformedExerciseData.swift in Sources */,
 				919B4E141B38995300C82A54 /* ExerciseRoutineTableViewController.swift in Sources */,
 				91B639171B49B62200EEE48B /* SetsView.swift in Sources */,
 				91BDBC391B3DD0570014AD41 /* CreateRoutineViewController.swift in Sources */,
@@ -418,33 +426,37 @@
 				9109067E1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift in Sources */,
 				9116C3BD1B5BEE3C00D8F427 /* ExerciseDescriptionViewController.swift in Sources */,
 				9103F9E31B3712BF00735BF7 /* ExerciseProfileTableViewCell.swift in Sources */,
+				911B82511B5D81BA009CAFF0 /* RepetitionExercise.swift in Sources */,
+				911B82491B5D81BA009CAFF0 /* RepetitionRoutineExercise.swift in Sources */,
 				910BC43C1B3AA2D30078FF8B /* ExerciseEditTableViewCell.swift in Sources */,
-				910ACBAF1B5AC07B00F5A1FB /* PerformedSet.swift in Sources */,
-				910ACBA71B5AC07A00F5A1FB /* ExerciseRoutine.swift in Sources */,
-				910ACBAB1B5AC07A00F5A1FB /* PerformedTimeSet.swift in Sources */,
 				910BC4361B3A9A230078FF8B /* ExerciseProfileTableViewController.swift in Sources */,
+				911B82531B5D81BA009CAFF0 /* PerformedExerciseData.swift in Sources */,
+				911B82551B5D81BA009CAFF0 /* TimeRoutineExercise.swift in Sources */,
+				911B824D1B5D81BA009CAFF0 /* ExerciseVideo.swift in Sources */,
 				9130C26B1B3C9A4500368E54 /* ExerciseRoutineCollectionSearchBarHeaderView.swift in Sources */,
-				910ACBAD1B5AC07B00F5A1FB /* RepetitionExercise.swift in Sources */,
-				910ACBB91B5AC07B00F5A1FB /* TimeExercise.swift in Sources */,
 				919B4E1A1B38A0F600C82A54 /* ExerciseRoutineViewController.swift in Sources */,
+				911B825B1B5D81BB009CAFF0 /* Exercise.swift in Sources */,
+				911B82591B5D81BB009CAFF0 /* ExerciseRoutine.swift in Sources */,
 				91BDBC3D1B3DEACF0014AD41 /* CreateExerciseForLibraryViewController.swift in Sources */,
+				911B82571B5D81BB009CAFF0 /* PerformedTimeSet.swift in Sources */,
 				919447F61B4C62C300C752D6 /* ExerciseRoutineTrainingView.swift in Sources */,
 				919B4E181B389D3A00C82A54 /* ExerciseTableViewCell.swift in Sources */,
-				910ACBB31B5AC07B00F5A1FB /* ExerciseVideo.swift in Sources */,
+				911B82471B5D81BA009CAFF0 /* RepetitionSet.swift in Sources */,
 				9114E8C71B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift in Sources */,
 				9103F9E11B37123C00735BF7 /* ExerciseTableViewController.swift in Sources */,
-				910ACBB71B5AC07B00F5A1FB /* TimeSet.swift in Sources */,
-				9105AEF41B5C1E0C001558EE /* Exercise.swift in Sources */,
 				9126E8FA1B453045006EA187 /* ExerciseTrainingView.swift in Sources */,
+				911B825D1B5D81BB009CAFF0 /* PerformedRepetitionSet.swift in Sources */,
 				91121D151B36F1EB004BAC11 /* MAX.xcdatamodeld in Sources */,
 				91121D121B36F1EB004BAC11 /* AppDelegate.swift in Sources */,
-				910ACBA91B5AC07A00F5A1FB /* PerformedRepetitionSet.swift in Sources */,
+				911B82631B5D81BB009CAFF0 /* RoutineExercise.swift in Sources */,
+				911B824F1B5D81BA009CAFF0 /* PerformedExerciseRoutineData.swift in Sources */,
+				911B825F1B5D81BB009CAFF0 /* PerformedSet.swift in Sources */,
 				91BDBC3B1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift in Sources */,
 				919B4E201B39A9DA00C82A54 /* ExerciseProfileViewController.swift in Sources */,
-				910ACBB51B5AC07B00F5A1FB /* PerformedExerciseRoutineData.swift in Sources */,
+				911B824B1B5D81BA009CAFF0 /* TimeExercise.swift in Sources */,
 				9126E8F81B452EB4006EA187 /* PerformExerciseRoutineViewController.swift in Sources */,
-				910ACBB11B5AC07B00F5A1FB /* RepetitionSet.swift in Sources */,
 				910BC4421B3AAFC40078FF8B /* SetsTableViewController.swift in Sources */,
+				911B82611B5D81BB009CAFF0 /* TimeSet.swift in Sources */,
 				910BC4401B3AAD000078FF8B /* EditExerciseSetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

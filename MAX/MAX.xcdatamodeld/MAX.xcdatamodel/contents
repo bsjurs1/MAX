@@ -41,7 +41,7 @@
         <relationship name="didSet" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="TimeSet" inverseName="performedSets" inverseEntity="TimeSet" syncable="YES"/>
     </entity>
     <entity name="RepetitionExercise" representedClassName="MAX.RepetitionExercise" parentEntity="Exercise" syncable="YES"/>
-    <entity name="RepetitionRoutineExercise" parentEntity="RoutineExercise" syncable="YES">
+    <entity name="RepetitionRoutineExercise" representedClassName="PRODUCT_MODULE_NAME.RepetitionRoutineExercise" parentEntity="RoutineExercise" syncable="YES">
         <relationship name="sets" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RepetitionSet" inverseName="belongsToExercise" inverseEntity="RepetitionSet" syncable="YES"/>
     </entity>
     <entity name="RepetitionSet" representedClassName="MAX.RepetitionSet" syncable="YES">
@@ -51,13 +51,13 @@
         <relationship name="belongsToExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RepetitionRoutineExercise" inverseName="sets" inverseEntity="RepetitionRoutineExercise" syncable="YES"/>
         <relationship name="performedSets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PerformedRepetitionSet" inverseName="didSet" inverseEntity="PerformedRepetitionSet" syncable="YES"/>
     </entity>
-    <entity name="RoutineExercise" syncable="YES">
+    <entity name="RoutineExercise" representedClassName="PRODUCT_MODULE_NAME.RoutineExercise" syncable="YES">
         <attribute name="exerciseNr" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="belongsToRoutine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExerciseRoutine" inverseName="exercises" inverseEntity="ExerciseRoutine" syncable="YES"/>
         <relationship name="isKindOfExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="routineExercises" inverseEntity="Exercise" syncable="YES"/>
     </entity>
     <entity name="TimeExercise" representedClassName="MAX.TimeExercise" parentEntity="Exercise" syncable="YES"/>
-    <entity name="TimeRoutineExercise" parentEntity="RoutineExercise" syncable="YES">
+    <entity name="TimeRoutineExercise" representedClassName="PRODUCT_MODULE_NAME.TimeRoutineExercise" parentEntity="RoutineExercise" syncable="YES">
         <relationship name="sets" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TimeSet" inverseName="belongsToExercise" inverseEntity="TimeSet" syncable="YES"/>
     </entity>
     <entity name="TimeSet" representedClassName="MAX.TimeSet" syncable="YES">

@@ -1,5 +1,5 @@
 //
-//  PerformedTimeSet.swift
+//  RepetitionRoutineExercise.swift
 //  MAX
 //
 //  Created by Bjarte Sjursen on 20.07.15.
@@ -9,9 +9,8 @@
 import Foundation
 import CoreData
 
-class PerformedTimeSet: PerformedSet {
+class RepetitionRoutineExercise: NSManagedObject {
 
-    @NSManaged var performedTimeInSeconds: NSNumber
-    @NSManaged var didSet: TimeSet
+    @NSManaged var sets: NSSet
 
 }
