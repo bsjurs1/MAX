@@ -7,16 +7,44 @@
 //
 
 import UIKit
+import CoreData
 
 class ExerciseRoutineTableViewController : ExerciseTableViewController{
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+    var newExerciseRoutine : ExerciseRoutine?
+    var managedObjectContext = NSManagedObjectContext()
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        managedObjectContext = appDelegate.managedObjectContext!
+        
+        newExerciseRoutine = NSEntityDescription.insertNewObjectForEntityForName("ExerciseRoutine", inManagedObjectContext: managedObjectContext) as? ExerciseRoutine
+        
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return sSampleArray.count
+        if newExerciseRoutine != nil {
+            
+            return newExerciseRoutine!.exercises.count
+            
+        }
+        
+        return 0
+        
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        
+        return 1
+        
+    }
+    
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        return UIView()
         
     }
     
@@ -30,7 +58,7 @@ class ExerciseRoutineTableViewController : ExerciseTableViewController{
             
             setUpExerciseCell(downCastedCell, indexPath: indexPath)
         }
-        else if (cell.isKindOfClass(ExerciseEditTableViewCell)){
+        else if cell.isKindOfClass(ExerciseEditTableViewCell) {
             
             var downCastedCell = cell as! ExerciseEditTableViewCell
             
@@ -43,8 +71,7 @@ class ExerciseRoutineTableViewController : ExerciseTableViewController{
     
     func setUpExerciseEditCell(cell : ExerciseEditTableViewCell, indexPath : NSIndexPath){
         
-        cell.exerciseImageView?.image = UIImage(named: samplePicArray[indexPath.row])
-        cell.exerciseNameLabel?.text = sSampleArray[indexPath.row]
+        let exercise = fetchedResultsController.objectAtIndexPath(indexPath) as! Exercise
         
         var setsTableViewController: SetsTableViewController? = self.storyboard?.instantiateViewControllerWithIdentifier("setTableViewController") as? SetsTableViewController
         
@@ -62,8 +89,12 @@ class ExerciseRoutineTableViewController : ExerciseTableViewController{
     
     func setUpExerciseCell(cell : ExerciseTableViewCell, indexPath : NSIndexPath){
         
-        cell.exerciseNameLabel.text = sSampleArray[indexPath.row]
-        cell.exerciseImageView?.image = UIImage(named: samplePicArray[indexPath.row])
+        let exercise = newExerciseRoutine!.exercises.allObjects[indexPath.row] as! Exercise
+        
+        cell.backgroundColor = UIColor.clearColor()
+        
+        cell.exerciseImageView?.image = exercise.getImage()
+        cell.exerciseNameLabel?.text = exercise.name
         
     }
     

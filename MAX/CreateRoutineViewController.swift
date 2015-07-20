@@ -13,12 +13,14 @@ class CreateRoutineViewController: UIViewController {
     var appDelegate = AppDelegate()
     
     var exerciseLibraryViewController : ExerciseLibraryViewController?
+    var exerciseRoutineTableViewController : ExerciseRoutineTableViewController?
     
     @IBOutlet weak var addRoutineImageButton: UIButton!
     @IBOutlet weak var dragStaticLabel: UILabel!
     @IBOutlet weak var routineNameTextField: UITextField!
+    var index : NSIndexPath?
     
-    var selectedCell = UIView()
+    var selectedCell : UIView?
     
     override func viewDidLoad() {
         
@@ -28,17 +30,24 @@ class CreateRoutineViewController: UIViewController {
         
         addExerciseLibraryViewController()
         
-        setUpButtons()
+        addExerciseRoutineTableViewController()
         
-        addNewRoutineTableViewController()
+        setUpButtons()
         
     }
     
-    func addNewRoutineTableViewController(){
+    func addExerciseRoutineTableViewController(){
         
+        exerciseRoutineTableViewController = (self.storyboard?.instantiateViewControllerWithIdentifier("exerciseTableViewController") as? ExerciseRoutineTableViewController)!
         
+        self.addChildViewController(exerciseLibraryViewController!)
+        
+        exerciseRoutineTableViewController!.view.frame = CGRectMake(0, 100,UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height - 100)
+
+        self.view.insertSubview(exerciseRoutineTableViewController!.view, belowSubview: exerciseLibraryViewController!.view)
         
     }
+
     
     func addExerciseLibraryViewController(){
         
@@ -97,93 +106,66 @@ class CreateRoutineViewController: UIViewController {
             
             cell = recognizer.view as? ExerciseProfileTableViewCell
             
-            var index = exerciseLibraryViewController!.exerciseLibraryTableViewController?.tableView.indexPathForCell(cell!)
+            index = exerciseLibraryViewController!.exerciseLibraryTableViewController?.tableView.indexPathForCell(cell!)
             exerciseLibraryViewController!.exerciseLibraryTableViewController?.tableView.scrollEnabled = false
             
             if(index != nil){
                 
-                UIGraphicsBeginImageContext(cell!.contentView.bounds.size);
+                UIGraphicsBeginImageContext(cell!.contentView.bounds.size)
                 cell!.contentView.layer.renderInContext(UIGraphicsGetCurrentContext())
                 var img = UIGraphicsGetImageFromCurrentImageContext()
                 UIGraphicsEndImageContext()
                 
                 var imageView = UIImageView(image: img)
                 
-                selectedCell.frame = imageView.frame
-                selectedCell.addSubview(imageView)
-                selectedCell.backgroundColor = UIColor.orangeColor()
-                selectedCell.center = recognizer.locationInView(self.view)
+                selectedCell = UIView()
+                selectedCell!.frame = imageView.frame
+                selectedCell!.addSubview(imageView)
+                selectedCell!.backgroundColor = UIColor.orangeColor()
+                selectedCell!.center = recognizer.locationInView(self.view)
+                selectedCell!.addGestureRecognizer(recognizer)
                 
-                selectedCell.addGestureRecognizer(recognizer)
-                
-                self.view.addSubview(selectedCell)
+                self.view.addSubview(selectedCell!)
             }
             
             break
         case UIGestureRecognizerState.Changed:
-            
-            selectedCell.center = recognizer.locationInView(self.view)
-            
+            selectedCell!.center = recognizer.locationInView(self.view)
             break
         case UIGestureRecognizerState.Ended:
             
             if(recognizer.locationInView(self.view).y < exerciseLibraryViewController?.view.frame.origin.y ){
                 dragStaticLabel.hidden = true
+                selectedCell!.removeFromSuperview()
+                selectedCell = nil
+                exerciseLibraryViewController!.exerciseLibraryTableViewController?.tableView.scrollEnabled = true
+                println("before")
+                println(index!.row)
+                addExerciseToNewRoutine(index!)
+                println("after")
             }
-            
             break
         default:
             break
             
         }
-        
-        /*UITableViewCell *cell= (UITableViewCell *)[gesture view];
-        
-        switch ([gesture state]) {
-        case UIGestureRecognizerStateBegan:{
-        NSIndexPath *ip = [self.tableView indexPathForCell:cell];
-        [self.tableView setScrollEnabled:NO];
-        
-        
-        if(ip!=nil){
-        [self.draggableDelegate dragAndDropTableViewController:self  draggingGestureWillBegin:gesture forCell:cell];
-        UIView *draggedView = [self.draggableDelegate dragAndDropTableViewControllerView:self ];
-        //switch the view the gesture is associated with this will allow the dragged view to continue on where the cell leaves off from
-        [draggedView addGestureRecognizer:[[cell gestureRecognizers]objectAtIndex:0]];
-        [self.draggableDelegate dragAndDropTableViewController:self draggingGestureDidBegin:gesture forCell:cell];
-        }
-        
-        
-        }
-        break;
-        case UIGestureRecognizerStateChanged:{
-        [self.draggableDelegate dragAndDropTableViewController:self draggingGestureDidMove:gesture];
-        }
-        break;
-        case UIGestureRecognizerStateEnded:{
-        UIView *draggedView = [self.draggableDelegate dragAndDropTableViewControllerView:self];
-        if(draggedView==nil)
-        return;
-        
-        //this does not seem like the best way to do this yet you really don't want to fire one after the other I don't think
-        [self.draggableDelegate dragAndDropTableViewController:self draggingGestureDidEnd:gesture];
-        [self.dropableDelegate dragAndDropTableViewController:self droppedGesture:gesture];
-        
-        [self.tableView setScrollEnabled:YES];
-        [self.tableView reloadData];
-        }
-        break;
-        
-        //        case UIGestureRecognizerStateCancelled:
-        //        case UIGestureRecognizerStateFailed:
-        //        case UIGestureRecognizerStatePossible:
-        //            [self.dragAndDropDelegate dragAndDropTableViewController:self draggingGesture:gesture endedForItem:nil];
-        break;
-        default:
-        break;
-        */
         
     }
+    
+    func addExerciseToNewRoutine(indexPath : NSIndexPath){
+        
+        var newRoutine = exerciseRoutineTableViewController?.newExerciseRoutine
+        
+        var exerciseToAdd = exerciseLibraryViewController!.exerciseLibraryTableViewController?.fetchedResultsController.objectAtIndexPath(indexPath) as! Exercise
+        
+        newRoutine?.exercises.setByAddingObject(exerciseToAdd)
+        
+        newRoutine?.setValue(newRoutine?.exercises.setByAddingObject(exerciseToAdd), forKey: "exercises")
+        
+        exerciseRoutineTableViewController!.tableView.reloadData()
+  
+    }
+
 
 
     

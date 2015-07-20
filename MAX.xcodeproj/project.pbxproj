@@ -51,7 +51,6 @@
 		919B4E1A1B38A0F600C82A54 /* ExerciseRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B4E191B38A0F600C82A54 /* ExerciseRoutineViewController.swift */; };
 		919B4E201B39A9DA00C82A54 /* ExerciseProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B4E1F1B39A9DA00C82A54 /* ExerciseProfileViewController.swift */; };
 		91B639171B49B62200EEE48B /* SetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B639161B49B62200EEE48B /* SetsView.swift */; };
-		91B96BC71B5D44EB0045A396 /* ExerciseRoutineCreationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B96BC61B5D44EB0045A396 /* ExerciseRoutineCreationTableViewController.swift */; };
 		91BDBC391B3DD0570014AD41 /* CreateRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BDBC381B3DD0570014AD41 /* CreateRoutineViewController.swift */; };
 		91BDBC3B1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BDBC3A1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift */; };
 		91BDBC3D1B3DEACF0014AD41 /* CreateExerciseForLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BDBC3C1B3DEACF0014AD41 /* CreateExerciseForLibraryViewController.swift */; };
@@ -128,7 +127,6 @@
 		919B4E191B38A0F600C82A54 /* ExerciseRoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineViewController.swift; sourceTree = "<group>"; };
 		919B4E1F1B39A9DA00C82A54 /* ExerciseProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseProfileViewController.swift; sourceTree = "<group>"; };
 		91B639161B49B62200EEE48B /* SetsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetsView.swift; sourceTree = "<group>"; };
-		91B96BC61B5D44EB0045A396 /* ExerciseRoutineCreationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineCreationTableViewController.swift; sourceTree = "<group>"; };
 		91BDBC381B3DD0570014AD41 /* CreateRoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRoutineViewController.swift; sourceTree = "<group>"; };
 		91BDBC3A1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLibraryViewController.swift; sourceTree = "<group>"; };
 		91BDBC3C1B3DEACF0014AD41 /* CreateExerciseForLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateExerciseForLibraryViewController.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 				910BC4411B3AAFC40078FF8B /* SetsTableViewController.swift */,
 				9103F9E01B37123C00735BF7 /* ExerciseTableViewController.swift */,
 				919B4E131B38995300C82A54 /* ExerciseRoutineTableViewController.swift */,
-				91B96BC61B5D44EB0045A396 /* ExerciseRoutineCreationTableViewController.swift */,
 				9109067D1B3888D7002B31B6 /* ExerciseLibraryTableViewController.swift */,
 				910BC4351B3A9A230078FF8B /* ExerciseProfileTableViewController.swift */,
 			);
@@ -413,7 +410,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				910ACBA31B5AC07A00F5A1FB /* PerformedExerciseData.swift in Sources */,
-				91B96BC71B5D44EB0045A396 /* ExerciseRoutineCreationTableViewController.swift in Sources */,
 				919B4E141B38995300C82A54 /* ExerciseRoutineTableViewController.swift in Sources */,
 				91B639171B49B62200EEE48B /* SetsView.swift in Sources */,
 				91BDBC391B3DD0570014AD41 /* CreateRoutineViewController.swift in Sources */,
