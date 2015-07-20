@@ -44,8 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             exerciseToInsert.setValue(UIImagePNGRepresentation(image), forKey: "exerciseImage")
             
         }
-        
-        testCoreData()
 
         return true
     }

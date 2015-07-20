@@ -42,7 +42,9 @@ class ExerciseLibraryTableViewController: ExerciseTableViewController {
         
         var exerciseDescription = self.storyboard?.instantiateViewControllerWithIdentifier("descriptionController") as? ExerciseDescriptionViewController
         
-        exerciseDescription!.exerciseDescription = exerciseTapped.exerciseDescription
+        exerciseDescription?.exerciseDescription = exerciseTapped.exerciseDescription
+        
+        exerciseDescription?.exerciseImage = exerciseTapped.getImage()
         
         exerciseDescription?.view.frame = CGRectMake(0, 0,UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height)
         

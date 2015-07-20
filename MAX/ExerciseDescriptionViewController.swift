@@ -10,10 +10,12 @@ import UIKit
 
 class ExerciseDescriptionViewController: UIViewController {
     
+    @IBOutlet weak var exerciseImageView: UIImageView!
     @IBOutlet weak var doneButton: UIButton!
     var appDelegate = AppDelegate()
     @IBOutlet weak var exerciseDescriptionTextView: UITextView!
     var exerciseDescription = String()
+    var exerciseImage = UIImage()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,9 @@ class ExerciseDescriptionViewController: UIViewController {
         self.doneButton.tintColor = appDelegate.maxTintColor
         
         self.exerciseDescriptionTextView.text = exerciseDescription
+        
+        exerciseImageView.image = exerciseImage
+        exerciseImageView.backgroundColor = UIColor.whiteColor()
 
         // Do any additional setup after loading the view.
     }
