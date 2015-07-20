@@ -6,7 +6,6 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sectionId" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="exerciseVideo" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="ExerciseVideo" inverseName="belongsToExercise" inverseEntity="ExerciseVideo" syncable="YES"/>
-        <relationship name="performedExerciseData" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="PerformedExerciseData" inverseName="didExercise" inverseEntity="PerformedExerciseData" syncable="YES"/>
         <relationship name="routineExercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RoutineExercise" inverseName="isKindOfExercise" inverseEntity="RoutineExercise" syncable="YES"/>
     </entity>
     <entity name="ExerciseRoutine" representedClassName="MAX.ExerciseRoutine" syncable="YES">
@@ -21,7 +20,7 @@
     </entity>
     <entity name="PerformedExerciseData" representedClassName="MAX.PerformedExerciseData" syncable="YES">
         <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="didExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="performedExerciseData" inverseEntity="Exercise" syncable="YES"/>
+        <relationship name="belongsToExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RoutineExercise" inverseName="performedExerciseData" inverseEntity="RoutineExercise" syncable="YES"/>
     </entity>
     <entity name="PerformedExerciseRoutineData" representedClassName="MAX.PerformedExerciseRoutineData" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
@@ -55,6 +54,7 @@
         <attribute name="exerciseNr" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="belongsToRoutine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExerciseRoutine" inverseName="exercises" inverseEntity="ExerciseRoutine" syncable="YES"/>
         <relationship name="isKindOfExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="routineExercises" inverseEntity="Exercise" syncable="YES"/>
+        <relationship name="performedExerciseData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PerformedExerciseData" inverseName="belongsToExercise" inverseEntity="PerformedExerciseData" syncable="YES"/>
     </entity>
     <entity name="TimeExercise" representedClassName="MAX.TimeExercise" parentEntity="Exercise" syncable="YES"/>
     <entity name="TimeRoutineExercise" representedClassName="PRODUCT_MODULE_NAME.TimeRoutineExercise" parentEntity="RoutineExercise" syncable="YES">
@@ -67,20 +67,20 @@
         <relationship name="performedSets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PerformedTimeSet" inverseName="didSet" inverseEntity="PerformedTimeSet" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Exercise" positionX="-1827" positionY="-3555" width="128" height="148"/>
+        <element name="Exercise" positionX="-1827" positionY="-3555" width="128" height="133"/>
         <element name="ExerciseRoutine" positionX="-2250" positionY="-3591" width="171" height="103"/>
         <element name="ExerciseVideo" positionX="-1611" positionY="-3555" width="128" height="73"/>
-        <element name="PerformedExerciseData" positionX="-1611" positionY="-3456" width="128" height="73"/>
-        <element name="PerformedExerciseRoutineData" positionX="-2540" positionY="-3402" width="200" height="73"/>
-        <element name="PerformedRepetitionSet" positionX="-2484" positionY="-2808" width="171" height="88"/>
-        <element name="PerformedSet" positionX="-2279" positionY="-2799" width="128" height="73"/>
+        <element name="PerformedExerciseData" positionX="-2396" positionY="-3304" width="128" height="73"/>
+        <element name="PerformedExerciseRoutineData" positionX="-2628" positionY="-3574" width="200" height="73"/>
+        <element name="PerformedRepetitionSet" positionX="-2493" positionY="-2851" width="171" height="88"/>
+        <element name="PerformedSet" positionX="-2279" positionY="-2836" width="128" height="73"/>
         <element name="PerformedTimeSet" positionX="-2117" positionY="-2799" width="128" height="73"/>
-        <element name="RepetitionExercise" positionX="-1872" positionY="-3355" width="128" height="43"/>
-        <element name="RepetitionSet" positionX="-2385" positionY="-3060" width="128" height="118"/>
-        <element name="TimeExercise" positionX="-1737" positionY="-3211" width="128" height="43"/>
-        <element name="TimeSet" positionX="-2135" positionY="-3049" width="128" height="103"/>
-        <element name="RoutineExercise" positionX="-2207" positionY="-3340" width="155" height="73"/>
+        <element name="RepetitionExercise" positionX="-1998" positionY="-3510" width="128" height="43"/>
         <element name="RepetitionRoutineExercise" positionX="-2430" positionY="-3177" width="180" height="58"/>
+        <element name="RepetitionSet" positionX="-2385" positionY="-3060" width="128" height="118"/>
+        <element name="RoutineExercise" positionX="-2207" positionY="-3340" width="155" height="103"/>
+        <element name="TimeExercise" positionX="-1820" positionY="-3384" width="128" height="43"/>
         <element name="TimeRoutineExercise" positionX="-2133" positionY="-3177" width="189" height="58"/>
+        <element name="TimeSet" positionX="-2135" positionY="-3049" width="128" height="103"/>
     </elements>
 </model>
