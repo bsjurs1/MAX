@@ -216,7 +216,17 @@ class CreateRoutineViewController: UIViewController, UITextFieldDelegate {
                 println(index!.row)
                 addExerciseToNewRoutine(index!)
                 println("after")
+            } else {
+                
+                selectedCell!.removeFromSuperview()
+                selectedCell = nil
+                exerciseLibraryViewController!.exerciseLibraryTableViewController?.tableView.scrollEnabled = true
+
+                
             }
+            
+            exerciseLibraryViewController!.exerciseLibraryTableViewController!.tableView.reloadData()
+            
             break
         default:
             break
