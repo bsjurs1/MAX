@@ -26,10 +26,10 @@ class ExerciseRoutineTableViewController : UITableViewController, NSFetchedResul
 
         
         let exercisesFetchRequest = NSFetchRequest(entityName: "RoutineExercise")
-        let primarySortDescriptor = NSSortDescriptor(key: "exerciseNr", ascending: true)
+        let primarySortDescriptor = NSSortDescriptor(key: "exerciseNr", ascending: false)
         exercisesFetchRequest.sortDescriptors = [primarySortDescriptor]
         
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: exercisesFetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: "isKindOfExercise.sectionId", cacheName: nil)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: exercisesFetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         
         self.view.tintColor = appDelegate.maxTintColor
         
@@ -112,7 +112,7 @@ class ExerciseRoutineTableViewController : UITableViewController, NSFetchedResul
         cell.backgroundColor = UIColor.clearColor()
         
         cell.exerciseImageView?.image = exercise.isKindOfExercise.getImage()
-        cell.exerciseNameLabel?.text = "\(exercise.exerciseNr)"
+        cell.exerciseNameLabel?.text = exercise.isKindOfExercise.name
         
     }
     

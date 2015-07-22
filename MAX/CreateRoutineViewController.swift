@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CreateRoutineViewController: UIViewController {
+class CreateRoutineViewController: UIViewController, UITextFieldDelegate {
     
     var appDelegate = AppDelegate()
     
@@ -21,10 +21,13 @@ class CreateRoutineViewController: UIViewController {
     @IBOutlet weak var routineNameTextField: UITextField!
     var index : NSIndexPath?
     var exerciseNr = 1
+    var prevPositionOfLibraryView = CGFloat()
     
     var selectedCell : UIView?
     
     override func viewDidLoad() {
+        
+        self.routineNameTextField.delegate = self
         
         self.view.tintColor = appDelegate.maxTintColor
         self.navigationController?.navigationBar.tintColor = appDelegate.maxTintColor
@@ -35,6 +38,33 @@ class CreateRoutineViewController: UIViewController {
         addExerciseRoutineTableViewController()
         
         setUpButtons()
+        
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        
+        prevPositionOfLibraryView = self.exerciseLibraryViewController!.view.frame.origin.y
+        
+        UIView.animateWithDuration(0.2, animations: {
+        
+            self.exerciseLibraryViewController!.view.frame.origin.y = UIScreen.mainScreen().bounds.size.height-200
+            
+        })
+        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        routineNameTextField.resignFirstResponder()
+        
+        UIView.animateWithDuration(0.2, animations: {
+            
+            self.exerciseLibraryViewController!.view.frame.origin.y = self.prevPositionOfLibraryView
+            
+        })
+
+        
+        return true
         
     }
     
