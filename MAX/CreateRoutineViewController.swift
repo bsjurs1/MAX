@@ -212,10 +212,8 @@ class CreateRoutineViewController: UIViewController, UITextFieldDelegate {
                 selectedCell!.removeFromSuperview()
                 selectedCell = nil
                 exerciseLibraryViewController!.exerciseLibraryTableViewController?.tableView.scrollEnabled = true
-                println("before")
                 println(index!.row)
                 addExerciseToNewRoutine(index!)
-                println("after")
             } else {
                 
                 selectedCell!.removeFromSuperview()
@@ -241,14 +239,12 @@ class CreateRoutineViewController: UIViewController, UITextFieldDelegate {
         
         var exerciseData = exerciseLibraryViewController!.exerciseLibraryTableViewController?.fetchedResultsController.objectAtIndexPath(indexPath) as! Exercise
         
-        var newRoutineExercise = NSEntityDescription.insertNewObjectForEntityForName("RoutineExercise", inManagedObjectContext: self.exerciseLibraryViewController!.exerciseLibraryTableViewController!.managedContext) as! RoutineExercise
+        var newRoutineExercise = NSEntityDescription.insertNewObjectForEntityForName("RoutineExercise", inManagedObjectContext: self.exerciseRoutineTableViewController!.managedObjectContext) as! RoutineExercise
         
         newRoutineExercise.isKindOfExercise = exerciseData
         newRoutineExercise.exerciseNr = exerciseNr++
+        newRoutineExercise.belongsToRoutine = newRoutine!
         
-        newRoutine?.setValue(newRoutine?.exercises.setByAddingObject(newRoutineExercise), forKey: "exercises")
-        
-        exerciseRoutineTableViewController!.tableView.reloadData()
         
         
         if(doneButton.enabled == false){
@@ -259,6 +255,9 @@ class CreateRoutineViewController: UIViewController, UITextFieldDelegate {
             })
         }
         
+        //self.exerciseRoutineTableViewController?.managedObjectContext.save(nil)
+        
+        exerciseRoutineTableViewController!.tableView.reloadData()
   
     }
     

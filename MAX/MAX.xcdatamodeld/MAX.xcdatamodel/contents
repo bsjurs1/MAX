@@ -7,13 +7,11 @@
         <attribute name="sectionId" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="exerciseVideo" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="ExerciseVideo" inverseName="belongsToExercise" inverseEntity="ExerciseVideo" syncable="YES"/>
         <relationship name="routineExercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RoutineExercise" inverseName="isKindOfExercise" inverseEntity="RoutineExercise" syncable="YES"/>
-        <relationship name="routineInCreation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExerciseRoutine" inverseName="exercisesInNewRoutine" inverseEntity="ExerciseRoutine" syncable="YES"/>
     </entity>
     <entity name="ExerciseRoutine" representedClassName="MAX.ExerciseRoutine" syncable="YES">
         <attribute name="backGroundImage" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RoutineExercise" inverseName="belongsToRoutine" inverseEntity="RoutineExercise" syncable="YES"/>
-        <relationship name="exercisesInNewRoutine" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercise" inverseName="routineInCreation" inverseEntity="Exercise" syncable="YES"/>
         <relationship name="performedExerciseRoutineData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PerformedExerciseRoutineData" inverseName="didExerciseRoutine" inverseEntity="PerformedExerciseRoutineData" syncable="YES"/>
     </entity>
     <entity name="ExerciseVideo" representedClassName="MAX.ExerciseVideo" syncable="YES">
@@ -55,7 +53,7 @@
     <entity name="RoutineExercise" representedClassName="MAX.RoutineExercise" syncable="YES">
         <attribute name="exerciseNr" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="belongsToRoutine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExerciseRoutine" inverseName="exercises" inverseEntity="ExerciseRoutine" syncable="YES"/>
-        <relationship name="isKindOfExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="routineExercises" inverseEntity="Exercise" syncable="YES"/>
+        <relationship name="isKindOfExercise" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Exercise" inverseName="routineExercises" inverseEntity="Exercise" syncable="YES"/>
         <relationship name="performedExerciseData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PerformedExerciseData" inverseName="belongsToExercise" inverseEntity="PerformedExerciseData" syncable="YES"/>
     </entity>
     <entity name="TimeExercise" representedClassName="MAX.TimeExercise" parentEntity="Exercise" syncable="YES"/>
@@ -69,8 +67,8 @@
         <relationship name="performedSets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PerformedTimeSet" inverseName="didSet" inverseEntity="PerformedTimeSet" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Exercise" positionX="-1827" positionY="-3555" width="128" height="148"/>
-        <element name="ExerciseRoutine" positionX="-2250" positionY="-3591" width="171" height="118"/>
+        <element name="Exercise" positionX="-1827" positionY="-3555" width="128" height="133"/>
+        <element name="ExerciseRoutine" positionX="-2250" positionY="-3591" width="171" height="103"/>
         <element name="ExerciseVideo" positionX="-1611" positionY="-3555" width="128" height="73"/>
         <element name="PerformedExerciseData" positionX="-2396" positionY="-3304" width="128" height="73"/>
         <element name="PerformedExerciseRoutineData" positionX="-2628" positionY="-3574" width="200" height="73"/>

@@ -15,6 +15,5 @@ class ExerciseRoutine: NSManagedObject {
     @NSManaged var name: String
     @NSManaged var exercises: NSSet
     @NSManaged var performedExerciseRoutineData: NSSet
-    @NSManaged var exercisesInNewRoutine: NSSet
 
 }

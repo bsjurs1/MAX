@@ -26,6 +26,7 @@ class ExerciseRoutineTableViewController : UITableViewController, NSFetchedResul
 
         
         let exercisesFetchRequest = NSFetchRequest(entityName: "RoutineExercise")
+        exercisesFetchRequest.predicate = NSPredicate(format: "ANY belongsToRoutine == %@", newExerciseRoutine!)
         let primarySortDescriptor = NSSortDescriptor(key: "exerciseNr", ascending: false)
         exercisesFetchRequest.sortDescriptors = [primarySortDescriptor]
         
@@ -44,7 +45,7 @@ class ExerciseRoutineTableViewController : UITableViewController, NSFetchedResul
         
         if newExerciseRoutine != nil {
             
-            return newExerciseRoutine!.exercises.count
+            return newExerciseRoutine!.exercises.allObjects.count
             
         }
         
@@ -54,7 +55,7 @@ class ExerciseRoutineTableViewController : UITableViewController, NSFetchedResul
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
-        return 1
+        return self.fetchedResultsController!.sections?.count ?? 0
         
     }
     
@@ -125,6 +126,37 @@ class ExerciseRoutineTableViewController : UITableViewController, NSFetchedResul
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
 
         return 100
+        
+    }
+    
+    
+    /*
+
+    
+    // Override to support editing the table view.
+    - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+    [_managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+    }
+    }
+    */
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            
+            var exerciseToDelete = self.fetchedResultsController!.objectAtIndexPath(indexPath) as! RoutineExercise
+            
+            println(exerciseToDelete)
+            
+            managedObjectContext.deleteObject(exerciseToDelete)
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+            
+        }
         
     }
     

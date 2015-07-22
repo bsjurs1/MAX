@@ -24,19 +24,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         var managedContext = self.managedObjectContext
         
-        for exercise in exercises{
-            
-            var exerciseDict: NSDictionary = exercise as! NSDictionary
-            var exerciseName : String = exerciseDict["name"] as! String
-            var exerciseDescription : String = exerciseDict["description"] as! String
-            var exerciseType : String = exerciseDict["type"] as! String
+        var request = NSFetchRequest(entityName: "Exercise")
+        var results = self.managedObjectContext?.executeFetchRequest(request, error: nil)
+        
+        // Checks to see whether core data exercise schema has any entities
+        if (results?.isEmpty == true) {
 
-            var request = NSFetchRequest(entityName: "Exercise")
-            var results = self.managedObjectContext?.executeFetchRequest(request, error: nil)
+        
+            for exercise in exercises{
             
-            // Checks to see whether core data exercise schema has any entities
-            if (results?.isEmpty == true) {
-                
+                var exerciseDict: NSDictionary = exercise as! NSDictionary
+                var exerciseName : String = exerciseDict["name"] as! String
+                var exerciseDescription : String = exerciseDict["description"] as! String
+                var exerciseType : String = exerciseDict["type"] as! String
+
+            
                 println("Core data store was empty")
                 
                 // Add json objects to core data

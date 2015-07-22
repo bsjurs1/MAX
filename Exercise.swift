@@ -17,7 +17,6 @@ class Exercise: NSManagedObject {
     @NSManaged var sectionId: String
     @NSManaged var exerciseVideo: ExerciseVideo
     @NSManaged var routineExercises: NSSet
-    @NSManaged var routineInCreation: ExerciseRoutine
     
     func insertImage(imagePath : String){
         
