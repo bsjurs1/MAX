@@ -807,12 +807,17 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Create new routine" id="gd7-fi-Uvv">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="MKW-Uo-50b"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="MKW-Uo-50b">
+                            <connections>
+                                <action selector="doneAddingExercises:" destination="bmP-O9-yI8" id="Cwf-7D-Jxa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="addRoutineImageButton" destination="FPq-ni-dSm" id="FxF-NB-tEN"/>
+                        <outlet property="doneButton" destination="MKW-Uo-50b" id="0mr-uN-VVr"/>
                         <outlet property="dragStaticLabel" destination="wme-W3-VU2" id="V6m-SK-fPx"/>
                         <outlet property="routineNameTextField" destination="Hkr-ic-PYb" id="gP2-Mo-fUH"/>
                     </connections>

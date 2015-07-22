@@ -16,16 +16,21 @@ class CreateRoutineViewController: UIViewController, UITextFieldDelegate {
     var exerciseLibraryViewController : ExerciseLibraryViewController?
     var exerciseRoutineTableViewController : ExerciseRoutineTableViewController?
     
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     @IBOutlet weak var addRoutineImageButton: UIButton!
     @IBOutlet weak var dragStaticLabel: UILabel!
     @IBOutlet weak var routineNameTextField: UITextField!
     var index : NSIndexPath?
     var exerciseNr = 1
     var prevPositionOfLibraryView = CGFloat()
+    var doneClicked = false
+    var lineView = UIView()
     
     var selectedCell : UIView?
     
     override func viewDidLoad() {
+        
+        self.doneButton.enabled = false
         
         self.routineNameTextField.delegate = self
         
@@ -38,6 +43,17 @@ class CreateRoutineViewController: UIViewController, UITextFieldDelegate {
         addExerciseRoutineTableViewController()
         
         setUpButtons()
+        
+        addLineView()
+        
+    }
+    
+    func addLineView(){
+        
+        lineView.frame = CGRectMake(20, 110, UIScreen.mainScreen().bounds.size.width-40, 1)
+        lineView.backgroundColor = UIColor(red: 0.6471, green: 0.6471, blue: 0.6471, alpha: 0.6)
+        self.view.addSubview(lineView)
+        self.view.sendSubviewToBack(lineView)
         
     }
     
@@ -76,13 +92,12 @@ class CreateRoutineViewController: UIViewController, UITextFieldDelegate {
         
         self.addChildViewController(exerciseLibraryViewController!)
         
-        exerciseRoutineTableViewController!.view.frame = CGRectMake(0, 100,UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height - 100)
+        exerciseRoutineTableViewController!.view.frame = CGRectMake(0, 110,UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height - 100)
 
         self.view.insertSubview(exerciseRoutineTableViewController!.view, belowSubview: exerciseLibraryViewController!.view)
         
     }
 
-    
     func addExerciseLibraryViewController(){
         
         exerciseLibraryViewController = (self.storyboard?.instantiateViewControllerWithIdentifier("exerciseLibraryViewController") as? ExerciseLibraryViewController)!
@@ -113,6 +128,30 @@ class CreateRoutineViewController: UIViewController, UITextFieldDelegate {
     }
     
     func moveView(gestureRecognizer : UIPanGestureRecognizer){
+        
+        if(doneClicked){
+            
+            doneClicked = false
+            
+            UIView.animateWithDuration(0.2, animations: {
+                
+                self.exerciseLibraryViewController!.view.frame.origin.y = UIScreen.mainScreen().bounds.size.height/2
+                
+                self.exerciseLibraryViewController!.view.frame.size.height = UIScreen.mainScreen().bounds.size.height/2
+
+                self.routineNameTextField.frame.origin.y += 100
+                self.addRoutineImageButton.frame.origin.y += 100
+                self.exerciseRoutineTableViewController!.view.frame.origin.y += 50
+                self.exerciseRoutineTableViewController!.view.frame.size.height -= 40
+                
+                self.exerciseLibraryViewController?.addExerciseButton.enabled = true
+                
+                self.lineView.frame.origin.y += 100
+                
+                self.navigationItem.title = "Create new routine"
+                
+            })
+        }
         
         var translation : CGPoint = gestureRecognizer.translationInView(self.view)
         
@@ -200,9 +239,47 @@ class CreateRoutineViewController: UIViewController, UITextFieldDelegate {
         newRoutine?.setValue(newRoutine?.exercises.setByAddingObject(newRoutineExercise), forKey: "exercises")
         
         exerciseRoutineTableViewController!.tableView.reloadData()
+        
+        
+        if(doneButton.enabled == false){
+            UIView.animateWithDuration(0.2, animations: {
+            
+                self.doneButton.enabled = true
+            
+            })
+        }
+        
   
     }
-
+    
+    @IBAction func doneAddingExercises(sender: AnyObject) {
+        
+        doneClicked = true
+        
+        UIView.animateWithDuration(0.2, animations: {
+            
+            self.exerciseLibraryViewController!.view.frame.origin.y = UIScreen.mainScreen().bounds.size.height-40
+            
+            self.routineNameTextField.frame.origin.y -= 100
+            self.addRoutineImageButton.frame.origin.y -= 100
+            self.exerciseRoutineTableViewController!.view.frame.origin.y -= 50
+            self.exerciseRoutineTableViewController!.view.frame.size.height += 40
+            
+            self.exerciseLibraryViewController?.addExerciseButton.enabled = false
+            
+            self.navigationItem.title = self.routineNameTextField.text
+            
+            self.lineView.frame.origin.y -= 100
+        })
+        
+        
+        self.exerciseLibraryViewController?.exerciseLibraryTableViewController?.managedContext.save(nil)
+        
+        
+        
+        
+    }
+    
 
 
     
