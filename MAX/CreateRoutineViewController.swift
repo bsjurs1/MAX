@@ -255,9 +255,10 @@ class CreateRoutineViewController: UIViewController, UITextFieldDelegate {
             })
         }
         
-        //self.exerciseRoutineTableViewController?.managedObjectContext.save(nil)
+        println("\(exerciseNr) adding exercise to routine: ")
+        println(newRoutine!)
         
-        exerciseRoutineTableViewController!.tableView.reloadData()
+        //self.exerciseRoutineTableViewController?.managedObjectContext.save(nil)
   
     }
     

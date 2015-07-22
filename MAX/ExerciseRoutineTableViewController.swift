@@ -14,7 +14,6 @@ class ExerciseRoutineTableViewController : UITableViewController, NSFetchedResul
     var newExerciseRoutine : ExerciseRoutine?
     var managedObjectContext = NSManagedObjectContext()
     var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    var fetchedResultsController : NSFetchedResultsController?
     
     override func viewDidLoad() {
         
@@ -26,7 +25,7 @@ class ExerciseRoutineTableViewController : UITableViewController, NSFetchedResul
 
         
         let exercisesFetchRequest = NSFetchRequest(entityName: "RoutineExercise")
-        exercisesFetchRequest.predicate = NSPredicate(format: "ANY belongsToRoutine == %@", newExerciseRoutine!)
+        //exercisesFetchRequest.predicate = NSPredicate(format: "ANY belongsToRoutine == %@", newExerciseRoutine!)
         let primarySortDescriptor = NSSortDescriptor(key: "exerciseNr", ascending: false)
         exercisesFetchRequest.sortDescriptors = [primarySortDescriptor]
         
@@ -38,24 +37,6 @@ class ExerciseRoutineTableViewController : UITableViewController, NSFetchedResul
         if (fetchedResultsController!.performFetch(&error) == false) {
             print("An error occurred: \(error?.localizedDescription)")
         }
-        
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if newExerciseRoutine != nil {
-            
-            return newExerciseRoutine!.exercises.allObjects.count
-            
-        }
-        
-        return 0
-        
-    }
-    
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
-        return self.fetchedResultsController!.sections?.count ?? 0
         
     }
     
@@ -108,7 +89,7 @@ class ExerciseRoutineTableViewController : UITableViewController, NSFetchedResul
     
     func setUpExerciseCell(cell : ExerciseTableViewCell, indexPath : NSIndexPath){
         
-        let exercise = newExerciseRoutine!.exercises.allObjects[indexPath.row] as! RoutineExercise
+        let exercise = fetchedResultsController!.objectAtIndexPath(indexPath) as! RoutineExercise
         
         cell.backgroundColor = UIColor.clearColor()
         
@@ -149,16 +130,129 @@ class ExerciseRoutineTableViewController : UITableViewController, NSFetchedResul
         
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
             
-            var exerciseToDelete = self.fetchedResultsController!.objectAtIndexPath(indexPath) as! RoutineExercise
+            println(1)
             
-            println(exerciseToDelete)
+            println(self.newExerciseRoutine)
             
-            managedObjectContext.deleteObject(exerciseToDelete)
-            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+            //[_managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+
+            managedObjectContext.deleteObject( self.fetchedResultsController!.objectAtIndexPath(indexPath) as! NSManagedObject)
+            
+            //var exerciseToDelete: RoutineExercise = self.newExerciseRoutine!.exercises.allObjects[indexPath.row] as! RoutineExercise
+            
+            //println(exerciseToDelete)
+            
+            //managedObjectContext.deleteObject(exerciseToDelete)
+            
+            println(2)
+            
+            tableView.reloadData()
+            
+            println(3)
+            
+            //self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+            
+            println(4)
+            println(self.newExerciseRoutine)
             
         }
         
     }
     
     
+    var fetchedResultsController: NSFetchedResultsController? {
+        didSet {
+            self.setUpFetchedResultsController()
+        }
+    }
+    
+    // MARK: - Fetching
+    
+    func performFetch() {
+        var error: NSError?
+        self.fetchedResultsController!.performFetch(&error)
+        if let err = error {
+            NSLog("%@", err.localizedDescription)
+        }
+        self.tableView.reloadData()
+    }
+    
+    // MARK: - UITableViewDataSource
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return self.fetchedResultsController!.sections!.count
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var rows = 0
+        if self.fetchedResultsController!.sections!.count > 0 {
+            var sectionInfo = self.fetchedResultsController!.sections![section] as! NSFetchedResultsSectionInfo
+            rows = sectionInfo.numberOfObjects
+        }
+        return rows
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sectionInfo = self.fetchedResultsController!.sections![section] as! NSFetchedResultsSectionInfo
+        return sectionInfo.name
+    }
+    
+    override func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
+        return self.fetchedResultsController!.sectionForSectionIndexTitle(title, atIndex: index)
+    }
+    
+    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [AnyObject]! {
+        return self.fetchedResultsController!.sectionIndexTitles
+    }
+    
+    // MARK: - NSFetchedResultsControllerDelegate
+    
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        self.tableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        self.tableView.endUpdates()
+    }
+    
+    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
+        let indexSet = NSIndexSet(index: sectionIndex)
+        switch type {
+        case NSFetchedResultsChangeType.Insert:
+            self.tableView.insertSections(indexSet, withRowAnimation: UITableViewRowAnimation.Fade)
+        case NSFetchedResultsChangeType.Delete:
+            self.tableView.deleteSections(indexSet, withRowAnimation: UITableViewRowAnimation.Fade)
+        case NSFetchedResultsChangeType.Update:
+            break
+        case NSFetchedResultsChangeType.Move:
+            break
+        }
+    }
+    
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        switch type {
+        case NSFetchedResultsChangeType.Insert:
+            self.tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: UITableViewRowAnimation.Fade)
+        case NSFetchedResultsChangeType.Delete:
+            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Fade)
+        case NSFetchedResultsChangeType.Update:
+            self.tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Fade)
+        case NSFetchedResultsChangeType.Move:
+            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Fade)
+            self.tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: UITableViewRowAnimation.Fade)
+        }
+    }
+    
+    // MARK: - Private
+    
+    private func setUpFetchedResultsController() {
+        self.fetchedResultsController!.delegate = self
+        if self.title == nil && (self.navigationController == nil || self.navigationItem.title == nil) {
+            self.title = self.fetchedResultsController!.fetchRequest.entity!.name
+        }
+        self.performFetch()
+    }
 }
+
+
+

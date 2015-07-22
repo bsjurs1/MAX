@@ -53,7 +53,7 @@
     <entity name="RoutineExercise" representedClassName="MAX.RoutineExercise" syncable="YES">
         <attribute name="exerciseNr" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="belongsToRoutine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExerciseRoutine" inverseName="exercises" inverseEntity="ExerciseRoutine" syncable="YES"/>
-        <relationship name="isKindOfExercise" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Exercise" inverseName="routineExercises" inverseEntity="Exercise" syncable="YES"/>
+        <relationship name="isKindOfExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="routineExercises" inverseEntity="Exercise" syncable="YES"/>
         <relationship name="performedExerciseData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PerformedExerciseData" inverseName="belongsToExercise" inverseEntity="PerformedExerciseData" syncable="YES"/>
     </entity>
     <entity name="TimeExercise" representedClassName="MAX.TimeExercise" parentEntity="Exercise" syncable="YES"/>
