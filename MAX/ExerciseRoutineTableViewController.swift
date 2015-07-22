@@ -25,7 +25,7 @@ class ExerciseRoutineTableViewController : UITableViewController, NSFetchedResul
 
         
         let exercisesFetchRequest = NSFetchRequest(entityName: "RoutineExercise")
-        //exercisesFetchRequest.predicate = NSPredicate(format: "ANY belongsToRoutine == %@", newExerciseRoutine!)
+        exercisesFetchRequest.predicate = NSPredicate(format: "belongsToRoutine == %@", newExerciseRoutine!)
         let primarySortDescriptor = NSSortDescriptor(key: "exerciseNr", ascending: false)
         exercisesFetchRequest.sortDescriptors = [primarySortDescriptor]
         
