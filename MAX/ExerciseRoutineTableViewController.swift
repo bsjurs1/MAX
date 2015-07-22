@@ -9,18 +9,34 @@
 import UIKit
 import CoreData
 
-class ExerciseRoutineTableViewController : ExerciseTableViewController{
+class ExerciseRoutineTableViewController : UITableViewController, NSFetchedResultsControllerDelegate {
     
     var newExerciseRoutine : ExerciseRoutine?
     var managedObjectContext = NSManagedObjectContext()
+    var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    var fetchedResultsController : NSFetchedResultsController?
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        managedObjectContext = appDelegate.managedObjectContext!
+        self.view.backgroundColor = UIColor.clearColor()
         
         newExerciseRoutine = NSEntityDescription.insertNewObjectForEntityForName("ExerciseRoutine", inManagedObjectContext: managedObjectContext) as? ExerciseRoutine
+
+        
+        let exercisesFetchRequest = NSFetchRequest(entityName: "RoutineExercise")
+        let primarySortDescriptor = NSSortDescriptor(key: "exerciseNr", ascending: true)
+        exercisesFetchRequest.sortDescriptors = [primarySortDescriptor]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: exercisesFetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: "isKindOfExercise.sectionId", cacheName: nil)
+        
+        self.view.tintColor = appDelegate.maxTintColor
+        
+        var error: NSError? = nil
+        if (fetchedResultsController!.performFetch(&error) == false) {
+            print("An error occurred: \(error?.localizedDescription)")
+        }
         
     }
     
@@ -28,7 +44,7 @@ class ExerciseRoutineTableViewController : ExerciseTableViewController{
         
         if newExerciseRoutine != nil {
             
-            return newExerciseRoutine!.exercisesInNewRoutine.count
+            return newExerciseRoutine!.exercises.count
             
         }
         
@@ -42,6 +58,8 @@ class ExerciseRoutineTableViewController : ExerciseTableViewController{
         
     }
     
+    
+    // Method added to only show non-empty cells in tableview
     override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
         return UIView()
@@ -71,7 +89,7 @@ class ExerciseRoutineTableViewController : ExerciseTableViewController{
     
     func setUpExerciseEditCell(cell : ExerciseEditTableViewCell, indexPath : NSIndexPath){
         
-        let exercise = fetchedResultsController.objectAtIndexPath(indexPath) as! Exercise
+        let exercise = fetchedResultsController!.objectAtIndexPath(indexPath) as! Exercise
         
         var setsTableViewController: SetsTableViewController? = self.storyboard?.instantiateViewControllerWithIdentifier("setTableViewController") as? SetsTableViewController
         
@@ -89,12 +107,12 @@ class ExerciseRoutineTableViewController : ExerciseTableViewController{
     
     func setUpExerciseCell(cell : ExerciseTableViewCell, indexPath : NSIndexPath){
         
-        let exercise = newExerciseRoutine!.exercisesInNewRoutine.allObjects[indexPath.row] as! Exercise
+        let exercise = newExerciseRoutine!.exercises.allObjects[indexPath.row] as! RoutineExercise
         
         cell.backgroundColor = UIColor.clearColor()
         
-        cell.exerciseImageView?.image = exercise.getImage()
-        cell.exerciseNameLabel?.text = exercise.name
+        cell.exerciseImageView?.image = exercise.isKindOfExercise.getImage()
+        cell.exerciseNameLabel?.text = "\(exercise.exerciseNr)"
         
     }
     

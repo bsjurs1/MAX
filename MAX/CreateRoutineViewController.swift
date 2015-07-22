@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class CreateRoutineViewController: UIViewController {
     
@@ -19,6 +20,7 @@ class CreateRoutineViewController: UIViewController {
     @IBOutlet weak var dragStaticLabel: UILabel!
     @IBOutlet weak var routineNameTextField: UITextField!
     var index : NSIndexPath?
+    var exerciseNr = 1
     
     var selectedCell : UIView?
     
@@ -39,6 +41,8 @@ class CreateRoutineViewController: UIViewController {
     func addExerciseRoutineTableViewController(){
         
         exerciseRoutineTableViewController = (self.storyboard?.instantiateViewControllerWithIdentifier("exerciseTableViewController") as? ExerciseRoutineTableViewController)!
+        
+        exerciseRoutineTableViewController?.managedObjectContext = exerciseLibraryViewController!.exerciseLibraryTableViewController!.managedContext
         
         self.addChildViewController(exerciseLibraryViewController!)
         
@@ -156,9 +160,14 @@ class CreateRoutineViewController: UIViewController {
         
         var newRoutine = exerciseRoutineTableViewController?.newExerciseRoutine
         
-        var exerciseToAdd = exerciseLibraryViewController!.exerciseLibraryTableViewController?.fetchedResultsController.objectAtIndexPath(indexPath) as! Exercise
+        var exerciseData = exerciseLibraryViewController!.exerciseLibraryTableViewController?.fetchedResultsController.objectAtIndexPath(indexPath) as! Exercise
         
-        newRoutine?.setValue(newRoutine?.exercisesInNewRoutine.setByAddingObject(exerciseToAdd), forKey: "exercisesInNewRoutine")
+        var newRoutineExercise = NSEntityDescription.insertNewObjectForEntityForName("RoutineExercise", inManagedObjectContext: self.exerciseLibraryViewController!.exerciseLibraryTableViewController!.managedContext) as! RoutineExercise
+        
+        newRoutineExercise.isKindOfExercise = exerciseData
+        newRoutineExercise.exerciseNr = exerciseNr++
+        
+        newRoutine?.setValue(newRoutine?.exercises.setByAddingObject(newRoutineExercise), forKey: "exercises")
         
         exerciseRoutineTableViewController!.tableView.reloadData()
   

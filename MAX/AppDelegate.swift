@@ -37,7 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Checks to see whether core data exercise schema has any entities
             if (results?.isEmpty == true) {
                 
-                // Add json objects to core data 
+                println("Core data store was empty")
+                
+                // Add json objects to core data
             
                 if exerciseType == "repetition" {
                 
