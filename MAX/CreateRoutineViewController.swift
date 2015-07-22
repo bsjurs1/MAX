@@ -158,9 +158,7 @@ class CreateRoutineViewController: UIViewController {
         
         var exerciseToAdd = exerciseLibraryViewController!.exerciseLibraryTableViewController?.fetchedResultsController.objectAtIndexPath(indexPath) as! Exercise
         
-        newRoutine?.exercises.setByAddingObject(exerciseToAdd)
-        
-        newRoutine?.setValue(newRoutine?.exercises.setByAddingObject(exerciseToAdd), forKey: "exercises")
+        newRoutine?.setValue(newRoutine?.exercisesInNewRoutine.setByAddingObject(exerciseToAdd), forKey: "exercisesInNewRoutine")
         
         exerciseRoutineTableViewController!.tableView.reloadData()
   

@@ -2,7 +2,7 @@
 //  Exercise.swift
 //  MAX
 //
-//  Created by Bjarte Sjursen on 20.07.15.
+//  Created by Bjarte Sjursen on 22.07.15.
 //  Copyright (c) 2015 Bjarte Sjursen. All rights reserved.
 //
 
@@ -16,8 +16,8 @@ class Exercise: NSManagedObject {
     @NSManaged var name: String
     @NSManaged var sectionId: String
     @NSManaged var exerciseVideo: ExerciseVideo
-    @NSManaged var performedExerciseData: NSSet
     @NSManaged var routineExercises: NSSet
+    @NSManaged var routineInCreation: ExerciseRoutine
     
     func insertImage(imagePath : String){
         
@@ -29,6 +29,5 @@ class Exercise: NSManagedObject {
         return UIImage(data: self.exerciseImage)!
         
     }
-
 
 }

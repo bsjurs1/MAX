@@ -30,39 +30,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var exerciseName : String = exerciseDict["name"] as! String
             var exerciseDescription : String = exerciseDict["description"] as! String
             var exerciseType : String = exerciseDict["type"] as! String
+
+            var request = NSFetchRequest(entityName: "Exercise")
+            var results = self.managedObjectContext?.executeFetchRequest(request, error: nil)
             
-            if exerciseType == "repetition" {
+            // Checks to see whether core data exercise schema has any entities
+            if (results?.isEmpty == true) {
                 
-                var exerciseToInsert: AnyObject = NSEntityDescription.insertNewObjectForEntityForName("RepetitionExercise", inManagedObjectContext: managedObjectContext!) as! RepetitionExercise
+                // Add json objects to core data 
+            
+                if exerciseType == "repetition" {
+                
+                    var exerciseToInsert: AnyObject = NSEntityDescription.insertNewObjectForEntityForName("RepetitionExercise", inManagedObjectContext: managedObjectContext!) as! RepetitionExercise
                 
                 
-                var sectionID = String(exerciseName[exerciseName.startIndex])
+                    var sectionID = String(exerciseName[exerciseName.startIndex])
                 
-                exerciseToInsert.setValue(exerciseName, forKey: "name")
-                exerciseToInsert.setValue(exerciseDescription, forKey: "exerciseDescription")
-                exerciseToInsert.setValue(sectionID, forKey: "sectionId")
+                    exerciseToInsert.setValue(exerciseName, forKey: "name")
+                    exerciseToInsert.setValue(exerciseDescription, forKey: "exerciseDescription")
+                    exerciseToInsert.setValue(sectionID, forKey: "sectionId")
                 
-                var image = UIImage(named: exerciseName + ".png")
+                    var image = UIImage(named: exerciseName + ".png")
                 
-                exerciseToInsert.setValue(UIImagePNGRepresentation(image), forKey: "exerciseImage")
+                    exerciseToInsert.setValue(UIImagePNGRepresentation(image), forKey: "exerciseImage")
 
                 
             } else if exerciseType == "time" {
                 
-                var exerciseToInsert: AnyObject = NSEntityDescription.insertNewObjectForEntityForName("TimeExercise", inManagedObjectContext: managedObjectContext!) as! TimeExercise
+                    var exerciseToInsert: AnyObject = NSEntityDescription.insertNewObjectForEntityForName("TimeExercise", inManagedObjectContext: managedObjectContext!) as! TimeExercise
                 
                 
-                var sectionID = String(exerciseName[exerciseName.startIndex])
+                    var sectionID = String(exerciseName[exerciseName.startIndex])
                 
-                exerciseToInsert.setValue(exerciseName, forKey: "name")
-                exerciseToInsert.setValue(exerciseDescription, forKey: "exerciseDescription")
-                exerciseToInsert.setValue(sectionID, forKey: "sectionId")
+                    exerciseToInsert.setValue(exerciseName, forKey: "name")
+                    exerciseToInsert.setValue(exerciseDescription, forKey: "exerciseDescription")
+                    exerciseToInsert.setValue(sectionID, forKey: "sectionId")
                 
-                var image = UIImage(named: exerciseName + ".png")
+                    var image = UIImage(named: exerciseName + ".png")
                 
-                exerciseToInsert.setValue(UIImagePNGRepresentation(image), forKey: "exerciseImage")
+                    exerciseToInsert.setValue(UIImagePNGRepresentation(image), forKey: "exerciseImage")
                 
             }
+            
+        }
+        
+            managedContext?.save(nil)
             
         }
 

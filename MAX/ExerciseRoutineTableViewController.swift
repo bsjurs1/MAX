@@ -28,7 +28,7 @@ class ExerciseRoutineTableViewController : ExerciseTableViewController{
         
         if newExerciseRoutine != nil {
             
-            return newExerciseRoutine!.exercises.count
+            return newExerciseRoutine!.exercisesInNewRoutine.count
             
         }
         
@@ -89,7 +89,7 @@ class ExerciseRoutineTableViewController : ExerciseTableViewController{
     
     func setUpExerciseCell(cell : ExerciseTableViewCell, indexPath : NSIndexPath){
         
-        let exercise = newExerciseRoutine!.exercises.allObjects[indexPath.row] as! Exercise
+        let exercise = newExerciseRoutine!.exercisesInNewRoutine.allObjects[indexPath.row] as! Exercise
         
         cell.backgroundColor = UIColor.clearColor()
         
