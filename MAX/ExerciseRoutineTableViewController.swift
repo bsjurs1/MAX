@@ -109,16 +109,6 @@ class ExerciseRoutineTableViewController : CoreDataTableViewController {
         
     }
     
-    
-    /*
-    // Override to support editing the table view.
-    - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-    [_managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-    }
-    }
-    */
-    
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
