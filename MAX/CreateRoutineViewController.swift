@@ -266,6 +266,8 @@ class CreateRoutineViewController: UIViewController, UITextFieldDelegate {
         
         doneClicked = true
         
+        exerciseRoutineTableViewController?.doneClicked = true
+        
         UIView.animateWithDuration(0.2, animations: {
             
             self.exerciseLibraryViewController!.view.frame.origin.y = UIScreen.mainScreen().bounds.size.height-40

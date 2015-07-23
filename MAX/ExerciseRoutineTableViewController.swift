@@ -14,6 +14,8 @@ class ExerciseRoutineTableViewController : CoreDataTableViewController {
     var newExerciseRoutine : ExerciseRoutine?
     var managedObjectContext = NSManagedObjectContext()
     var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    var selectedExerciseIndex : NSIndexPath?
+    var doneClicked = false
     
     override func viewDidLoad() {
         
@@ -49,22 +51,65 @@ class ExerciseRoutineTableViewController : CoreDataTableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("exerciseCell", forIndexPath: indexPath) as! UITableViewCell
+        if(indexPath == selectedExerciseIndex && doneClicked == true){
+            
+            let exercise = fetchedResultsController!.objectAtIndexPath(indexPath) as! RoutineExercise
+            
+            var cell : ExerciseEditTableViewCell = tableView.dequeueReusableCellWithIdentifier("exerciseEditCell", forIndexPath: indexPath) as! ExerciseEditTableViewCell
+            
+            cell.backgroundColor = UIColor.clearColor()
+            
+            cell.exerciseNameLabel.text = exercise.isKindOfExercise.name
+            cell.exerciseImageView.image = exercise.isKindOfExercise.getImage()
+            cell.exerciseDetailsButton.addTarget(self, action: "showExerciseInformation", forControlEvents: UIControlEvents.TouchUpInside)
+            
+            return cell
+            
+        }
+        else{
         
-        if cell.isKindOfClass(ExerciseTableViewCell){
+            var cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("exerciseCell", forIndexPath: indexPath) as! UITableViewCell
+        
+            if cell.isKindOfClass(ExerciseTableViewCell){
             
-            var downCastedCell = cell as! ExerciseTableViewCell
+                var downCastedCell = cell as! ExerciseTableViewCell
             
-            setUpExerciseCell(downCastedCell, indexPath: indexPath)
-        }
-        else if cell.isKindOfClass(ExerciseEditTableViewCell) {
-            
-            var downCastedCell = cell as! ExerciseEditTableViewCell
-            
-            setUpExerciseEditCell(downCastedCell, indexPath: indexPath)
-        }
+                setUpExerciseCell(downCastedCell, indexPath: indexPath)
+            }
 
-        return cell
+            return cell
+            
+        }
+        
+    }
+    
+    func showExerciseInformation(){
+        
+        var routineExerciseTapped = fetchedResultsController!.objectAtIndexPath(selectedExerciseIndex!) as! RoutineExercise
+        
+        var exerciseTapped = routineExerciseTapped.isKindOfExercise
+        
+        println(exerciseTapped)
+        
+        var exerciseDescription = self.storyboard?.instantiateViewControllerWithIdentifier("descriptionController") as? ExerciseDescriptionViewController
+        
+        exerciseDescription?.exerciseDescription = exerciseTapped.exerciseDescription
+        
+        exerciseDescription?.exerciseImage = exerciseTapped.getImage()
+        
+        exerciseDescription?.view.frame = CGRectMake(0, 0,UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height)
+        
+        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        var beView = UIVisualEffectView(effect: blurEffect)
+        beView.frame = UIScreen.mainScreen().bounds
+        
+        exerciseDescription!.view.frame = UIScreen.mainScreen().bounds
+        exerciseDescription!.view.backgroundColor = UIColor.clearColor()
+        exerciseDescription!.view.insertSubview(beView, atIndex: 0)
+        exerciseDescription!.modalPresentationStyle = UIModalPresentationStyle.OverFullScreen
+        
+        self.presentViewController(exerciseDescription!, animated: true, completion: nil)
+
         
     }
     
@@ -105,7 +150,51 @@ class ExerciseRoutineTableViewController : CoreDataTableViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
 
-        return 100
+        if(indexPath == selectedExerciseIndex && doneClicked == true){
+            
+            return 300
+            
+        }
+        else {
+        
+            return 100
+            
+        }
+        
+    }
+    
+    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        
+        if selectedExerciseIndex != nil && indexPath == selectedExerciseIndex! {
+            
+            selectedExerciseIndex = nil
+            
+            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+            
+        }
+        
+        else if selectedExerciseIndex != nil && indexPath != selectedExerciseIndex {
+
+            var previouslySelectedCell = selectedExerciseIndex!
+            
+            selectedExerciseIndex = indexPath
+            
+            tableView.reloadRowsAtIndexPaths([previouslySelectedCell, selectedExerciseIndex!], withRowAnimation: UITableViewRowAnimation.Fade)
+
+ 
+        }
+        
+        else {
+            
+            selectedExerciseIndex = indexPath
+            
+            
+            tableView.reloadRowsAtIndexPaths([selectedExerciseIndex!], withRowAnimation: UITableViewRowAnimation.Fade)
+            
+            
+        }
+        
+        return indexPath
         
     }
     
