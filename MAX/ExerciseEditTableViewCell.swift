@@ -175,5 +175,20 @@ class ExerciseEditTableViewCell: UITableViewCell, NSFetchedResultsControllerDele
         self.fetchedResultsController!.delegate = self
         self.performFetch()
     }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            
+            managedObjectContext!.deleteObject(self.fetchedResultsController!.objectAtIndexPath(indexPath) as! NSManagedObject)
+            
+        }
+        
+    }
+    
 
 }
