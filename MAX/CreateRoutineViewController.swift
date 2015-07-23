@@ -239,7 +239,7 @@ class CreateRoutineViewController: UIViewController, UITextFieldDelegate {
         
         var exerciseData = exerciseLibraryViewController!.exerciseLibraryTableViewController?.fetchedResultsController.objectAtIndexPath(indexPath) as! Exercise
         
-        var newRoutineExercise = NSEntityDescription.insertNewObjectForEntityForName("RoutineExercise", inManagedObjectContext: self.exerciseRoutineTableViewController!.managedObjectContext) as! RoutineExercise
+        var newRoutineExercise = NSEntityDescription.insertNewObjectForEntityForName("RepetitionRoutineExercise", inManagedObjectContext: self.exerciseRoutineTableViewController!.managedObjectContext) as! RepetitionRoutineExercise
         
         newRoutineExercise.isKindOfExercise = exerciseData
         newRoutineExercise.exerciseNr = exerciseNr++

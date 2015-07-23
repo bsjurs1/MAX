@@ -54,7 +54,6 @@ class ExerciseRoutineTableViewController : CoreDataTableViewController {
         if(indexPath == selectedExerciseIndex && doneClicked == true){
             
             let exercise = fetchedResultsController!.objectAtIndexPath(indexPath) as! RoutineExercise
-            
             var cell : ExerciseEditTableViewCell = tableView.dequeueReusableCellWithIdentifier("exerciseEditCell", forIndexPath: indexPath) as! ExerciseEditTableViewCell
             
             cell.backgroundColor = UIColor.clearColor()
@@ -62,6 +61,11 @@ class ExerciseRoutineTableViewController : CoreDataTableViewController {
             cell.exerciseNameLabel.text = exercise.isKindOfExercise.name
             cell.exerciseImageView.image = exercise.isKindOfExercise.getImage()
             cell.exerciseDetailsButton.addTarget(self, action: "showExerciseInformation", forControlEvents: UIControlEvents.TouchUpInside)
+            cell.addSetButton.addTarget(self, action: "addSet", forControlEvents: UIControlEvents.TouchUpInside)
+            cell.managedObjectContext = self.managedObjectContext
+            cell.exercise = exercise
+            cell.isRepetitionExercise = true
+            cell.setupFetchedResultsController()
             
             return cell
             
@@ -80,6 +84,18 @@ class ExerciseRoutineTableViewController : CoreDataTableViewController {
             return cell
             
         }
+        
+    }
+    
+    func addSet(){
+        
+        var newSet = NSEntityDescription.insertNewObjectForEntityForName("RepetitionSet", inManagedObjectContext: managedObjectContext) as! RepetitionSet
+        
+        newSet.setNr = 1
+        
+        var exercise = fetchedResultsController?.objectAtIndexPath(selectedExerciseIndex!) as! RepetitionRoutineExercise
+        
+        newSet.belongsToExercise = exercise
         
     }
     

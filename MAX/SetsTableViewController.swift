@@ -7,30 +7,75 @@
 //
 
 import UIKit
+import CoreData
 
-class SetsTableViewController: UITableViewController {
+class SetsTableViewController: CoreDataTableViewController {
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
-        return 1
-        
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 1
-        
-    }
+    var exerciseToEdit : RoutineExercise?
+    var appDelegate = AppDelegate()
+    var managedObjectContext = NSManagedObjectContext()
+    var isRepetitionExercise : Bool?
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell : EditExerciseSetTableViewCell = tableView.dequeueReusableCellWithIdentifier("setCell", forIndexPath: indexPath) as! EditExerciseSetTableViewCell
+        if(isRepetitionExercise == true){
+            
+            var set = fetchedResultsController?.objectAtIndexPath(indexPath) as! RepetitionSet
         
-        cell.setNumberLabel.text = "Set 1"
+            var cell : EditExerciseSetTableViewCell = tableView.dequeueReusableCellWithIdentifier("setCell", forIndexPath: indexPath) as! EditExerciseSetTableViewCell
         
-        return cell
+            cell.setNumberLabel.text = "\(set.setNr)"
+        
+            return cell
+        }
+        else {
+            
+            // add code to handle time sets
+            
+            var cell : EditExerciseSetTableViewCell = tableView.dequeueReusableCellWithIdentifier("setCell", forIndexPath: indexPath) as! EditExerciseSetTableViewCell
+            
+            cell.setNumberLabel.text = "Set 1"
+            
+            return cell
+            
+        }
         
         
     }
+    
+    override func viewDidLoad() {
+        
+        if(isRepetitionExercise == true){
+            
+            let exercisesFetchRequest = NSFetchRequest(entityName: "RepetitionSet")
+            exercisesFetchRequest.predicate = NSPredicate(format: "belongsToExercise == %@", exerciseToEdit!)
+            let primarySortDescriptor = NSSortDescriptor(key: "setNr", ascending: true)
+            exercisesFetchRequest.sortDescriptors = [primarySortDescriptor]
+            
+            fetchedResultsController = NSFetchedResultsController(fetchRequest: exercisesFetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+
+            
+        }
+        else if (isRepetitionExercise == false){
+            
+            let exercisesFetchRequest = NSFetchRequest(entityName: "TimeSet")
+            exercisesFetchRequest.predicate = NSPredicate(format: "belongsToExercise == %@", exerciseToEdit!)
+            let primarySortDescriptor = NSSortDescriptor(key: "setNr", ascending: true)
+            exercisesFetchRequest.sortDescriptors = [primarySortDescriptor]
+            
+            fetchedResultsController = NSFetchedResultsController(fetchRequest: exercisesFetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+            
+        }
+        
+        self.view.tintColor = appDelegate.maxTintColor
+    
+        var error: NSError? = nil
+        
+        if (fetchedResultsController!.performFetch(&error) == false) {
+            print("An error occurred: \(error?.localizedDescription)")
+        }
+    }
+    
+    
 
 }

@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class RepetitionRoutineExercise: NSManagedObject {
+class RepetitionRoutineExercise: RoutineExercise {
 
     @NSManaged var sets: NSSet
 
