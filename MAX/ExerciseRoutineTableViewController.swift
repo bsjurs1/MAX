@@ -91,9 +91,11 @@ class ExerciseRoutineTableViewController : CoreDataTableViewController {
         
         var newSet = NSEntityDescription.insertNewObjectForEntityForName("RepetitionSet", inManagedObjectContext: managedObjectContext) as! RepetitionSet
         
-        newSet.setNr = 1
-        
         var exercise = fetchedResultsController?.objectAtIndexPath(selectedExerciseIndex!) as! RepetitionRoutineExercise
+        
+        var numberOfSetsInExercise = exercise.sets.count
+        
+        newSet.setNr = numberOfSetsInExercise + 1
         
         newSet.belongsToExercise = exercise
         
