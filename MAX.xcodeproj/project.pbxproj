@@ -57,6 +57,7 @@
 		91BDBC391B3DD0570014AD41 /* CreateRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BDBC381B3DD0570014AD41 /* CreateRoutineViewController.swift */; };
 		91BDBC3B1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BDBC3A1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift */; };
 		91BDBC3D1B3DEACF0014AD41 /* CreateExerciseForLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BDBC3C1B3DEACF0014AD41 /* CreateExerciseForLibraryViewController.swift */; };
+		91F4BB171B613A8F0061C546 /* CoreDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F4BB161B613A8F0061C546 /* CoreDataTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		91BDBC381B3DD0570014AD41 /* CreateRoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRoutineViewController.swift; sourceTree = "<group>"; };
 		91BDBC3A1B3DD73B0014AD41 /* ExerciseLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLibraryViewController.swift; sourceTree = "<group>"; };
 		91BDBC3C1B3DEACF0014AD41 /* CreateExerciseForLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateExerciseForLibraryViewController.swift; sourceTree = "<group>"; };
+		91F4BB161B613A8F0061C546 /* CoreDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +269,7 @@
 		91121D0F1B36F1EB004BAC11 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				91F4BB161B613A8F0061C546 /* CoreDataTableViewController.swift */,
 				910ACB521B5A8C5800F5A1FB /* bjarte.jpg */,
 				9128F3EC1B4C0A3A00B2475B /* squats.png */,
 				9128F3EA1B4C059A00B2475B /* 1230_0.jpg */,
@@ -433,6 +436,7 @@
 				911B82531B5D81BA009CAFF0 /* PerformedExerciseData.swift in Sources */,
 				911B82551B5D81BA009CAFF0 /* TimeRoutineExercise.swift in Sources */,
 				911B824D1B5D81BA009CAFF0 /* ExerciseVideo.swift in Sources */,
+				91F4BB171B613A8F0061C546 /* CoreDataTableViewController.swift in Sources */,
 				9130C26B1B3C9A4500368E54 /* ExerciseRoutineCollectionSearchBarHeaderView.swift in Sources */,
 				919B4E1A1B38A0F600C82A54 /* ExerciseRoutineViewController.swift in Sources */,
 				91BDBC3D1B3DEACF0014AD41 /* CreateExerciseForLibraryViewController.swift in Sources */,
