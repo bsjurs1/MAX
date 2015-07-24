@@ -44,7 +44,14 @@ class ExerciseEditTableViewCell: UITableViewCell, NSFetchedResultsControllerDele
             cell.weightTextField.tintColor = UIColor.orangeColor()
             
             cell.setNumberLabel.text = "\(set.setNr)"
-            cell.addDoneButtonOnKeyboard()
+            cell.addDoneButtonToNumpads()
+            cell.set = set
+            if (set.numberOfRepetitions.intValue >= 0) {
+                 cell.repetitionsTextField.text = "\(set.numberOfRepetitions.intValue)"
+            }
+            if (set.weightToLift.doubleValue >= 0){
+                cell.weightTextField.text = "\(set.weightToLift.doubleValue)"
+            }
             
             return cell
         }
