@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditExerciseSetTableViewCell: UITableViewCell {
+class EditExerciseSetTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var repetitionsTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
@@ -21,6 +21,9 @@ class EditExerciseSetTableViewCell: UITableViewCell {
         
         addDoneButtonOnRepetitionKeyboard()
         addDoneButtonOnWeightKeyboard()
+        
+        repetitionsTextField.delegate = self
+        weightTextField.delegate = self
         
     }
     
@@ -43,7 +46,7 @@ class EditExerciseSetTableViewCell: UITableViewCell {
         self.repetitionsTextField.inputAccessoryView = doneToolbar
 
     }
-    
+
     func doneRepetitionKeyboardButtonAction()
     {
         if (set != nil){
@@ -84,6 +87,16 @@ class EditExerciseSetTableViewCell: UITableViewCell {
         }
         
         self.weightTextField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        repetitionsTextField.resignFirstResponder()
+        weightTextField.resignFirstResponder()
+        
+        
+        return true
+        
     }
 
 }

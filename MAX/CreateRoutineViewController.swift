@@ -264,30 +264,37 @@ class CreateRoutineViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func doneAddingExercises(sender: AnyObject) {
         
-        doneClicked = true
-        
-        exerciseRoutineTableViewController?.doneClicked = true
-        
-        UIView.animateWithDuration(0.2, animations: {
+        if(doneClicked == true){
+            println(exerciseRoutineTableViewController?.newExerciseRoutine)
             
-            self.exerciseLibraryViewController!.view.frame.origin.y = UIScreen.mainScreen().bounds.size.height-40
+            self.navigationController?.popToRootViewControllerAnimated(true)
             
-            self.routineNameTextField.frame.origin.y -= 100
-            self.addRoutineImageButton.frame.origin.y -= 100
-            self.exerciseRoutineTableViewController!.view.frame.origin.y -= 50
-            self.exerciseRoutineTableViewController!.view.frame.size.height += 40
+        }
+        else {
+        
+            doneClicked = true
+        
+            exerciseRoutineTableViewController?.doneClicked = true
+        
+                UIView.animateWithDuration(0.2, animations: {
             
-            self.exerciseLibraryViewController?.addExerciseButton.enabled = false
+                    self.exerciseLibraryViewController!.view.frame.origin.y = UIScreen.mainScreen().bounds.size.height-40
             
-            self.navigationItem.title = self.routineNameTextField.text
+                    self.routineNameTextField.frame.origin.y -= 100
+                    self.addRoutineImageButton.frame.origin.y -= 100
+                    self.exerciseRoutineTableViewController!.view.frame.origin.y -= 50
+                    self.exerciseRoutineTableViewController!.view.frame.size.height += 40
+                
+                    self.exerciseLibraryViewController?.addExerciseButton.enabled = false
             
-            self.lineView.frame.origin.y -= 100
-        })
+                    self.navigationItem.title = self.routineNameTextField.text
+            
+                    self.lineView.frame.origin.y -= 100
+            })
         
         
-        self.exerciseLibraryViewController?.exerciseLibraryTableViewController?.managedContext.save(nil)
-        
-        
+            self.exerciseLibraryViewController?.exerciseLibraryTableViewController?.managedContext.save(nil)
+        }
         
         
     }

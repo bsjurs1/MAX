@@ -46,10 +46,10 @@ class ExerciseEditTableViewCell: UITableViewCell, NSFetchedResultsControllerDele
             cell.setNumberLabel.text = "\(set.setNr)"
             cell.addDoneButtonToNumpads()
             cell.set = set
-            if (set.numberOfRepetitions.intValue >= 0) {
+            if (set.numberOfRepetitions.intValue != 0) {
                  cell.repetitionsTextField.text = "\(set.numberOfRepetitions.intValue)"
             }
-            if (set.weightToLift.doubleValue >= 0){
+            if (set.weightToLift.doubleValue != 0){
                 cell.weightTextField.text = "\(set.weightToLift.doubleValue)"
             }
             
