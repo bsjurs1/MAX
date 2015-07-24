@@ -67,6 +67,8 @@ class ExerciseRoutineTableViewController : CoreDataTableViewController {
             cell.isRepetitionExercise = true
             cell.setupFetchedResultsController()
             
+            
+            
             return cell
             
         }

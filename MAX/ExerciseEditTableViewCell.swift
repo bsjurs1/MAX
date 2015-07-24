@@ -44,6 +44,7 @@ class ExerciseEditTableViewCell: UITableViewCell, NSFetchedResultsControllerDele
             cell.weightTextField.tintColor = UIColor.orangeColor()
             
             cell.setNumberLabel.text = "\(set.setNr)"
+            cell.addDoneButtonOnKeyboard()
             
             return cell
         }

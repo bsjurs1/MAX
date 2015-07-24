@@ -375,19 +375,23 @@
                                                                     <constraint firstAttribute="width" constant="173" id="gc5-Yr-bIg"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                                 <variation key="default">
                                                                     <mask key="constraints">
                                                                         <exclude reference="7ab-Ub-PhF"/>
                                                                         <exclude reference="gc5-Yr-bIg"/>
                                                                     </mask>
                                                                 </variation>
-                                                                <variation key="widthClass=compact">
+                                                                <variation key="widthClass=compact" misplaced="YES">
+                                                                    <rect key="frame" x="139" y="7" width="173" height="30"/>
                                                                     <mask key="constraints">
                                                                         <include reference="7ab-Ub-PhF"/>
                                                                         <include reference="gc5-Yr-bIg"/>
                                                                     </mask>
                                                                 </variation>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="ia3-GA-Zzp" id="r5G-Nv-FGD"/>
+                                                                </connections>
                                                             </textField>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter weight to lift" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Dp5-Uo-iee">
                                                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
@@ -397,19 +401,23 @@
                                                                     <constraint firstAttribute="height" constant="30" id="qqx-ys-GNa"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="done"/>
                                                                 <variation key="default">
                                                                     <mask key="constraints">
                                                                         <exclude reference="AW0-Kx-Can"/>
                                                                         <exclude reference="qqx-ys-GNa"/>
                                                                     </mask>
                                                                 </variation>
-                                                                <variation key="widthClass=compact">
+                                                                <variation key="widthClass=compact" misplaced="YES">
+                                                                    <rect key="frame" x="6" y="7" width="131" height="30"/>
                                                                     <mask key="constraints">
                                                                         <include reference="AW0-Kx-Can"/>
                                                                         <include reference="qqx-ys-GNa"/>
                                                                     </mask>
                                                                 </variation>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="ia3-GA-Zzp" id="IMu-oA-djO"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                         <constraints>
