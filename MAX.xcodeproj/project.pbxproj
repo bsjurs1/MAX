@@ -44,6 +44,7 @@
 		9128F3EB1B4C059A00B2475B /* 1230_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9128F3EA1B4C059A00B2475B /* 1230_0.jpg */; };
 		9128F3ED1B4C0A3A00B2475B /* squats.png in Resources */ = {isa = PBXBuildFile; fileRef = 9128F3EC1B4C0A3A00B2475B /* squats.png */; };
 		9130C26B1B3C9A4500368E54 /* ExerciseRoutineCollectionSearchBarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9130C26A1B3C9A4500368E54 /* ExerciseRoutineCollectionSearchBarHeaderView.swift */; };
+		9173DA7F1B63CDB30062877C /* CoreDataCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9173DA7E1B63CDB30062877C /* CoreDataCollectionViewController.swift */; };
 		917403911B46AE7100A58E9C /* SetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917403901B46AE7100A58E9C /* SetView.swift */; };
 		91902B011B6008FC004CA0B0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91902B001B6008FC004CA0B0 /* Exercise.swift */; };
 		91902B031B6008FD004CA0B0 /* ExerciseRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91902B021B6008FD004CA0B0 /* ExerciseRoutine.swift */; };
@@ -124,6 +125,7 @@
 		9128F3EA1B4C059A00B2475B /* 1230_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1230_0.jpg; path = ../1230_0.jpg; sourceTree = "<group>"; };
 		9128F3EC1B4C0A3A00B2475B /* squats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = squats.png; path = ../squats.png; sourceTree = "<group>"; };
 		9130C26A1B3C9A4500368E54 /* ExerciseRoutineCollectionSearchBarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineCollectionSearchBarHeaderView.swift; sourceTree = "<group>"; };
+		9173DA7E1B63CDB30062877C /* CoreDataCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataCollectionViewController.swift; sourceTree = "<group>"; };
 		917403901B46AE7100A58E9C /* SetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetView.swift; path = ../SetView.swift; sourceTree = "<group>"; };
 		91902B001B6008FC004CA0B0 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = ../Exercise.swift; sourceTree = "<group>"; };
 		91902B021B6008FD004CA0B0 /* ExerciseRoutine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseRoutine.swift; path = ../ExerciseRoutine.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				91F4BB161B613A8F0061C546 /* CoreDataTableViewController.swift */,
+				9173DA7E1B63CDB30062877C /* CoreDataCollectionViewController.swift */,
 				910ACB521B5A8C5800F5A1FB /* bjarte.jpg */,
 				9128F3EC1B4C0A3A00B2475B /* squats.png */,
 				9128F3EA1B4C059A00B2475B /* 1230_0.jpg */,
@@ -458,6 +461,7 @@
 				919B4E201B39A9DA00C82A54 /* ExerciseProfileViewController.swift in Sources */,
 				911B824B1B5D81BA009CAFF0 /* TimeExercise.swift in Sources */,
 				9126E8F81B452EB4006EA187 /* PerformExerciseRoutineViewController.swift in Sources */,
+				9173DA7F1B63CDB30062877C /* CoreDataCollectionViewController.swift in Sources */,
 				91902B011B6008FC004CA0B0 /* Exercise.swift in Sources */,
 				910BC4421B3AAFC40078FF8B /* SetsTableViewController.swift in Sources */,
 				911B82611B5D81BB009CAFF0 /* TimeSet.swift in Sources */,

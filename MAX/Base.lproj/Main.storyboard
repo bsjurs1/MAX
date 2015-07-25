@@ -2015,7 +2015,7 @@
         <image name="squats.png" width="400" height="236"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ClM-cT-aMW"/>
         <segue reference="RiR-bL-pGJ"/>
-        <segue reference="mm0-ba-r1z"/>
     </inferredMetricsTieBreakers>
 </document>
