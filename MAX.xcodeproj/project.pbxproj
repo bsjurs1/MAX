@@ -24,7 +24,7 @@
 		91121D1F1B36F1EB004BAC11 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91121D1D1B36F1EB004BAC11 /* LaunchScreen.xib */; };
 		91121D2B1B36F1EB004BAC11 /* MAXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91121D2A1B36F1EB004BAC11 /* MAXTests.swift */; };
 		9114E8C51B3C39220034127B /* ExerciseRoutinesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E8C41B3C39220034127B /* ExerciseRoutinesCollectionViewController.swift */; };
-		9114E8C71B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E8C61B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift */; };
+		9114E8C71B3C3AB60034127B /* ExerciseRoutineCollectionViewLeftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114E8C61B3C3AB60034127B /* ExerciseRoutineCollectionViewLeftCell.swift */; };
 		9116C3BD1B5BEE3C00D8F427 /* ExerciseDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9116C3BC1B5BEE3C00D8F427 /* ExerciseDescriptionViewController.swift */; };
 		911B82471B5D81BA009CAFF0 /* RepetitionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B82461B5D81BA009CAFF0 /* RepetitionSet.swift */; };
 		911B82491B5D81BA009CAFF0 /* RepetitionRoutineExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B82481B5D81BA009CAFF0 /* RepetitionRoutineExercise.swift */; };
@@ -45,6 +45,8 @@
 		9128F3ED1B4C0A3A00B2475B /* squats.png in Resources */ = {isa = PBXBuildFile; fileRef = 9128F3EC1B4C0A3A00B2475B /* squats.png */; };
 		9130C26B1B3C9A4500368E54 /* ExerciseRoutineCollectionSearchBarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9130C26A1B3C9A4500368E54 /* ExerciseRoutineCollectionSearchBarHeaderView.swift */; };
 		9173DA7F1B63CDB30062877C /* CoreDataCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9173DA7E1B63CDB30062877C /* CoreDataCollectionViewController.swift */; };
+		9173DA811B63D6620062877C /* ExerciseRoutineCollectionViewMiddleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9173DA801B63D6620062877C /* ExerciseRoutineCollectionViewMiddleCell.swift */; };
+		9173DA831B63D6FF0062877C /* ExerciseRoutineCollectionViewRightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9173DA821B63D6FF0062877C /* ExerciseRoutineCollectionViewRightCell.swift */; };
 		917403911B46AE7100A58E9C /* SetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917403901B46AE7100A58E9C /* SetView.swift */; };
 		91902B011B6008FC004CA0B0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91902B001B6008FC004CA0B0 /* Exercise.swift */; };
 		91902B031B6008FD004CA0B0 /* ExerciseRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91902B021B6008FD004CA0B0 /* ExerciseRoutine.swift */; };
@@ -105,7 +107,7 @@
 		91121D291B36F1EB004BAC11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91121D2A1B36F1EB004BAC11 /* MAXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAXTests.swift; sourceTree = "<group>"; };
 		9114E8C41B3C39220034127B /* ExerciseRoutinesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutinesCollectionViewController.swift; sourceTree = "<group>"; };
-		9114E8C61B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineCollectionViewCell.swift; sourceTree = "<group>"; };
+		9114E8C61B3C3AB60034127B /* ExerciseRoutineCollectionViewLeftCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineCollectionViewLeftCell.swift; sourceTree = "<group>"; };
 		9116C3BC1B5BEE3C00D8F427 /* ExerciseDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseDescriptionViewController.swift; sourceTree = "<group>"; };
 		911B82461B5D81BA009CAFF0 /* RepetitionSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepetitionSet.swift; path = ../RepetitionSet.swift; sourceTree = "<group>"; };
 		911B82481B5D81BA009CAFF0 /* RepetitionRoutineExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepetitionRoutineExercise.swift; path = ../RepetitionRoutineExercise.swift; sourceTree = "<group>"; };
@@ -126,6 +128,8 @@
 		9128F3EC1B4C0A3A00B2475B /* squats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = squats.png; path = ../squats.png; sourceTree = "<group>"; };
 		9130C26A1B3C9A4500368E54 /* ExerciseRoutineCollectionSearchBarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineCollectionSearchBarHeaderView.swift; sourceTree = "<group>"; };
 		9173DA7E1B63CDB30062877C /* CoreDataCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataCollectionViewController.swift; sourceTree = "<group>"; };
+		9173DA801B63D6620062877C /* ExerciseRoutineCollectionViewMiddleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineCollectionViewMiddleCell.swift; sourceTree = "<group>"; };
+		9173DA821B63D6FF0062877C /* ExerciseRoutineCollectionViewRightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineCollectionViewRightCell.swift; sourceTree = "<group>"; };
 		917403901B46AE7100A58E9C /* SetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetView.swift; path = ../SetView.swift; sourceTree = "<group>"; };
 		91902B001B6008FC004CA0B0 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = ../Exercise.swift; sourceTree = "<group>"; };
 		91902B021B6008FD004CA0B0 /* ExerciseRoutine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseRoutine.swift; path = ../ExerciseRoutine.swift; sourceTree = "<group>"; };
@@ -219,7 +223,9 @@
 				91B639161B49B62200EEE48B /* SetsView.swift */,
 				9126E8F91B453045006EA187 /* ExerciseTrainingView.swift */,
 				919447F51B4C62C300C752D6 /* ExerciseRoutineTrainingView.swift */,
-				9114E8C61B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift */,
+				9173DA801B63D6620062877C /* ExerciseRoutineCollectionViewMiddleCell.swift */,
+				9173DA821B63D6FF0062877C /* ExerciseRoutineCollectionViewRightCell.swift */,
+				9114E8C61B3C3AB60034127B /* ExerciseRoutineCollectionViewLeftCell.swift */,
 				9130C26A1B3C9A4500368E54 /* ExerciseRoutineCollectionSearchBarHeaderView.swift */,
 				910BC4431B3AB0050078FF8B /* TableViewCells */,
 				91121D181B36F1EB004BAC11 /* Main.storyboard */,
@@ -446,9 +452,10 @@
 				911B82571B5D81BB009CAFF0 /* PerformedTimeSet.swift in Sources */,
 				919447F61B4C62C300C752D6 /* ExerciseRoutineTrainingView.swift in Sources */,
 				919B4E181B389D3A00C82A54 /* ExerciseTableViewCell.swift in Sources */,
+				9173DA811B63D6620062877C /* ExerciseRoutineCollectionViewMiddleCell.swift in Sources */,
 				911B82471B5D81BA009CAFF0 /* RepetitionSet.swift in Sources */,
 				91902B031B6008FD004CA0B0 /* ExerciseRoutine.swift in Sources */,
-				9114E8C71B3C3AB60034127B /* ExerciseRoutineCollectionViewCell.swift in Sources */,
+				9114E8C71B3C3AB60034127B /* ExerciseRoutineCollectionViewLeftCell.swift in Sources */,
 				9103F9E11B37123C00735BF7 /* ExerciseTableViewController.swift in Sources */,
 				9126E8FA1B453045006EA187 /* ExerciseTrainingView.swift in Sources */,
 				911B825D1B5D81BB009CAFF0 /* PerformedRepetitionSet.swift in Sources */,
@@ -461,6 +468,7 @@
 				919B4E201B39A9DA00C82A54 /* ExerciseProfileViewController.swift in Sources */,
 				911B824B1B5D81BA009CAFF0 /* TimeExercise.swift in Sources */,
 				9126E8F81B452EB4006EA187 /* PerformExerciseRoutineViewController.swift in Sources */,
+				9173DA831B63D6FF0062877C /* ExerciseRoutineCollectionViewRightCell.swift in Sources */,
 				9173DA7F1B63CDB30062877C /* CoreDataCollectionViewController.swift in Sources */,
 				91902B011B6008FC004CA0B0 /* Exercise.swift in Sources */,
 				910BC4421B3AAFC40078FF8B /* SetsTableViewController.swift in Sources */,

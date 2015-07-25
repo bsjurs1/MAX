@@ -11,8 +11,6 @@ import CoreData
 
 class CoreDataCollectionViewController: UICollectionViewController, NSFetchedResultsControllerDelegate {
 
- 
-
     /*
     // MARK: - Navigation
 
@@ -26,55 +24,29 @@ class CoreDataCollectionViewController: UICollectionViewController, NSFetchedRes
     // MARK: UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return self.fetchedResultsController!.sections!.count
+        
+        return (self.fetchedResultsController!.sections!.count)
+        
     }
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        var rows = 0
-        if self.fetchedResultsController!.sections!.count > 0 {
-            var sectionInfo = self.fetchedResultsController!.sections![section] as! NSFetchedResultsSectionInfo
-            rows = sectionInfo.numberOfObjects
+
+        if(section == 0){
+            return self.fetchedResultsController!.sections![0].numberOfObjects + 1
         }
-        return rows
+        else {
+            return self.fetchedResultsController!.sections![section].numberOfObjects
+        }
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(collectionView: UICollectionView, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
     
-    }
-    */
     
     var fetchedResultsController: NSFetchedResultsController? {
         didSet {
             self.setUpFetchedResultsController()
         }
     }
+
     
     // MARK: - Fetching
     
@@ -87,34 +59,6 @@ class CoreDataCollectionViewController: UICollectionViewController, NSFetchedRes
         self.collectionView!.reloadData()
     }
     
-    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
-        let indexSet = NSIndexSet(index: sectionIndex)
-        switch type {
-        case NSFetchedResultsChangeType.Insert:
-            self.collectionView!.insertSections(indexSet)
-        case NSFetchedResultsChangeType.Delete:
-            self.collectionView!.deleteSections(indexSet)
-        case NSFetchedResultsChangeType.Update:
-            break
-        case NSFetchedResultsChangeType.Move:
-            break
-        }
-    }
-
-    
-    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
-        switch type {
-        case NSFetchedResultsChangeType.Insert:
-            self.collectionView!.insertItemsAtIndexPaths([newIndexPath!])
-        case NSFetchedResultsChangeType.Delete:
-            self.collectionView!.deleteItemsAtIndexPaths([indexPath!])
-        case NSFetchedResultsChangeType.Update:
-            self.collectionView!.reloadItemsAtIndexPaths([indexPath!])
-        case NSFetchedResultsChangeType.Move:
-            self.collectionView!.deleteItemsAtIndexPaths([indexPath!])
-            self.collectionView!.insertItemsAtIndexPaths([newIndexPath!])
-        }
-    }
     
     // MARK: - Private
     private func setUpFetchedResultsController() {
@@ -124,6 +68,117 @@ class CoreDataCollectionViewController: UICollectionViewController, NSFetchedRes
         }
         self.performFetch()
     }
-
+    
+    // I just implemented that with Swift. So I would like to share my implementation.
+    // First initialise an array of NSBlockOperations:
+    var blockOperations: [NSBlockOperation] = []
+    
+    
+    // In the did change object method:
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        
+        if type == NSFetchedResultsChangeType.Insert {
+            println("Insert Object: \(newIndexPath)")
+            
+            blockOperations.append(
+                NSBlockOperation(block: { [weak self] in
+                    if let this = self {
+                        this.collectionView!.insertItemsAtIndexPaths([newIndexPath!])
+                    }
+                    })
+            )
+        }
+        else if type == NSFetchedResultsChangeType.Update {
+            println("Update Object: \(indexPath)")
+            blockOperations.append(
+                NSBlockOperation(block: { [weak self] in
+                    if let this = self {
+                        this.collectionView!.reloadItemsAtIndexPaths([indexPath!])
+                    }
+                    })
+            )
+        }
+        else if type == NSFetchedResultsChangeType.Move {
+            println("Move Object: \(indexPath)")
+            
+            blockOperations.append(
+                NSBlockOperation(block: { [weak self] in
+                    if let this = self {
+                        this.collectionView!.moveItemAtIndexPath(indexPath!, toIndexPath: newIndexPath!)
+                    }
+                    })
+            )
+        }
+        else if type == NSFetchedResultsChangeType.Delete {
+            println("Delete Object: \(indexPath)")
+            
+            blockOperations.append(
+                NSBlockOperation(block: { [weak self] in
+                    if let this = self {
+                        this.collectionView!.deleteItemsAtIndexPaths([indexPath!])
+                    }
+                    })
+            )
+        }
+    }
+    
+    // In the did change section method:
+    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
+        
+        if type == NSFetchedResultsChangeType.Insert {
+            println("Insert Section: \(sectionIndex)")
+            
+            blockOperations.append(
+                NSBlockOperation(block: { [weak self] in
+                    if let this = self {
+                        this.collectionView!.insertSections(NSIndexSet(index: sectionIndex))
+                    }
+                    })
+            )
+        }
+        else if type == NSFetchedResultsChangeType.Update {
+            println("Update Section: \(sectionIndex)")
+            blockOperations.append(
+                NSBlockOperation(block: { [weak self] in
+                    if let this = self {
+                        this.collectionView!.reloadSections(NSIndexSet(index: sectionIndex))
+                    }
+                    })
+            )
+        }
+        else if type == NSFetchedResultsChangeType.Delete {
+            println("Delete Section: \(sectionIndex)")
+            
+            blockOperations.append(
+                NSBlockOperation(block: { [weak self] in
+                    if let this = self {
+                        this.collectionView!.deleteSections(NSIndexSet(index: sectionIndex))
+                    }
+                    })
+            )
+        }
+    }
+    
+    // And finally, in the did controller did change content method:
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        collectionView!.performBatchUpdates({ () -> Void in
+            for operation: NSBlockOperation in self.blockOperations {
+                operation.start()
+            }
+            }, completion: { (finished) -> Void in
+                self.blockOperations.removeAll(keepCapacity: false)
+        })
+    }
+    
+    // I personally added some code in the deinit method as well, in order to cancel the operations when the ViewController is about to get deallocated:
+    deinit {
+        // Cancel all block operations when VC deallocates
+        for operation: NSBlockOperation in blockOperations {
+            operation.cancel()
+        }
+        
+        blockOperations.removeAll(keepCapacity: false)
+    }
+    
 
 }

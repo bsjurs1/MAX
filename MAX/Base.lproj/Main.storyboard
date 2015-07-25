@@ -1024,7 +1024,7 @@
                                     </mask>
                                 </variation>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="middleRoutineCell" id="65A-zX-YRE" customClass="ExerciseRoutineCollectionViewCell" customModule="MAX" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="middleRoutineCell" id="65A-zX-YRE" customClass="ExerciseRoutineCollectionViewMiddleCell" customModule="MAX" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1152,10 +1152,13 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <outlet property="exerciseRoutineImageView" destination="dTJ-rJ-RLT" id="XMV-gt-5hz"/>
+                                    <outlet property="exerciseRoutineNameLabel" destination="uhs-lm-yZn" id="Bsx-Km-brj"/>
+                                    <outlet property="lastPerformedDateLabel" destination="fqH-En-1H1" id="XxI-fa-4aX"/>
                                     <segue destination="t5F-6b-Zdo" kind="push" id="Z4H-gu-cTi"/>
                                 </connections>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="rightRoutineCell" id="xSJ-cf-Mfc" customClass="ExerciseRoutineCollectionViewCell" customModule="MAX" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="rightRoutineCell" id="xSJ-cf-Mfc" customClass="ExerciseRoutineCollectionViewRightCell" customModule="MAX" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1277,10 +1280,13 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <outlet property="exerciseRoutineImageView" destination="Vch-2c-iXP" id="IC4-EU-8tH"/>
+                                    <outlet property="exerciseRoutineNameLabel" destination="JPS-Kd-M7g" id="IkG-gX-Tvf"/>
+                                    <outlet property="lastPerformedDateLabel" destination="hko-rQ-0JI" id="h8d-ZY-cVK"/>
                                     <segue destination="t5F-6b-Zdo" kind="push" id="ClM-cT-aMW"/>
                                 </connections>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="leftRoutineCell" id="ltJ-kB-Uc9" customClass="ExerciseRoutineCollectionViewCell" customModule="MAX" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="leftRoutineCell" id="ltJ-kB-Uc9" customClass="ExerciseRoutineCollectionViewLeftCell" customModule="MAX" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1399,7 +1405,9 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <outlet property="exerciseRoutineNameLabel" destination="aYT-AT-Omz" id="fv9-Wj-VGo"/>
                                     <outlet property="exerciseRoutinePrintScreenImageView" destination="xv3-9G-xcD" id="bau-nL-RDH"/>
+                                    <outlet property="lastPerformedDateLabel" destination="z2z-BZ-nEb" id="GVA-hA-LDp"/>
                                     <segue destination="t5F-6b-Zdo" kind="push" id="mm0-ba-r1z"/>
                                 </connections>
                             </collectionViewCell>

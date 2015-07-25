@@ -8,8 +8,11 @@
 
 import UIKit
 
-class ExerciseRoutineCollectionViewCell: UICollectionViewCell {
+class ExerciseRoutineCollectionViewLeftCell: UICollectionViewCell {
 
+    
+    @IBOutlet weak var lastPerformedDateLabel: UILabel!
+    @IBOutlet weak var exerciseRoutineNameLabel: UILabel!
     @IBOutlet weak var exerciseRoutinePrintScreenImageView: UIImageView?
     
 }

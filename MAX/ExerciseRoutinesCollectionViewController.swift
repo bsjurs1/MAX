@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class ExerciseRoutinesCollectionViewController: UICollectionViewController {
+class ExerciseRoutinesCollectionViewController: CoreDataCollectionViewController {
     
     @IBOutlet weak var editExerciseRoutineBarButton: UIBarButtonItem!
     @IBOutlet weak var addExerciseRoutineBarButton: UIBarButtonItem!
@@ -17,11 +18,26 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
     var gravity : UIGravityBehavior?
     var collider : UICollisionBehavior?
     var snapBehavior : UISnapBehavior?
+    var managedContext : NSManagedObjectContext?
     
-    var appDelegate = AppDelegate()
+    var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var profileViewController : ExerciseProfileViewController?
     
     override func viewDidLoad() {
+        
+        managedContext = appDelegate.managedObjectContext!
+        
+        let exercisesFetchRequest = NSFetchRequest(entityName: "ExerciseRoutine")
+        let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        exercisesFetchRequest.sortDescriptors = [primarySortDescriptor]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: exercisesFetchRequest, managedObjectContext: self.managedContext!, sectionNameKeyPath: nil, cacheName: nil)
+        
+        var error: NSError? = nil
+        if (fetchedResultsController!.performFetch(&error) == false) {
+            print("An error occurred: \(error?.localizedDescription)")
+        }
+
         
         animator = UIDynamicAnimator(referenceView: self.view)
         
@@ -100,12 +116,24 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
         gestureRecognizer.setTranslation(CGPointMake(0,0), inView: self.view)
         
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        collectionView?.reloadData()
+        
+    }
  
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        var cell : ExerciseRoutineCollectionViewCell
+        var newIndexPath : NSIndexPath
+        var exerciseRoutine : ExerciseRoutine?
+        
+        if(indexPath.row != 0){
+            newIndexPath = NSIndexPath(forItem: (indexPath.item-1), inSection: indexPath.section)
+            exerciseRoutine = fetchedResultsController!.objectAtIndexPath(newIndexPath) as? ExerciseRoutine
+        }
 
-        if indexPath.row == 0 {
+        if indexPath.row == 0 && indexPath.section == 0{
             
             var cell : UICollectionViewCell
             
@@ -114,34 +142,61 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
             return cell
             
         }
-        else if indexPath.row % numerOfCellsOnScreenWidth() == 0 {
+        else if indexPath.section == 0 && indexPath.row % numerOfCellsOnScreenWidth() == 0 {
             
+            var cell : ExerciseRoutineCollectionViewLeftCell
             
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("leftRoutineCell", forIndexPath: indexPath) as! ExerciseRoutineCollectionViewLeftCell
             
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("leftRoutineCell", forIndexPath: indexPath) as! ExerciseRoutineCollectionViewCell
-            
-            
-            //FIX THE IMAGE LOADING
-            //cell.exerciseRoutinePrintScreenImageView?.
             //cell.exerciseRoutinePrintScreenImageView?.image = UIImage(contentsOfFile: "prtscreen.png")
             
+            //println(exerciseRoutine.name)
+
+            if (exerciseRoutine?.name != nil){
+                 cell.exerciseRoutineNameLabel.text = exerciseRoutine!.name
+            } else {
+                
+                cell.exerciseRoutineNameLabel.text = "sample"
+            }
+            
+            return cell
+            
         }
-        else if (indexPath.row % numerOfCellsOnScreenWidth()) == (numerOfCellsOnScreenWidth()-1) {
+        else if ((indexPath.section == 0) && (indexPath.row % numerOfCellsOnScreenWidth()) == (numerOfCellsOnScreenWidth()-1)) {
             
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("rightRoutineCell", forIndexPath: indexPath) as! ExerciseRoutineCollectionViewCell
+            var cell : ExerciseRoutineCollectionViewRightCell
             
-            cell.exerciseRoutinePrintScreenImageView?.image = UIImage(contentsOfFile: "prtscreen.png")
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("rightRoutineCell", forIndexPath: indexPath) as! ExerciseRoutineCollectionViewRightCell
             
+            //cell.exerciseRoutineImageView?.image = UIImage(contentsOfFile: "prtscreen.png")
+            
+            if (exerciseRoutine?.name != nil){
+                cell.exerciseRoutineNameLabel.text = exerciseRoutine!.name
+            } else {
+                
+                cell.exerciseRoutineNameLabel.text = "sample"
+            }
+            
+            return cell
+        
         }
         else{
             
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("middleRoutineCell", forIndexPath: indexPath) as! ExerciseRoutineCollectionViewCell
+            var cell : ExerciseRoutineCollectionViewMiddleCell
             
-            cell.exerciseRoutinePrintScreenImageView?.image = UIImage(contentsOfFile: "prtscreen.png")
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("middleRoutineCell", forIndexPath: indexPath) as! ExerciseRoutineCollectionViewMiddleCell
             
+            //cell.exerciseRoutineImageView?.image = UIImage(contentsOfFile: "prtscreen.png")
+            
+            if (exerciseRoutine?.name != nil){
+                cell.exerciseRoutineNameLabel.text = exerciseRoutine!.name
+            } else {
+                
+                cell.exerciseRoutineNameLabel.text = "sample"
+            }
+            
+            return cell
         }
-        
-        return cell
         
     }
     
@@ -152,18 +207,6 @@ class ExerciseRoutinesCollectionViewController: UICollectionViewController {
         var convertedNumberToFloor : Int = Int(numberToFloor)
         
         return convertedNumberToFloor
-        
-    }
-    
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return 6
-        
-    }
-    
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        
-        return 1
         
     }
     

@@ -11,8 +11,8 @@ import CoreData
 
 class ExerciseRoutine: NSManagedObject {
 
-    @NSManaged var backGroundImage: NSData
-    @NSManaged var name: String
+    @NSManaged var backGroundImage: NSData?
+    @NSManaged var name: String?
     @NSManaged var exercises: NSSet
     @NSManaged var performedExerciseRoutineData: NSSet
 

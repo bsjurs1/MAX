@@ -258,16 +258,29 @@ class CreateRoutineViewController: UIViewController, UITextFieldDelegate {
         println("\(exerciseNr) adding exercise to routine: ")
         println(newRoutine!)
         
-        //self.exerciseRoutineTableViewController?.managedObjectContext.save(nil)
+        self.exerciseRoutineTableViewController?.managedObjectContext.save(nil)
   
     }
     
     @IBAction func doneAddingExercises(sender: AnyObject) {
         
         if(doneClicked == true){
-            println(exerciseRoutineTableViewController?.newExerciseRoutine)
+            
+            println("GOT HERE")
+            
+            exerciseRoutineTableViewController?.newExerciseRoutine?.name = routineNameTextField.text
+            
+            println("GOT HERE too 1")
+            
+            println(exerciseRoutineTableViewController?.newExerciseRoutine!)
+            
+            self.exerciseRoutineTableViewController?.managedObjectContext.save(nil)
             
             self.navigationController?.popToRootViewControllerAnimated(true)
+            
+             println("GOT HERE too 2")
+            
+            
             
         }
         else {
@@ -291,9 +304,6 @@ class CreateRoutineViewController: UIViewController, UITextFieldDelegate {
             
                     self.lineView.frame.origin.y -= 100
             })
-        
-        
-            self.exerciseLibraryViewController?.exerciseLibraryTableViewController?.managedContext.save(nil)
         }
         
         
